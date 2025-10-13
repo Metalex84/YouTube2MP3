@@ -1,0 +1,24 @@
+2025-10-13 19:15:32,271 - INFO - ==================================================
+2025-10-13 19:15:32,271 - INFO - Nueva sesion de YouTube to MP3 Downloader iniciada
+2025-10-13 19:15:32,271 - INFO - ==================================================
+2025-10-13 19:15:32,272 - INFO - URL 1 agregada: https://www.youtube.com/watch?v=CM8aSeluAus
+2025-10-13 19:15:32,272 - INFO - [S01] Iniciando descarga de: https://www.youtube.com/watch?v=CM8aSeluAus
+2025-10-13 19:15:41,061 - INFO - [S01] Titulo del video: Arde Bogotá - Cariño // LYRIC/LETRA
+2025-10-13 19:15:49,678 - INFO - [S01] Descargando...   0.0% a  Unknown B/s
+2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.1% a    1.03MiB/s
+2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.2% a    2.17MiB/s
+2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.4% a    4.17MiB/s
+2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.9% a    7.93MiB/s
+2025-10-13 19:15:49,685 - INFO - [S01] Descargando...   1.8% a    8.24MiB/s
+2025-10-13 19:15:49,688 - INFO - [S01] Descargando...   3.6% a   11.73MiB/s
+2025-10-13 19:15:49,690 - INFO - [S01] Descargando...   7.3% a   18.65MiB/s
+2025-10-13 19:15:49,695 - INFO - [S01] Descargando...  14.7% a   27.26MiB/s
+2025-10-13 19:15:49,704 - INFO - [S01] Descargando...  29.4% a   37.02MiB/s
+2025-10-13 19:15:49,721 - INFO - [S01] Descargando...  58.8% a   45.28MiB/s
+2025-10-13 19:15:49,748 - INFO - [S01] Descargando... 100.0% a   48.09MiB/s
+2025-10-13 19:15:49,754 - INFO - [S01] Descarga terminada: Arde Bogotá - Cariño ⧸⧸ LYRIC⧸LETRA.webm
+2025-10-13 19:15:53,233 - INFO - [S01] Descarga completada exitosamente: .\Arde Bogotá - Cariño  LYRICLETRA.mp3
+2025-10-13 19:15:53,235 - INFO - Resumen final - URLs: 1, Exitosos: 1, Fallidos: 0
+2025-10-13 19:15:53,235 - INFO - Sesion completada exitosamente - todos los archivos descargados
+2025-10-13 19:15:53,235 - INFO - Programa terminado con codigo de salida: 0
+2025-10-13 19:15:53,235 - INFO - ==================================================
