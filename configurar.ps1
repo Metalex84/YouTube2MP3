@@ -263,7 +263,8 @@ function Test-Project {
         Write-Step "Probando script principal..."
         
         $activateScript = ".\venv\Scripts\Activate.ps1"
-        $testCommand = "& '$activateScript'; python descargar_audio.py --version"
+        . $activateScript
+        $testCommand = "python descargar_audio.py --version"
         
         $result = Invoke-Expression $testCommand
         
