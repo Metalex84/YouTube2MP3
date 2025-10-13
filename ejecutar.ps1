@@ -21,11 +21,11 @@ function Write-ColorOutput([string]$Message, [string]$Color = "White") {
 }
 
 function Write-Error-Custom([string]$Message) {
-    Write-ColorOutput "❌ $Message" "Red"
+    Write-ColorOutput "[ERROR] $Message" "Red"
 }
 
 function Write-Info([string]$Message) {
-    Write-ColorOutput "ℹ️  $Message" "Cyan"
+    Write-ColorOutput "[INFO] $Message" "Cyan"
 }
 
 # Verificar que estamos en el directorio correcto
@@ -84,9 +84,9 @@ function Show-Help {
     Write-Host "  .\ejecutar.ps1                                     # Modo interactivo"
     Write-Host ""
     Write-ColorOutput "NOTAS:" "Yellow"
-    Write-Host "  • Si no especificas una URL, el programa te pedirá una"
-    Write-Host "  • Los archivos MP3 se guardan en el directorio actual por defecto"
-    Write-Host "  • Usa Ctrl+C para cancelar en cualquier momento"
+    Write-Host "  - Si no especificas una URL, el programa te pedira una"
+    Write-Host "  - Los archivos MP3 se guardan en el directorio actual por defecto"
+    Write-Host "  - Usa Ctrl+C para cancelar en cualquier momento"
     Write-Host ""
 }
 
@@ -99,7 +99,7 @@ if ($Arguments.Count -eq 1 -and ($Arguments[0] -eq "-?" -or $Arguments[0] -eq "/
 try {
     Write-Info "Preparando ejecución del programa..."
     
-    Write-ColorOutput "🚀 Ejecutando programa..." "Green"
+    Write-ColorOutput ">> Ejecutando programa..." "Green"
     Write-Host ""
     
     # Construir argumentos para Python
@@ -128,9 +128,9 @@ try {
     
     Write-Host ""
     if ($exitCode -eq 0) {
-        Write-ColorOutput "✅ Ejecución completada exitosamente." "Green"
+        Write-ColorOutput "[OK] Ejecucion completada exitosamente." "Green"
     } else {
-        Write-ColorOutput "⚠️  El programa terminó con código de salida: $exitCode" "Yellow"
+        Write-ColorOutput "[WARNING] El programa termino con codigo de salida: $exitCode" "Yellow"
     }
     
     exit $exitCode
