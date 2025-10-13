@@ -89,29 +89,36 @@ if ($Arguments.Count -eq 1 -and ($Arguments[0] -eq "-?" -or $Arguments[0] -eq "/
 }
 
 try {
-    Write-Info "Activando entorno virtual y ejecutando programa..."
+    Write-Info "Preparando ejecución del programa..."
     
     # Cambiar al directorio del script para asegurar rutas relativas
     Push-Location $PSScriptRoot
     
     try {
-        # Ejecutar usando cmd para mayor compatibilidad
-        $cmdArgs = @()
-        $cmdArgs += '/c'
-        $cmdArgs += $activateScript + ' &&'
-        $cmdArgs += 'python'
-        $cmdArgs += 'descargar_audio.py'
-        
-        if ($Arguments.Count -gt 0) {
-            $cmdArgs += $Arguments
-        }
-        
         Write-ColorOutput "🚀 Ejecutando programa..." "Green"
         Write-Host ""
         
-        # Usar Start-Process para mejor control
-        $process = Start-Process -FilePath "cmd.exe" -ArgumentList $cmdArgs -NoNewWindow -PassThru -Wait
-        $exitCode = $process.ExitCode
+        # Construir argumentos para Python
+        $pythonArgs = @('descargar_audio.py')
+        if ($Arguments.Count -gt 0) {
+            $pythonArgs += $Arguments
+        }
+        
+        # Determinar la ruta del ejecutable de Python
+        $pythonExe = "python"
+        
+        # Si no estamos en un entorno virtual activado, usar el de venv
+        if (-not $env:VIRTUAL_ENV) {
+            $pythonExe = Join-Path $venvPath "Scripts\python.exe"
+            if (-not (Test-Path $pythonExe)) {
+                throw "No se pudo encontrar el ejecutable de Python en el entorno virtual."
+            }
+        }
+        
+        # Ejecutar Python directamente con los argumentos
+        # Usar & para mejor manejo de argumentos en PowerShell
+        $process = & $pythonExe $pythonArgs
+        $exitCode = $LASTEXITCODE
         
         Write-Host ""
         if ($exitCode -eq 0) {

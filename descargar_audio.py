@@ -5,6 +5,58 @@ import argparse
 import csv
 from pathlib import Path
 
+# Fix Windows console encoding issues
+def setup_console_encoding():
+    """Configure console for Unicode output on Windows"""
+    if sys.platform.startswith('win'):
+        try:
+            # For Python 3.7+ on Windows, just set the encoding environment variable
+            # and let Python handle the console encoding automatically
+            os.environ['PYTHONIOENCODING'] = 'utf-8'
+            # Try to reconfigure stdout and stderr to use utf-8 with error handling
+            if hasattr(sys.stdout, 'reconfigure'):
+                sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+                sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+        except (AttributeError, OSError, TypeError, UnicodeError):
+            # If that fails, we'll use emoji fallbacks
+            pass
+
+# Emoji fallbacks for Windows console
+def safe_print(*args, **kwargs):
+    """Print function that handles Unicode characters safely"""
+    try:
+        print(*args, **kwargs)
+    except UnicodeEncodeError:
+        # Replace problematic Unicode characters with ASCII alternatives
+        safe_args = []
+        for arg in args:
+            if isinstance(arg, str):
+                # Replace common emojis with text equivalents
+                safe_arg = arg.replace('📁', '[FOLDER]')
+                safe_arg = safe_arg.replace('📝', '[NOTE]')
+                safe_arg = safe_arg.replace('⚠️', '[WARNING]')
+                safe_arg = safe_arg.replace('❌', '[ERROR]')
+                safe_arg = safe_arg.replace('📊', '[STATS]')
+                safe_arg = safe_arg.replace('✓', '[OK]')
+                safe_arg = safe_arg.replace('✗', '[FAIL]')
+                safe_arg = safe_arg.replace('✅', '[SUCCESS]')
+                safe_arg = safe_arg.replace('🚀', '[START]')
+                safe_arg = safe_arg.replace('🎧', '[AUDIO]')
+                safe_arg = safe_arg.replace('🎉', '[CELEBRATE]')
+                safe_arg = safe_arg.replace('⏸️', '[PAUSE]')
+                safe_arg = safe_arg.replace('🔄', '[PROCESS]')
+                safe_arg = safe_arg.replace('🎵', '[MUSIC]')
+                safe_arg = safe_arg.replace('📢', '[INFO]')
+                safe_arg = safe_arg.replace('🔇', '[QUIET]')
+                safe_arg = safe_arg.replace('⚙️', '[SETTINGS]')
+                safe_args.append(safe_arg)
+            else:
+                safe_args.append(arg)
+        print(*safe_args, **kwargs)
+
+# Initialize console encoding
+setup_console_encoding()
+
 def leer_urls_csv(archivo_csv):
     """
     Lee URLs desde un archivo CSV.
@@ -44,18 +96,18 @@ def leer_urls_csv(archivo_csv):
                 
                 if url and (url.startswith('http://') or url.startswith('https://')):
                     urls.append(url)
-                    print(f"📝 URL {len(urls)}: {url}")
+                    safe_print(f"📝 URL {len(urls)}: {url}")
                 elif url:
-                    print(f"⚠️  Fila {row_num}: URL inválida '{url}' (ignorada)")
+                    safe_print(f"⚠️  Fila {row_num}: URL inválida '{url}' (ignorada)")
                     
     except FileNotFoundError:
-        print(f"❌ No se pudo encontrar el archivo: {archivo_csv}")
+        safe_print(f"❌ No se pudo encontrar el archivo: {archivo_csv}")
         return []
     except Exception as e:
-        print(f"❌ Error leyendo el archivo CSV: {e}")
+        safe_print(f"❌ Error leyendo el archivo CSV: {e}")
         return []
     
-    print(f"\n📊 Se encontraron {len(urls)} URLs válidas para procesar.\n")
+    safe_print(f"\n📊 Se encontraron {len(urls)} URLs válidas para procesar.\n")
     return urls
 
 def progress_hook(d):
@@ -65,9 +117,9 @@ def progress_hook(d):
         speed = d.get('_speed_str', 'N/A')
         print(f"\rDescargando... {percent} a {speed}", end='', flush=True)
     elif d['status'] == 'finished':
-        print(f"\n✓ Descarga terminada: {d.get('filename', 'archivo')}")
+        safe_print(f"\n✓ Descarga terminada: {d.get('filename', 'archivo')}")
     elif d['status'] == 'error':
-        print(f"\n✗ Error durante la descarga")
+        safe_print(f"\n✗ Error durante la descarga")
 
 def descargar_audio_mp3(url_youtube, output_dir='.'):
     """
@@ -117,15 +169,15 @@ def descargar_audio_mp3(url_youtube, output_dir='.'):
             # Ahora forzamos la descarga real
             ydl.download([url_youtube])
 
-        print(f"\n✅ ¡Descarga completada con éxito!")
-        print(f"El archivo MP3 se ha guardado como: '{final_filename}'")
+        safe_print(f"\n✅ ¡Descarga completada con éxito!")
+        safe_print(f"El archivo MP3 se ha guardado como: '{final_filename}'")
         return final_filename
 
     except yt_dlp.utils.DownloadError as e:
-        print(f"\n❌ Error de descarga (asegúrate de que la URL es correcta y el video está disponible): {e}")
+        safe_print(f"\n❌ Error de descarga (asegúrate de que la URL es correcta y el video está disponible): {e}")
         return None
     except Exception as e:
-        print(f"\n❌ Ha ocurrido un error inesperado. Asegúrate de que FFmpeg está instalado y en el PATH. Error: {e}")
+        safe_print(f"\n❌ Ha ocurrido un error inesperado. Asegúrate de que FFmpeg está instalado y en el PATH. Error: {e}")
         return None
 
 def main():
@@ -169,11 +221,11 @@ Ejemplos:
     
     # Modo CSV: procesar múltiples URLs desde archivo
     if args.csv_file:
-        print(f"📁 Procesando URLs desde archivo CSV: {args.csv_file}\n")
+        safe_print(f"📁 Procesando URLs desde archivo CSV: {args.csv_file}\n")
         urls_a_procesar = leer_urls_csv(args.csv_file)
         
         if not urls_a_procesar:
-            print("❌ No se encontraron URLs válidas en el archivo CSV.")
+            safe_print("❌ No se encontraron URLs válidas en el archivo CSV.")
             return 1
     
     # Modo individual: una sola URL
@@ -183,16 +235,16 @@ Ejemplos:
             try:
                 url = input("Pega la URL del video de YouTube aquí: ").strip()
             except KeyboardInterrupt:
-                print("\n❌ Operación cancelada por el usuario.")
+                safe_print("\n❌ Operación cancelada por el usuario.")
                 return 1
         
         if not url:
-            print("❌ No se proporcionó ninguna URL.")
+            safe_print("❌ No se proporcionó ninguna URL.")
             return 1
         
         # Validación básica de URL
         if not (url.startswith('http://') or url.startswith('https://')):
-            print("❌ La URL debe comenzar con http:// o https://")
+            safe_print("❌ La URL debe comenzar con http:// o https://")
             return 1
             
         urls_a_procesar = [url]
@@ -202,50 +254,50 @@ Ejemplos:
     exitosos = 0
     fallidos = 0
     
-    print(f"🚀 Iniciando procesamiento de {total_urls} URL(s)...\n")
+    safe_print(f"🚀 Iniciando procesamiento de {total_urls} URL(s)...\n")
     
     for i, url in enumerate(urls_a_procesar, 1):
-        print(f"\n{'='*60}")
-        print(f"🎧 Procesando {i}/{total_urls}: {url}")
-        print(f"{'='*60}")
+        safe_print(f"\n{'='*60}")
+        safe_print(f"🎧 Procesando {i}/{total_urls}: {url}")
+        safe_print(f"{'='*60}")
         
         try:
             resultado = descargar_audio_mp3(url, args.output_dir)
             
             if resultado:
                 exitosos += 1
-                print(f"✅ {i}/{total_urls} - Éxito: {url}")
+                safe_print(f"✅ {i}/{total_urls} - Éxito: {url}")
             else:
                 fallidos += 1
-                print(f"❌ {i}/{total_urls} - Fallo: {url}")
+                safe_print(f"❌ {i}/{total_urls} - Fallo: {url}")
                 
         except KeyboardInterrupt:
-            print(f"\n\n⏸️  Procesamiento interrumpido por el usuario.")
-            print(f"📊 Resumen hasta el momento:")
-            print(f"   ✅ Exitosos: {exitosos}")
-            print(f"   ❌ Fallidos: {fallidos}")
-            print(f"   ⏸️  Restantes: {total_urls - i}")
+            safe_print(f"\n\n⏸️  Procesamiento interrumpido por el usuario.")
+            safe_print(f"📊 Resumen hasta el momento:")
+            safe_print(f"   ✅ Exitosos: {exitosos}")
+            safe_print(f"   ❌ Fallidos: {fallidos}")
+            safe_print(f"   ⏸️  Restantes: {total_urls - i}")
             return 1
         except Exception as e:
             fallidos += 1
-            print(f"❌ {i}/{total_urls} - Error inesperado con {url}: {e}")
+            safe_print(f"❌ {i}/{total_urls} - Error inesperado con {url}: {e}")
     
     # Resumen final
-    print(f"\n\n{'='*60}")
-    print(f"📊 RESUMEN FINAL")
-    print(f"{'='*60}")
-    print(f"📝 URLs procesadas: {total_urls}")
-    print(f"✅ Exitosos: {exitosos}")
-    print(f"❌ Fallidos: {fallidos}")
+    safe_print(f"\n\n{'='*60}")
+    safe_print(f"📊 RESUMEN FINAL")
+    safe_print(f"{'='*60}")
+    safe_print(f"📝 URLs procesadas: {total_urls}")
+    safe_print(f"✅ Exitosos: {exitosos}")
+    safe_print(f"❌ Fallidos: {fallidos}")
     
     if fallidos == 0:
-        print(f"\n🎉 ¡Todos los archivos se descargaron exitosamente!")
+        safe_print(f"\n🎉 ¡Todos los archivos se descargaron exitosamente!")
         return 0
     elif exitosos > 0:
-        print(f"\n⚠️  Procesamiento completado con algunos errores.")
+        safe_print(f"\n⚠️  Procesamiento completado con algunos errores.")
         return 0
     else:
-        print(f"\n❌ Todos los intentos de descarga fallaron.")
+        safe_print(f"\n❌ Todos los intentos de descarga fallaron.")
         return 1
 
 # Bloque principal para la ejecución
