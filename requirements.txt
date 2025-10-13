@@ -1,0 +1,2 @@
+yt-dlp>=2023.7.6
+# FFmpeg is also required but installed separately as a system dependency
