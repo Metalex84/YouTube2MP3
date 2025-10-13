@@ -1,24 +1,66 @@
-2025-10-13 19:15:32,271 - INFO - ==================================================
-2025-10-13 19:15:32,271 - INFO - Nueva sesion de YouTube to MP3 Downloader iniciada
-2025-10-13 19:15:32,271 - INFO - ==================================================
-2025-10-13 19:15:32,272 - INFO - URL 1 agregada: https://www.youtube.com/watch?v=CM8aSeluAus
-2025-10-13 19:15:32,272 - INFO - [S01] Iniciando descarga de: https://www.youtube.com/watch?v=CM8aSeluAus
-2025-10-13 19:15:41,061 - INFO - [S01] Titulo del video: Arde Bogotá - Cariño // LYRIC/LETRA
-2025-10-13 19:15:49,678 - INFO - [S01] Descargando...   0.0% a  Unknown B/s
-2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.1% a    1.03MiB/s
-2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.2% a    2.17MiB/s
-2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.4% a    4.17MiB/s
-2025-10-13 19:15:49,680 - INFO - [S01] Descargando...   0.9% a    7.93MiB/s
-2025-10-13 19:15:49,685 - INFO - [S01] Descargando...   1.8% a    8.24MiB/s
-2025-10-13 19:15:49,688 - INFO - [S01] Descargando...   3.6% a   11.73MiB/s
-2025-10-13 19:15:49,690 - INFO - [S01] Descargando...   7.3% a   18.65MiB/s
-2025-10-13 19:15:49,695 - INFO - [S01] Descargando...  14.7% a   27.26MiB/s
-2025-10-13 19:15:49,704 - INFO - [S01] Descargando...  29.4% a   37.02MiB/s
-2025-10-13 19:15:49,721 - INFO - [S01] Descargando...  58.8% a   45.28MiB/s
-2025-10-13 19:15:49,748 - INFO - [S01] Descargando... 100.0% a   48.09MiB/s
-2025-10-13 19:15:49,754 - INFO - [S01] Descarga terminada: Arde Bogotá - Cariño ⧸⧸ LYRIC⧸LETRA.webm
-2025-10-13 19:15:53,233 - INFO - [S01] Descarga completada exitosamente: .\Arde Bogotá - Cariño  LYRICLETRA.mp3
-2025-10-13 19:15:53,235 - INFO - Resumen final - URLs: 1, Exitosos: 1, Fallidos: 0
-2025-10-13 19:15:53,235 - INFO - Sesion completada exitosamente - todos los archivos descargados
-2025-10-13 19:15:53,235 - INFO - Programa terminado con codigo de salida: 0
-2025-10-13 19:15:53,235 - INFO - ==================================================
+2025-10-13 22:57:24,873 - INFO - ==================================================
+2025-10-13 22:57:24,873 - INFO - Nueva sesion de YouTube to MP3 Downloader iniciada
+2025-10-13 22:57:24,873 - INFO - ==================================================
+2025-10-13 22:57:24,876 - INFO - URL 1 agregada: https://www.youtube.com/watch?v=ipXKZyTW7Mc
+2025-10-13 22:57:24,876 - INFO - URL 2 agregada: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-13 22:57:24,876 - INFO - URL 3 agregada: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-13 22:57:24,880 - INFO - Iniciando procesamiento asincrono de 3 URLs con hasta 3 hilos simultaneos
+2025-10-13 22:57:24,888 - INFO - Creando tarea T01 para: https://www.youtube.com/watch?v=ipXKZyTW7Mc
+2025-10-13 22:57:24,888 - INFO - Creando tarea T02 para: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-13 22:57:24,888 - INFO - Creando tarea T03 para: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-13 22:57:24,890 - INFO - [T01] Iniciando descarga de: https://www.youtube.com/watch?v=ipXKZyTW7Mc
+2025-10-13 22:57:24,890 - INFO - [T02] Iniciando descarga de: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-13 22:57:24,892 - INFO - [T03] Iniciando descarga de: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-13 22:57:31,822 - INFO - [T03] Titulo del video: Arde Bogotá - Cowboys de la A3 (Video Oficial)
+2025-10-13 22:57:32,914 - INFO - [T02] Titulo del video: Arde Bogotá - Los Perros (Video Oficial)
+2025-10-13 22:57:32,946 - INFO - [T01] Titulo del video: Arde Bogotá - Cariño
+2025-10-13 22:57:39,562 - INFO - [T03] Descargando... [0;94m  0.0%[0m a [0;32m 532.20KiB/s[0m
+2025-10-13 22:57:39,562 - INFO - [T03] Descargando... [0;94m  0.1%[0m a [0;32m 741.74KiB/s[0m
+2025-10-13 22:57:39,563 - INFO - [T03] Descargando... [0;94m  0.1%[0m a [0;32m   1.48MiB/s[0m
+2025-10-13 22:57:39,563 - INFO - [T03] Descargando... [0;94m  0.3%[0m a [0;32m   2.78MiB/s[0m
+2025-10-13 22:57:39,564 - INFO - [T03] Descargando... [0;94m  0.6%[0m a [0;32m   5.13MiB/s[0m
+2025-10-13 22:57:39,576 - INFO - [T03] Descargando... [0;94m  1.3%[0m a [0;32m   3.54MiB/s[0m
+2025-10-13 22:57:39,591 - INFO - [T03] Descargando... [0;94m  2.6%[0m a [0;32m   3.88MiB/s[0m
+2025-10-13 22:57:39,605 - INFO - [T03] Descargando... [0;94m  5.2%[0m a [0;32m   5.32MiB/s[0m
+2025-10-13 22:57:39,621 - INFO - [T03] Descargando... [0;94m 10.4%[0m a [0;32m   7.91MiB/s[0m
+2025-10-13 22:57:39,638 - INFO - [T03] Descargando... [0;94m 20.8%[0m a [0;32m  12.59MiB/s[0m
+2025-10-13 22:57:39,660 - INFO - [T03] Descargando... [0;94m 41.6%[0m a [0;32m  19.69MiB/s[0m
+2025-10-13 22:57:39,691 - INFO - [T03] Descargando... [0;94m 83.2%[0m a [0;32m  30.09MiB/s[0m
+2025-10-13 22:57:39,704 - INFO - [T03] Descargando... [0;94m100.0%[0m a [0;32m  32.89MiB/s[0m
+2025-10-13 22:57:39,706 - INFO - [T03] Descarga terminada: Arde Bogotá - Cowboys de la A3 (Video Oficial).webm
+2025-10-13 22:57:41,437 - INFO - [T01] Descargando... [0;94m  0.0%[0m a [0;32m 679.13KiB/s[0m
+2025-10-13 22:57:41,440 - INFO - [T01] Descargando... [0;94m  0.1%[0m a [0;32m 555.29KiB/s[0m
+2025-10-13 22:57:41,441 - INFO - [T01] Descargando... [0;94m  0.2%[0m a [0;32m 915.47KiB/s[0m
+2025-10-13 22:57:41,442 - INFO - [T01] Descargando... [0;94m  0.4%[0m a [0;32m   1.64MiB/s[0m
+2025-10-13 22:57:41,443 - INFO - [T01] Descargando... [0;94m  0.8%[0m a [0;32m   3.11MiB/s[0m
+2025-10-13 22:57:41,444 - INFO - [T01] Descargando... [0;94m  1.7%[0m a [0;32m   5.73MiB/s[0m
+2025-10-13 22:57:41,445 - INFO - [T01] Descargando... [0;94m  3.5%[0m a [0;32m  10.61MiB/s[0m
+2025-10-13 22:57:41,448 - INFO - [T01] Descargando... [0;94m  6.9%[0m a [0;32m  17.16MiB/s[0m
+2025-10-13 22:57:41,456 - INFO - [T01] Descargando... [0;94m 13.9%[0m a [0;32m  23.72MiB/s[0m
+2025-10-13 22:57:41,462 - INFO - [T01] Descargando... [0;94m 27.9%[0m a [0;32m  35.30MiB/s[0m
+2025-10-13 22:57:41,478 - INFO - [T01] Descargando... [0;94m 55.8%[0m a [0;32m  45.10MiB/s[0m
+2025-10-13 22:57:41,507 - INFO - [T01] Descargando... [0;94m100.0%[0m a [0;32m  49.19MiB/s[0m
+2025-10-13 22:57:41,510 - INFO - [T01] Descarga terminada: Arde Bogotá - Cariño.webm
+2025-10-13 22:57:41,859 - INFO - [T02] Descargando... [0;94m  0.0%[0m a [0;32m Unknown B/s[0m
+2025-10-13 22:57:41,859 - INFO - [T02] Descargando... [0;94m  0.1%[0m a [0;32m   2.50MiB/s[0m
+2025-10-13 22:57:41,859 - INFO - [T02] Descargando... [0;94m  0.2%[0m a [0;32m   4.25MiB/s[0m
+2025-10-13 22:57:41,860 - INFO - [T02] Descargando... [0;94m  0.4%[0m a [0;32m   6.99MiB/s[0m
+2025-10-13 22:57:41,861 - INFO - [T02] Descargando... [0;94m  0.8%[0m a [0;32m   9.30MiB/s[0m
+2025-10-13 22:57:41,864 - INFO - [T02] Descargando... [0;94m  1.6%[0m a [0;32m   9.77MiB/s[0m
+2025-10-13 22:57:41,867 - INFO - [T02] Descargando... [0;94m  3.2%[0m a [0;32m  13.25MiB/s[0m
+2025-10-13 22:57:41,870 - INFO - [T02] Descargando... [0;94m  6.4%[0m a [0;32m  19.91MiB/s[0m
+2025-10-13 22:57:41,875 - INFO - [T02] Descargando... [0;94m 12.9%[0m a [0;32m  28.58MiB/s[0m
+2025-10-13 22:57:41,882 - INFO - [T02] Descargando... [0;94m 25.8%[0m a [0;32m  42.75MiB/s[0m
+2025-10-13 22:57:41,890 - INFO - [T02] Descargando... [0;94m 51.6%[0m a [0;32m  63.20MiB/s[0m
+2025-10-13 22:57:41,908 - INFO - [T02] Descargando... [0;94m100.0%[0m a [0;32m  77.40MiB/s[0m
+2025-10-13 22:57:41,909 - INFO - [T02] Descarga terminada: Arde Bogotá - Los Perros (Video Oficial).webm
+2025-10-13 22:57:45,655 - INFO - [T01] Descarga completada exitosamente: .\Arde Bogotá - Cariño.mp3
+2025-10-13 22:57:45,702 - INFO - [T03] Descarga completada exitosamente: .\Arde Bogotá - Cowboys de la A3 Video Oficial.mp3
+2025-10-13 22:57:46,426 - INFO - [T02] Descarga completada exitosamente: .\Arde Bogotá - Los Perros Video Oficial.mp3
+2025-10-13 22:57:46,427 - INFO - T01 - Exito: https://www.youtube.com/watch?v=ipXKZyTW7Mc
+2025-10-13 22:57:46,427 - INFO - T02 - Exito: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-13 22:57:46,427 - INFO - T03 - Exito: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-13 22:57:46,428 - INFO - Resumen final - URLs: 3, Exitosos: 3, Fallidos: 0
+2025-10-13 22:57:46,428 - INFO - Sesion completada exitosamente - todos los archivos descargados
+2025-10-13 22:57:46,428 - INFO - Programa terminado con codigo de salida: 0
+2025-10-13 22:57:46,428 - INFO - ==================================================

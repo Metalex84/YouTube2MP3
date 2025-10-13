@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.mp3
+*.mp4
+*.webm
+*.m4a
+*.log
+temp_*
+test_*
+
+# PowerShell scripts (no necesarios en Linux container)
+*.ps1
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
