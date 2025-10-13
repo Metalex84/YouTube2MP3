@@ -76,7 +76,7 @@ run_container() {
         -v "$(pwd)/downloads:/app/downloads" \
         -v "$(pwd)/logs:/app/logs" \
         $([ -f "urls.csv" ] && echo "-v $(pwd)/urls.csv:/app/urls.csv:ro") \
-        youtube-mp3-downloader "$@"
+        youtube-mp3-downloader -o downloads "$@"
 }
 
 # Shell interactiva
