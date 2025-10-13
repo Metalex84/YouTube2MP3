@@ -35,8 +35,16 @@ if (-not (Test-Path "descargar_audio.py")) {
     exit 1
 }
 
-# Verificar que existe el entorno virtual
+# Verificar que existe el entorno virtual 
 $venvPath = ".\venv"
+
+# Verificar que el directorio existe
+if (-not (Test-Path $venvPath -PathType Container)) {
+    Write-Error-Custom "No se encontró el directorio del entorno virtual en: $venvPath"
+    Write-Info "Ejecuta primero: .\configurar.ps1 para crear el entorno virtual"
+    exit 1
+}
+
 $activateScript = Join-Path $venvPath "Scripts\Activate.ps1"
 
 if (-not (Test-Path $activateScript)) {
@@ -91,47 +99,41 @@ if ($Arguments.Count -eq 1 -and ($Arguments[0] -eq "-?" -or $Arguments[0] -eq "/
 try {
     Write-Info "Preparando ejecución del programa..."
     
-    # Cambiar al directorio del script para asegurar rutas relativas
-    Push-Location $PSScriptRoot
+    Write-ColorOutput "🚀 Ejecutando programa..." "Green"
+    Write-Host ""
     
-    try {
-        Write-ColorOutput "🚀 Ejecutando programa..." "Green"
-        Write-Host ""
-        
-        # Construir argumentos para Python
-        $pythonArgs = @('descargar_audio.py')
-        if ($Arguments.Count -gt 0) {
-            $pythonArgs += $Arguments
-        }
-        
-        # Determinar la ruta del ejecutable de Python
-        $pythonExe = "python"
-        
-        # Si no estamos en un entorno virtual activado, usar el de venv
-        if (-not $env:VIRTUAL_ENV) {
-            $pythonExe = Join-Path $venvPath "Scripts\python.exe"
-            if (-not (Test-Path $pythonExe)) {
-                throw "No se pudo encontrar el ejecutable de Python en el entorno virtual."
-            }
-        }
-        
-        # Ejecutar Python directamente con los argumentos
-        # Usar & para mejor manejo de argumentos en PowerShell
-        $process = & $pythonExe $pythonArgs
-        $exitCode = $LASTEXITCODE
-        
-        Write-Host ""
-        if ($exitCode -eq 0) {
-            Write-ColorOutput "✅ Ejecución completada exitosamente." "Green"
-        } else {
-            Write-ColorOutput "⚠️  El programa terminó con código de salida: $exitCode" "Yellow"
-        }
-        
-        exit $exitCode
+    # Construir argumentos para Python
+    $pythonArgs = @('descargar_audio.py')
+    if ($Arguments.Count -gt 0) {
+        $pythonArgs += $Arguments
     }
-    finally {
-        Pop-Location
+    
+    # Determinar la ruta del ejecutable de Python
+    $pythonExe = "python"
+    
+    # Si no estamos en un entorno virtual activado, usar el de venv
+    if (-not $env:VIRTUAL_ENV) {
+        # Construir la ruta del ejecutable de Python de forma más segura
+        $pythonExe = ".\venv\Scripts\python.exe"
+        
+        if (-not (Test-Path $pythonExe)) {
+            throw "No se pudo encontrar el ejecutable de Python en el entorno virtual en: $pythonExe"
+        }
     }
+    
+    # Ejecutar Python directamente con los argumentos
+    # Usar & para mejor manejo de argumentos en PowerShell
+    $process = & $pythonExe $pythonArgs
+    $exitCode = $LASTEXITCODE
+    
+    Write-Host ""
+    if ($exitCode -eq 0) {
+        Write-ColorOutput "✅ Ejecución completada exitosamente." "Green"
+    } else {
+        Write-ColorOutput "⚠️  El programa terminó con código de salida: $exitCode" "Yellow"
+    }
+    
+    exit $exitCode
 }
 catch {
     Write-Error-Custom "Error ejecutando el programa: $($_.Exception.Message)"
