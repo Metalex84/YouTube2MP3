@@ -72,11 +72,34 @@ run_container() {
     
     print_info "Ejecutando contenedor con argumentos: $@"
     
-    docker run --rm \
-        -v "$(pwd)/downloads:/app/downloads" \
-        -v "$(pwd)/logs:/app/logs" \
-        $([ -f "urls.csv" ] && echo "-v $(pwd)/urls.csv:/app/urls.csv:ro") \
-        youtube-mp3-downloader -o downloads "$@"
+    # Check if output directory is specified
+    has_output_dir=false
+    for arg in "$@"; do
+        if [ "$arg" = "-o" ] || [ "$arg" = "--output-dir" ]; then
+            has_output_dir=true
+            break
+        fi
+    done
+    
+    # Build docker command
+    docker_cmd="docker run --rm"
+    docker_cmd="$docker_cmd -v $(pwd)/downloads:/app/downloads"
+    docker_cmd="$docker_cmd -v $(pwd)/logs:/app/logs"
+    docker_cmd="$docker_cmd -e LOGS_DIR=logs"
+    
+    if [ -f "urls.csv" ]; then
+        docker_cmd="$docker_cmd -v $(pwd)/urls.csv:/app/urls.csv:ro"
+    fi
+    
+    docker_cmd="$docker_cmd youtube-mp3-downloader"
+    
+    # Add default output directory if not specified
+    if [ "$has_output_dir" = false ]; then
+        docker_cmd="$docker_cmd -o downloads"
+    fi
+    
+    # Add all arguments
+    eval "$docker_cmd" '"$@"'
 }
 
 # Shell interactiva
