@@ -1,11 +1,4 @@
 # YouTube to MP3 Downloader - Docker Runner Script (PowerShell)
-param(
-    [Parameter(Position=0)]
-    [string]$Command = "help",
-    
-    [Parameter(Position=1, ValueFromRemainingArguments=$true)]
-    [string[]]$Arguments
-)
 
 # Funciones de utilidad para colores
 function Write-Info([string]$Message) {
@@ -70,16 +63,17 @@ function Build-Image {
 
 # Ejecutar contenedor
 function Run-Container {
-    param([string[]]$Args)
+    param([string[]]$ContainerArgs)
     
     Create-Directories
     
-    Write-Info "Ejecutando contenedor con argumentos: $($Args -join ' ')"
+    Write-Info "Ejecutando contenedor con argumentos: $($ContainerArgs -join ' ')"
     
     $dockerArgs = @(
         "run", "--rm"
         "-v", "$(Get-Location)\downloads:/app/downloads"
         "-v", "$(Get-Location)\logs:/app/logs"
+        "-e", "LOGS_DIR=logs"
     )
     
     # Agregar volumen para CSV si existe
@@ -88,7 +82,21 @@ function Run-Container {
     }
     
     $dockerArgs += "youtube-mp3-downloader"
-    $dockerArgs += $Args
+    
+    # Add default output directory if not specified
+    $hasOutputDir = $false
+    foreach ($arg in $ContainerArgs) {
+        if ($arg -eq "-o" -or $arg -eq "--output-dir") {
+            $hasOutputDir = $true
+            break
+        }
+    }
+    
+    if (-not $hasOutputDir) {
+        $dockerArgs += "-o", "downloads"
+    }
+    
+    $dockerArgs += $ContainerArgs
     
     & docker $dockerArgs
 }
@@ -140,12 +148,18 @@ function Main {
         exit 1
     }
     
+    $Command = if ($args.Length -gt 0) { $args[0] } else { "help" }
+    $Arguments = if ($args.Length -gt 1) { 
+        if ($args.Length -eq 2) { @($args[1]) } 
+        else { $args[1..($args.Length-1)] }
+    } else { @() }
+    
     switch ($Command.ToLower()) {
         "build" {
             Build-Image
         }
         "run" {
-            Run-Container -Args $Arguments
+            Run-Container -ContainerArgs $Arguments
         }
         "shell" {
             Run-Shell
@@ -163,4 +177,4 @@ function Main {
 }
 
 # Ejecutar función principal
-Main
+Main @args

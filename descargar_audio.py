@@ -66,7 +66,12 @@ setup_console_encoding()
 # Configure logging
 def setup_logging():
     """Configure logging to file with timestamp"""
-    log_filename = 'youtube_downloader.log'
+    logs_dir = os.environ.get('LOGS_DIR', '.')
+    
+    # Create logs directory if it doesn't exist
+    Path(logs_dir).mkdir(parents=True, exist_ok=True)
+    
+    log_filename = os.path.join(logs_dir, 'youtube_downloader.log')
     
     # Clear previous log file
     if os.path.exists(log_filename):
