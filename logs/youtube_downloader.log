@@ -1,707 +1,300 @@
-2025-10-17 18:54:55,174 - INFO - ==================================================
-2025-10-17 18:54:55,174 - INFO - Nueva sesion de YouTube to MP3 Downloader iniciada
-2025-10-17 18:54:55,174 - INFO - ==================================================
-2025-10-17 18:54:55,176 - WARNING - Se recomienda no usar mas de 10 descargas simultaneas para evitar problemas.
-2025-10-17 18:54:55,182 - INFO - URL 1 agregada: https://www.youtube.com/watch?v=DmxuL9h8foQ
-2025-10-17 18:54:55,183 - INFO - URL 2 agregada: https://www.youtube.com/watch?v=5BJfkeN_lkQ
-2025-10-17 18:54:55,184 - INFO - URL 3 agregada: https://www.youtube.com/watch?v=hY1tULEr4-4
-2025-10-17 18:54:55,185 - INFO - URL 4 agregada: https://www.youtube.com/watch?v=uQHLJoXXjL8
-2025-10-17 18:54:55,186 - INFO - URL 5 agregada: https://www.youtube.com/watch?v=PZtwxD5Myk0
-2025-10-17 18:54:55,187 - INFO - URL 6 agregada: https://www.youtube.com/watch?v=rykH1BkGwTo
-2025-10-17 18:54:55,188 - INFO - URL 7 agregada: https://www.youtube.com/watch?v=dmSbahgZZ2U
-2025-10-17 18:54:55,190 - INFO - URL 8 agregada: https://www.youtube.com/watch?v=0Cshm-BsiaU
-2025-10-17 18:54:55,192 - INFO - Iniciando procesamiento asincrono de 8 URLs con hasta 20 hilos simultaneos
-2025-10-17 18:54:55,197 - INFO - Creando tarea T01 para: https://www.youtube.com/watch?v=DmxuL9h8foQ
-2025-10-17 18:54:55,197 - INFO - Creando tarea T02 para: https://www.youtube.com/watch?v=5BJfkeN_lkQ
-2025-10-17 18:54:55,198 - INFO - Creando tarea T03 para: https://www.youtube.com/watch?v=hY1tULEr4-4
-2025-10-17 18:54:55,198 - INFO - Creando tarea T04 para: https://www.youtube.com/watch?v=uQHLJoXXjL8
-2025-10-17 18:54:55,198 - INFO - Creando tarea T05 para: https://www.youtube.com/watch?v=PZtwxD5Myk0
-2025-10-17 18:54:55,199 - INFO - Creando tarea T06 para: https://www.youtube.com/watch?v=rykH1BkGwTo
-2025-10-17 18:54:55,199 - INFO - Creando tarea T07 para: https://www.youtube.com/watch?v=dmSbahgZZ2U
-2025-10-17 18:54:55,199 - INFO - Creando tarea T08 para: https://www.youtube.com/watch?v=0Cshm-BsiaU
-2025-10-17 18:54:55,203 - INFO - [T01] Iniciando descarga de: https://www.youtube.com/watch?v=DmxuL9h8foQ
-2025-10-17 18:54:55,204 - INFO - [T03] Iniciando descarga de: https://www.youtube.com/watch?v=hY1tULEr4-4
-2025-10-17 18:54:55,205 - INFO - [T02] Iniciando descarga de: https://www.youtube.com/watch?v=5BJfkeN_lkQ
-2025-10-17 18:54:55,211 - INFO - [T04] Iniciando descarga de: https://www.youtube.com/watch?v=uQHLJoXXjL8
-2025-10-17 18:54:55,216 - INFO - [T05] Iniciando descarga de: https://www.youtube.com/watch?v=PZtwxD5Myk0
-2025-10-17 18:54:55,217 - INFO - [T06] Iniciando descarga de: https://www.youtube.com/watch?v=rykH1BkGwTo
-2025-10-17 18:54:55,221 - INFO - [T07] Iniciando descarga de: https://www.youtube.com/watch?v=dmSbahgZZ2U
-2025-10-17 18:54:55,224 - INFO - [T08] Iniciando descarga de: https://www.youtube.com/watch?v=0Cshm-BsiaU
-2025-10-17 18:55:28,193 - INFO - [T01] Titulo del video: Miley Cyrus - Angels Like You (Lyrics)
-2025-10-17 18:55:28,252 - INFO - [T06] Titulo del video: Selena Gomez, Marshmello - Wolves (Lyrics)
-2025-10-17 18:55:35,727 - INFO - [T02] Titulo del video: Saweetie – Best Friend, feat. Doja Cat (letra)
-2025-10-17 18:55:35,808 - INFO - [T08] Titulo del video: Lil Tecca - Ransom (Lyrics)
-2025-10-17 18:55:37,666 - INFO - [T07] Titulo del video: Música Relajante Alivia el Estrés, Ansiedad y Depresión, Sana la Mente, Sueño Profundo
-2025-10-17 18:55:39,005 - INFO - [T05] Titulo del video: David Kushner - Daylight (Lyric Video) (Official)
-2025-10-17 18:55:39,185 - INFO - [T04] Titulo del video: Marshmello ft. Bastille - Happier (Performance Video)
-2025-10-17 18:55:39,435 - INFO - [T03] Titulo del video: Mabel - Mad Love (Official Video)
-2025-10-17 18:55:49,528 - INFO - [T01] Descargando... 100.0% a    228.87B/s
-2025-10-17 18:55:49,615 - INFO - [T01] Descargando...   8.6% a    228.87B/s
-2025-10-17 18:55:49,633 - INFO - [T01] Descargando...   6.7% a    1.61KiB/s
-2025-10-17 18:55:49,666 - INFO - [T01] Descargando...   6.1% a    1.61KiB/s
-2025-10-17 18:55:49,904 - INFO - [T01] Descargando...   5.9% a    6.54KiB/s
-2025-10-17 18:55:50,067 - INFO - [T01] Descargando...   5.8% a   14.63KiB/s
-2025-10-17 18:55:50,966 - INFO - [T01] Descargando...   5.8% a   23.95KiB/s
-2025-10-17 18:55:51,717 - INFO - [T01] Descargando...   4.5% a   43.79KiB/s
-2025-10-17 18:55:51,922 - INFO - [T01] Descargando...   4.2% a   67.24KiB/s
-2025-10-17 18:55:52,339 - INFO - [T01] Descargando...   4.7% a   98.54KiB/s
-2025-10-17 18:55:52,810 - INFO - [T01] Descargando...   3.5% a  126.27KiB/s
-2025-10-17 18:55:53,054 - INFO - [T01] Descargando...   1.4% a  141.66KiB/s
-2025-10-17 18:55:56,048 - INFO - [T01] Descargando...   5.7% a      0.00B/s
-2025-10-17 18:55:56,061 - INFO - [T01] Descargando...   5.7% a      0.00B/s
-2025-10-17 18:55:56,317 - INFO - [T01] Descargando...   5.8% a   10.33KiB/s
-2025-10-17 18:55:56,429 - INFO - [T01] Descargando...   5.8% a   18.10KiB/s
-2025-10-17 18:55:56,618 - INFO - [T01] Descargando...   5.9% a   28.45KiB/s
-2025-10-17 18:55:56,727 - INFO - [T01] Descargando...   6.0% a   47.28KiB/s
-2025-10-17 18:55:57,109 - INFO - [T01] Descargando...   6.3% a   68.71KiB/s
-2025-10-17 18:55:57,367 - INFO - [T01] Descargando...   6.7% a  107.92KiB/s
-2025-10-17 18:55:58,161 - INFO - [T06] Descargando...   0.0% a   10.18KiB/s
-2025-10-17 18:55:58,172 - INFO - [T06] Descargando...   0.1% a   12.05KiB/s
-2025-10-17 18:55:58,191 - INFO - [T06] Descargando...   0.2% a   26.22KiB/s
-2025-10-17 18:55:58,574 - INFO - [T06] Descargando...   0.5% a   33.48KiB/s
-2025-10-17 18:55:58,657 - INFO - [T01] Descargando...   7.5% a  135.81KiB/s
-2025-10-17 18:55:58,801 - INFO - [T06] Descargando...   0.9% a   38.16KiB/s
-2025-10-17 18:55:59,044 - INFO - [T06] Descargando...   1.9% a   55.99KiB/s
-2025-10-17 18:55:59,278 - INFO - [T06] Descargando...   3.8% a   93.76KiB/s
-2025-10-17 18:55:59,480 - INFO - [T01] Descargando...   6.8% a  166.62KiB/s
-2025-10-17 18:55:59,579 - INFO - [T06] Descargando...   7.7% a  153.54KiB/s
-2025-10-17 18:55:59,825 - INFO - [T01] Descargando...   6.0% a  189.62KiB/s
-2025-10-17 18:56:00,062 - INFO - [T01] Descargando...   3.6% a  199.74KiB/s
-2025-10-17 18:56:00,207 - INFO - [T06] Descargando...  15.3% a  223.26KiB/s
-2025-10-17 18:56:01,287 - INFO - [T06] Descargando...  27.6% a  273.28KiB/s
-2025-10-17 18:56:01,804 - INFO - [T06] Descargando...  39.0% a  334.15KiB/s
-2025-10-17 18:56:02,017 - INFO - [T01] Descargando...   8.6% a  148.96KiB/s
-2025-10-17 18:56:02,079 - INFO - [T01] Descargando...   8.6% a  113.16KiB/s
-2025-10-17 18:56:02,096 - INFO - [T01] Descargando...   8.6% a  113.16KiB/s
-2025-10-17 18:56:02,284 - INFO - [T01] Descargando...   8.6% a   88.74KiB/s
-2025-10-17 18:56:02,313 - INFO - [T01] Descargando...   8.7% a   88.74KiB/s
-2025-10-17 18:56:02,341 - INFO - [T01] Descargando...   8.8% a   76.47KiB/s
-2025-10-17 18:56:02,504 - INFO - [T01] Descargando...   9.0% a   67.75KiB/s
-2025-10-17 18:56:03,145 - INFO - [T06] Descargando...  60.7% a  386.96KiB/s
-2025-10-17 18:56:03,152 - INFO - [T01] Descargando...   9.3% a  110.42KiB/s
-2025-10-17 18:56:03,932 - INFO - [T01] Descargando...   9.6% a  145.34KiB/s
-2025-10-17 18:56:04,430 - INFO - [T06] Descargando...  76.9% a  393.88KiB/s
-2025-10-17 18:56:04,381 - INFO - [T01] Descargando...   9.4% a  169.99KiB/s
-2025-10-17 18:56:04,608 - INFO - [T01] Descargando...   6.5% a  181.89KiB/s
-2025-10-17 18:56:04,941 - INFO - [T06] Descargando...  89.6% a  425.00KiB/s
-2025-10-17 18:56:05,318 - INFO - [T06] Descargando... 100.0% a  452.03KiB/s
-2025-10-17 18:56:05,378 - INFO - [T06] Descarga terminada: downloads/Selena Gomez, Marshmello - Wolves (Lyrics).webm
-2025-10-17 18:56:06,502 - INFO - [T08] Descargando...   0.0% a    4.17KiB/s
-2025-10-17 18:56:06,509 - INFO - [T01] Descargando...  11.4% a  145.37KiB/s
-2025-10-17 18:56:06,644 - INFO - [T08] Descargando...   0.1% a    7.15KiB/s
-2025-10-17 18:56:06,676 - INFO - [T01] Descargando...  11.4% a  102.15KiB/s
-2025-10-17 18:56:06,790 - INFO - [T08] Descargando...   0.3% a   11.94KiB/s
-2025-10-17 18:56:06,916 - INFO - [T02] Descargando...   0.0% a    3.78KiB/s
-2025-10-17 18:56:06,931 - INFO - [T01] Descargando...  11.5% a   72.33KiB/s
-2025-10-17 18:56:07,029 - INFO - [T08] Descargando...   0.6% a   19.50KiB/s
-2025-10-17 18:56:07,078 - INFO - [T02] Descargando...   0.1% a    7.03KiB/s
-2025-10-17 18:56:07,167 - INFO - [T01] Descargando...  11.5% a   52.24KiB/s
-2025-10-17 18:56:07,261 - INFO - [T08] Descargando...   1.3% a   29.48KiB/s
-2025-10-17 18:56:07,317 - INFO - [T02] Descargando...   0.2% a   10.52KiB/s
-2025-10-17 18:56:07,358 - INFO - [T01] Descargando...  11.5% a   39.69KiB/s
-2025-10-17 18:56:07,406 - INFO - [T08] Descargando...   2.7% a   52.67KiB/s
-2025-10-17 18:56:07,613 - INFO - [T02] Descargando...   0.5% a   15.60KiB/s
-2025-10-17 18:56:07,684 - INFO - [T01] Descargando...  11.6% a   43.54KiB/s
-2025-10-17 18:56:07,731 - INFO - [T02] Descargando...   1.1% a   28.72KiB/s
-2025-10-17 18:56:07,773 - INFO - [T02] Descargando...   2.2% a   57.04KiB/s
-2025-10-17 18:56:07,773 - INFO - [T08] Descargando...   5.4% a   82.08KiB/s
-2025-10-17 18:56:07,844 - INFO - [T02] Descargando...   4.5% a  109.20KiB/s
-2025-10-17 18:56:07,919 - INFO - [T08] Descargando...  10.8% a  149.13KiB/s
-2025-10-17 18:56:07,949 - INFO - [T01] Descargando...  11.8% a   56.64KiB/s
-2025-10-17 18:56:08,035 - INFO - [T02] Descargando...   9.0% a  186.25KiB/s
-2025-10-17 18:56:08,271 - INFO - [T01] Descargando...  12.1% a   82.93KiB/s
-2025-10-17 18:56:08,417 - INFO - [T08] Descargando...  21.7% a  230.96KiB/s
-2025-10-17 18:56:08,430 - INFO - [T02] Descargando...  18.1% a  288.78KiB/s
-2025-10-17 18:56:08,787 - INFO - [T01] Descargando...  12.7% a  125.07KiB/s
-2025-10-17 18:56:08,961 - INFO - [T02] Descargando...  36.2% a  443.01KiB/s
-2025-10-17 18:56:09,011 - INFO - [T08] Descargando...  43.4% a  363.86KiB/s
-2025-10-17 18:56:09,181 - INFO - [T01] Descargando...  12.6% a  174.81KiB/s
-2025-10-17 18:56:09,256 - INFO - [T01] Descargando...   9.0% a  205.57KiB/s
-2025-10-17 18:56:09,737 - INFO - [T08] Descargando...  80.0% a  533.29KiB/s
-2025-10-17 18:56:10,034 - INFO - [T02] Descargando...  69.8% a  582.90KiB/s
-2025-10-17 18:56:10,171 - INFO - [T08] Descargando... 100.0% a  593.08KiB/s
-2025-10-17 18:56:10,211 - INFO - [T08] Descarga terminada: downloads/Lil Tecca - Ransom (Lyrics).webm
-2025-10-17 18:56:10,350 - INFO - [T01] Descargando...  14.3% a  217.64KiB/s
-2025-10-17 18:56:10,351 - INFO - [T05] Descargando...   0.0% a    6.61KiB/s
-2025-10-17 18:56:10,354 - INFO - [T01] Descargando...  14.3% a  217.64KiB/s
-2025-10-17 18:56:10,361 - INFO - [T05] Descargando...   0.1% a   18.67KiB/s
-2025-10-17 18:56:10,369 - INFO - [T01] Descargando...  14.3% a  217.64KiB/s
-2025-10-17 18:56:10,377 - INFO - [T05] Descargando...   0.2% a   39.63KiB/s
-2025-10-17 18:56:10,380 - INFO - [T01] Descargando...  14.3% a  217.64KiB/s
-2025-10-17 18:56:10,382 - INFO - [T05] Descargando...   0.4% a   82.37KiB/s
-2025-10-17 18:56:10,385 - INFO - [T05] Descargando...   0.9% a  167.98KiB/s
-2025-10-17 18:56:10,385 - INFO - [T02] Descargando... 100.0% a  755.18KiB/s
-2025-10-17 18:56:10,393 - INFO - [T02] Descarga terminada: downloads/Saweetie – Best Friend, feat. Doja Cat (letra).webm
-2025-10-17 18:56:18,614 - INFO - [T06] Descarga completada exitosamente: downloads/Selena Gomez Marshmello - Wolves Lyrics.mp3
-2025-10-17 18:56:20,483 - INFO - [T02] Descarga completada exitosamente: downloads/Saweetie  Best Friend feat Doja Cat letra.mp3
-2025-10-17 18:56:22,930 - INFO - [T04] Descargando...   0.0% a   87.35KiB/s
-2025-10-17 18:56:22,931 - INFO - [T04] Descargando...   0.1% a  240.68KiB/s
-2025-10-17 18:56:22,933 - INFO - [T04] Descargando...   0.2% a  485.43KiB/s
-2025-10-17 18:56:22,935 - INFO - [T04] Descargando...   0.4% a  917.46KiB/s
-2025-10-17 18:56:22,963 - INFO - [T04] Descargando...   0.9% a  701.04KiB/s
-2025-10-17 18:56:23,011 - INFO - [T04] Descargando...   1.8% a  686.21KiB/s
-2025-10-17 18:56:23,035 - INFO - [T04] Descargando...   3.7% a    1.07MiB/s
-2025-10-17 18:56:23,087 - INFO - [T04] Descargando...   7.4% a    1.48MiB/s
-2025-10-17 18:56:23,173 - INFO - [T04] Descargando...  14.8% a    1.97MiB/s
-2025-10-17 18:56:23,436 - INFO - [T04] Descargando...  29.7% a    1.93MiB/s
-2025-10-17 18:56:23,878 - INFO - [T04] Descargando...  59.5% a    2.08MiB/s
-2025-10-17 18:56:24,289 - INFO - [T04] Descargando... 100.0% a    2.45MiB/s
-2025-10-17 18:56:24,298 - INFO - [T04] Descarga terminada: downloads/Marshmello ft. Bastille - Happier (Performance Video).webm
-2025-10-17 18:56:25,349 - INFO - [T08] Descarga completada exitosamente: downloads/Lil Tecca - Ransom Lyrics.mp3
-2025-10-17 18:56:26,137 - INFO - [T07] Descargando...   0.0% a   33.91KiB/s
-2025-10-17 18:56:26,139 - INFO - [T07] Descargando...   0.0% a   94.43KiB/s
-2025-10-17 18:56:26,142 - INFO - [T07] Descargando...   0.0% a  203.85KiB/s
-2025-10-17 18:56:26,150 - INFO - [T07] Descargando...   0.0% a  349.83KiB/s
-2025-10-17 18:56:26,154 - INFO - [T07] Descargando...   0.0% a  668.67KiB/s
-2025-10-17 18:56:26,158 - INFO - [T07] Descargando...   0.1% a    1.20MiB/s
-2025-10-17 18:56:26,161 - INFO - [T03] Descargando...   0.0% a   71.78KiB/s
-2025-10-17 18:56:26,165 - INFO - [T03] Descargando...   0.1% a  163.11KiB/s
-2025-10-17 18:56:26,168 - INFO - [T03] Descargando...   0.2% a  323.68KiB/s
-2025-10-17 18:56:26,171 - INFO - [T03] Descargando...   0.5% a  598.49KiB/s
-2025-10-17 18:56:26,178 - INFO - [T07] Descargando...   0.1% a    1.76MiB/s
-2025-10-17 18:56:26,179 - INFO - [T03] Descargando...   1.1% a    1.08MiB/s
-2025-10-17 18:56:26,189 - INFO - [T03] Descargando...   2.2% a    1.43MiB/s
-2025-10-17 18:56:26,217 - INFO - [T07] Descargando...   0.2% a    2.35MiB/s
-2025-10-17 18:56:26,219 - INFO - [T03] Descargando...   4.5% a    1.69MiB/s
-2025-10-17 18:56:26,277 - INFO - [T07] Descargando...   0.4% a    2.93MiB/s
-2025-10-17 18:56:26,324 - INFO - [T03] Descargando...   9.0% a    1.40MiB/s
-2025-10-17 18:56:26,485 - INFO - [T03] Descargando...  18.0% a    1.47MiB/s
-2025-10-17 18:56:26,544 - INFO - [T07] Descargando...   0.8% a    2.29MiB/s
-2025-10-17 18:56:26,572 - INFO - [T01] Descargando...  14.4% a      0.00B/s
-2025-10-17 18:56:26,576 - INFO - [T01] Descargando...  14.3% a      0.00B/s
-2025-10-17 18:56:26,858 - INFO - [T01] Descargando...  14.4% a   25.16KiB/s
-2025-10-17 18:56:26,892 - INFO - [T01] Descargando...  14.4% a   25.16KiB/s
-2025-10-17 18:56:27,179 - INFO - [T01] Descargando...  14.6% a   76.87KiB/s
-2025-10-17 18:56:27,188 - INFO - [T03] Descargando...  36.1% a  982.03KiB/s
-2025-10-17 18:56:27,199 - INFO - [T07] Descargando...   1.7% a    1.83MiB/s
-2025-10-17 18:56:27,430 - INFO - [T01] Descargando...  14.9% a  140.46KiB/s
-2025-10-17 18:56:27,638 - INFO - [T01] Descargando...  15.2% a  225.14KiB/s
-2025-10-17 18:56:27,656 - INFO - [T01] Descargando...  12.4% a  225.14KiB/s
-2025-10-17 18:56:28,049 - INFO - [T03] Descargando...  61.8% a  920.27KiB/s
-2025-10-17 18:56:28,055 - INFO - [T07] Descargando...   3.0% a    1.81MiB/s
-2025-10-17 18:56:28,484 - INFO - [T01] Descargando...  17.1% a  228.07KiB/s
-2025-10-17 18:56:28,486 - INFO - [T01] Descargando...  17.2% a  228.07KiB/s
-2025-10-17 18:56:28,492 - INFO - [T01] Descargando...  17.2% a  228.07KiB/s
-2025-10-17 18:56:28,496 - INFO - [T01] Descargando...  17.2% a  228.07KiB/s
-2025-10-17 18:56:28,565 - INFO - [T01] Descargando...  17.2% a  231.77KiB/s
-2025-10-17 18:56:28,656 - INFO - [T01] Descargando...  17.3% a  235.81KiB/s
-2025-10-17 18:56:28,744 - INFO - [T01] Descargando...  17.5% a  244.49KiB/s
-2025-10-17 18:56:28,849 - INFO - [T07] Descargando...   4.5% a    1.94MiB/s
-2025-10-17 18:56:28,910 - INFO - [T03] Descargando...  91.6% a  939.67KiB/s
-2025-10-17 18:56:28,933 - INFO - [T01] Descargando...  17.8% a  260.47KiB/s
-2025-10-17 18:56:29,238 - INFO - [T03] Descargando... 100.0% a  917.37KiB/s
-2025-10-17 18:56:29,288 - INFO - [T03] Descarga terminada: downloads/Mabel - Mad Love (Official Video).webm
-2025-10-17 18:56:29,377 - INFO - [T05] Descargando...   1.9% a    3.29KiB/s
-2025-10-17 18:56:29,464 - INFO - [T01] Descargando...  18.4% a  281.84KiB/s
-2025-10-17 18:56:29,491 - INFO - [T05] Descargando...   2.3% a    4.10KiB/s
-2025-10-17 18:56:29,523 - INFO - [T05] Descargando...   3.3% a    5.74KiB/s
-2025-10-17 18:56:29,611 - INFO - [T01] Descargando...  17.6% a  310.14KiB/s
-2025-10-17 18:56:29,676 - INFO - [T01] Descargando...  14.8% a  327.35KiB/s
-2025-10-17 18:56:29,700 - INFO - [T05] Descargando...   5.1% a    8.97KiB/s
-2025-10-17 18:56:29,945 - INFO - [T05] Descargando...   8.9% a   15.35KiB/s
-2025-10-17 18:56:30,467 - INFO - [T07] Descargando...   6.4% a    1.73MiB/s
-2025-10-17 18:56:30,511 - INFO - [T05] Descargando...  16.4% a   27.52KiB/s
-2025-10-17 18:56:30,664 - INFO - [T01] Descargando...  20.0% a  313.26KiB/s
-2025-10-17 18:56:30,675 - INFO - [T01] Descargando...  20.0% a  313.26KiB/s
-2025-10-17 18:56:30,694 - INFO - [T01] Descargando...  20.0% a  313.26KiB/s
-2025-10-17 18:56:30,699 - INFO - [T01] Descargando...  20.0% a  313.26KiB/s
-2025-10-17 18:56:30,761 - INFO - [T01] Descargando...  20.1% a  303.94KiB/s
-2025-10-17 18:56:30,811 - INFO - [T01] Descargando...  20.2% a  299.61KiB/s
-2025-10-17 18:56:30,869 - INFO - [T01] Descargando...  20.3% a  302.48KiB/s
-2025-10-17 18:56:31,013 - INFO - [T01] Descargando...  20.6% a  314.39KiB/s
-2025-10-17 18:56:31,147 - INFO - [T07] Descargando...   7.6% a    1.78MiB/s
-2025-10-17 18:56:31,222 - INFO - [T01] Descargando...  21.2% a  342.96KiB/s
-2025-10-17 18:56:31,267 - INFO - [T05] Descargando...  29.7% a   47.99KiB/s
-2025-10-17 18:56:31,420 - INFO - [T01] Descargando...  21.5% a  388.91KiB/s
-2025-10-17 18:56:31,433 - INFO - [T01] Descargando...  16.9% a  388.91KiB/s
-2025-10-17 18:56:31,536 - INFO - [T07] Descargando...   8.1% a    1.76MiB/s
-2025-10-17 18:56:31,594 - INFO - [T07] Descargando...   8.1% a  354.91KiB/s
-2025-10-17 18:56:31,596 - INFO - [T07] Descargando...   8.1% a  596.35KiB/s
-2025-10-17 18:56:31,598 - INFO - [T07] Descargando...   8.1% a    1.01MiB/s
-2025-10-17 18:56:31,601 - INFO - [T07] Descargando...   8.1% a    1.46MiB/s
-2025-10-17 18:56:31,603 - INFO - [T07] Descargando...   8.1% a    2.49MiB/s
-2025-10-17 18:56:31,638 - INFO - [T07] Descargando...   8.1% a    1.40MiB/s
-2025-10-17 18:56:31,668 - INFO - [T07] Descargando...   8.2% a    1.60MiB/s
-2025-10-17 18:56:31,723 - INFO - [T07] Descargando...   8.3% a    1.88MiB/s
-2025-10-17 18:56:31,757 - INFO - [T01] Descargando...  22.9% a  400.09KiB/s
-2025-10-17 18:56:31,760 - INFO - [T01] Descargando...  22.9% a  400.09KiB/s
-2025-10-17 18:56:31,768 - INFO - [T01] Descargando...  22.9% a  400.09KiB/s
-2025-10-17 18:56:31,772 - INFO - [T01] Descargando...  22.9% a  400.09KiB/s
-2025-10-17 18:56:31,825 - INFO - [T01] Descargando...  22.9% a  408.04KiB/s
-2025-10-17 18:56:31,946 - INFO - [T01] Descargando...  23.0% a  407.67KiB/s
-2025-10-17 18:56:31,949 - INFO - [T07] Descargando...   8.5% a    1.40MiB/s
-2025-10-17 18:56:32,128 - INFO - [T01] Descargando...  23.2% a  406.26KiB/s
-2025-10-17 18:56:32,248 - INFO - [T05] Descargando...  47.3% a   72.97KiB/s
-2025-10-17 18:56:32,383 - INFO - [T07] Descargando...   8.9% a    1.26MiB/s
-2025-10-17 18:56:32,601 - INFO - [T01] Descargando...  23.5% a  394.87KiB/s
-2025-10-17 18:56:32,991 - INFO - [T07] Descargando...   9.8% a    1.43MiB/s
-2025-10-17 18:56:33,200 - INFO - [T01] Descargando...  24.0% a  436.85KiB/s
-2025-10-17 18:56:33,408 - INFO - [T05] Descargando...  65.3% a   95.59KiB/s
-2025-10-17 18:56:33,667 - INFO - [T01] Descargando...  23.7% a  461.65KiB/s
-2025-10-17 18:56:33,691 - INFO - [T01] Descargando...  20.2% a  461.65KiB/s
-2025-10-17 18:56:33,898 - INFO - [T07] Descargando...  11.2% a    1.58MiB/s
-2025-10-17 18:56:33,922 - INFO - [T05] Descargando...  80.7% a  115.67KiB/s
-2025-10-17 18:56:34,228 - INFO - [T01] Descargando...  25.7% a  397.67KiB/s
-2025-10-17 18:56:34,230 - INFO - [T01] Descargando...  25.7% a  397.67KiB/s
-2025-10-17 18:56:34,234 - INFO - [T01] Descargando...  25.7% a  397.67KiB/s
-2025-10-17 18:56:34,237 - INFO - [T01] Descargando...  25.8% a  397.67KiB/s
-2025-10-17 18:56:34,018 - INFO - [T01] Descargando...  25.8% a  353.58KiB/s
-2025-10-17 18:56:34,083 - INFO - [T01] Descargando...  25.9% a  324.31KiB/s
-2025-10-17 18:56:34,219 - INFO - [T01] Descargando...  26.0% a  316.26KiB/s
-2025-10-17 18:56:34,378 - INFO - [T01] Descargando...  26.3% a  318.91KiB/s
-2025-10-17 18:56:34,460 - INFO - [T07] Descargando...  12.7% a    1.90MiB/s
-2025-10-17 18:56:34,546 - INFO - [T05] Descargando... 100.0% a  139.63KiB/s
-2025-10-17 18:56:34,551 - INFO - [T01] Descargando...  26.9% a  341.28KiB/s
-2025-10-17 18:56:34,571 - INFO - [T05] Descarga terminada: downloads/David Kushner - Daylight (Lyric Video) (Official).webm
-2025-10-17 18:56:34,739 - INFO - [T01] Descargando...  27.0% a  380.69KiB/s
-2025-10-17 18:56:34,799 - INFO - [T01] Descargando...  22.7% a  405.64KiB/s
-2025-10-17 18:56:35,337 - INFO - [T01] Descargando...  28.6% a  406.24KiB/s
-2025-10-17 18:56:35,342 - INFO - [T01] Descargando...  28.6% a  406.24KiB/s
-2025-10-17 18:56:35,349 - INFO - [T01] Descargando...  28.6% a  406.24KiB/s
-2025-10-17 18:56:35,356 - INFO - [T01] Descargando...  28.6% a  406.24KiB/s
-2025-10-17 18:56:35,401 - INFO - [T01] Descargando...  28.6% a  407.12KiB/s
-2025-10-17 18:56:35,455 - INFO - [T01] Descargando...  28.7% a  408.90KiB/s
-2025-10-17 18:56:35,523 - INFO - [T07] Descargando...  15.4% a    2.21MiB/s
-2025-10-17 18:56:35,532 - INFO - [T01] Descargando...  28.9% a  414.12KiB/s
-2025-10-17 18:56:35,679 - INFO - [T01] Descargando...  29.1% a  424.54KiB/s
-2025-10-17 18:56:36,121 - INFO - [T07] Descargando...  16.3% a    2.15MiB/s
-2025-10-17 18:56:36,180 - INFO - [T01] Descargando...  29.7% a  437.76KiB/s
-2025-10-17 18:56:36,230 - INFO - [T07] Descargando...  16.3% a   84.81KiB/s
-2025-10-17 18:56:36,234 - INFO - [T07] Descargando...  16.3% a  190.97KiB/s
-2025-10-17 18:56:36,237 - INFO - [T07] Descargando...  16.3% a  377.36KiB/s
-2025-10-17 18:56:36,241 - INFO - [T07] Descargando...  16.3% a  636.21KiB/s
-2025-10-17 18:56:36,245 - INFO - [T07] Descargando...  16.3% a    1.12MiB/s
-2025-10-17 18:56:36,268 - INFO - [T07] Descargando...  16.4% a    1.28MiB/s
-2025-10-17 18:56:36,274 - INFO - [T07] Descargando...  16.4% a    2.18MiB/s
-2025-10-17 18:56:36,428 - INFO - [T07] Descargando...  16.5% a    1.18MiB/s
-2025-10-17 18:56:36,524 - INFO - [T07] Descargando...  16.7% a    1.63MiB/s
-2025-10-17 18:56:36,613 - INFO - [T01] Descargando...  30.3% a  499.93KiB/s
-2025-10-17 18:56:36,634 - INFO - [T01] Descargando...  25.3% a  499.93KiB/s
-2025-10-17 18:56:36,730 - INFO - [T07] Descargando...  17.2% a    1.95MiB/s
-2025-10-17 18:56:36,994 - INFO - [T01] Descargando...  31.4% a  521.74KiB/s
-2025-10-17 18:56:37,001 - INFO - [T01] Descargando...  31.4% a  521.74KiB/s
-2025-10-17 18:56:37,006 - INFO - [T01] Descargando...  31.4% a  521.74KiB/s
-2025-10-17 18:56:37,010 - INFO - [T01] Descargando...  31.5% a  521.74KiB/s
-2025-10-17 18:56:37,032 - INFO - [T01] Descargando...  31.5% a  521.74KiB/s
-2025-10-17 18:56:37,062 - INFO - [T01] Descargando...  31.6% a  539.93KiB/s
-2025-10-17 18:56:37,063 - INFO - [T07] Descargando...  18.0% a    2.38MiB/s
-2025-10-17 18:56:37,176 - INFO - [T01] Descargando...  31.7% a  553.88KiB/s
-2025-10-17 18:56:37,246 - INFO - [T01] Descargando...  32.0% a  569.06KiB/s
-2025-10-17 18:56:37,368 - INFO - [T01] Descargando...  32.5% a  597.99KiB/s
-2025-10-17 18:56:37,446 - INFO - [T01] Descargando...  32.1% a  616.62KiB/s
-2025-10-17 18:56:37,460 - INFO - [T01] Descargando...  28.9% a  616.62KiB/s
-2025-10-17 18:56:37,875 - INFO - [T01] Descargando...  34.3% a  622.04KiB/s
-2025-10-17 18:56:37,879 - INFO - [T01] Descargando...  34.3% a  622.04KiB/s
-2025-10-17 18:56:37,884 - INFO - [T01] Descargando...  34.3% a  622.04KiB/s
-2025-10-17 18:56:37,889 - INFO - [T01] Descargando...  34.3% a  622.04KiB/s
-2025-10-17 18:56:37,889 - INFO - [T07] Descargando...  19.7% a    2.39MiB/s
-2025-10-17 18:56:37,899 - INFO - [T01] Descargando...  34.4% a  622.04KiB/s
-2025-10-17 18:56:37,977 - INFO - [T01] Descargando...  34.4% a  625.49KiB/s
-2025-10-17 18:56:38,075 - INFO - [T01] Descargando...  34.6% a  628.09KiB/s
-2025-10-17 18:56:38,219 - INFO - [T01] Descargando...  34.8% a  633.87KiB/s
-2025-10-17 18:56:38,397 - INFO - [T01] Descargando...  35.4% a  653.06KiB/s
-2025-10-17 18:56:38,410 - INFO - [T04] Descarga completada exitosamente: downloads/Marshmello ft Bastille - Happier Performance Video.mp3
-2025-10-17 18:56:38,461 - INFO - [T01] Descargando...  34.7% a  672.15KiB/s
-2025-10-17 18:56:38,477 - INFO - [T01] Descargando...  31.9% a  672.15KiB/s
-2025-10-17 18:56:38,679 - INFO - [T07] Descargando...  21.7% a    2.60MiB/s
-2025-10-17 18:56:38,964 - INFO - [T01] Descargando...  37.1% a  655.87KiB/s
-2025-10-17 18:56:38,966 - INFO - [T01] Descargando...  37.2% a  655.87KiB/s
-2025-10-17 18:56:38,981 - INFO - [T01] Descargando...  37.2% a  655.87KiB/s
-2025-10-17 18:56:38,991 - INFO - [T01] Descargando...  37.2% a  655.87KiB/s
-2025-10-17 18:56:39,003 - INFO - [T01] Descargando...  37.2% a  655.87KiB/s
-2025-10-17 18:56:39,096 - INFO - [T01] Descargando...  37.3% a  642.41KiB/s
-2025-10-17 18:56:39,188 - INFO - [T01] Descargando...  37.4% a  616.42KiB/s
-2025-10-17 18:56:39,336 - INFO - [T01] Descargando...  37.7% a  603.22KiB/s
-2025-10-17 18:56:39,591 - INFO - [T01] Descargando...  38.2% a  604.80KiB/s
-2025-10-17 18:56:39,648 - INFO - [T01] Descargando...  35.2% a  627.95KiB/s
-2025-10-17 18:56:41,173 - INFO - [T03] Descarga completada exitosamente: downloads/Mabel - Mad Love Official Video.mp3
-2025-10-17 18:56:44,809 - INFO - [T07] Descargando...  24.3% a    1.10MiB/s
-2025-10-17 18:56:45,464 - INFO - [T07] Descargando...  24.7% a    1.07MiB/s
-2025-10-17 18:56:45,560 - INFO - [T07] Descargando...  24.7% a  213.24KiB/s
-2025-10-17 18:56:45,561 - INFO - [T07] Descargando...  24.7% a  490.14KiB/s
-2025-10-17 18:56:45,565 - INFO - [T07] Descargando...  24.7% a  740.37KiB/s
-2025-10-17 18:56:45,567 - INFO - [T07] Descargando...  24.7% a    1.23MiB/s
-2025-10-17 18:56:45,572 - INFO - [T07] Descargando...  24.7% a    1.85MiB/s
-2025-10-17 18:56:45,588 - INFO - [T07] Descargando...  24.7% a    1.89MiB/s
-2025-10-17 18:56:45,609 - INFO - [T07] Descargando...  24.8% a    2.30MiB/s
-2025-10-17 18:56:45,620 - INFO - [T01] Descargando...  40.0% a      0.00B/s
-2025-10-17 18:56:45,622 - INFO - [T01] Descargando...  40.0% a      0.00B/s
-2025-10-17 18:56:45,625 - INFO - [T01] Descargando...  40.0% a      0.00B/s
-2025-10-17 18:56:45,632 - INFO - [T01] Descargando...  40.0% a      0.00B/s
-2025-10-17 18:56:45,637 - INFO - [T07] Descargando...  24.9% a    3.07MiB/s
-2025-10-17 18:56:45,651 - INFO - [T01] Descargando...  40.1% a      0.00B/s
-2025-10-17 18:56:45,688 - INFO - [T01] Descargando...  40.1% a  272.64KiB/s
-2025-10-17 18:56:45,701 - INFO - [T07] Descargando...  25.1% a    3.42MiB/s
-2025-10-17 18:56:45,737 - INFO - [T01] Descargando...  40.3% a  272.64KiB/s
-2025-10-17 18:56:45,867 - INFO - [T07] Descargando...  25.5% a    3.20MiB/s
-2025-10-17 18:56:45,935 - INFO - [T01] Descargando...  40.6% a  432.48KiB/s
-2025-10-17 18:56:46,115 - INFO - [T05] Descarga completada exitosamente: downloads/David Kushner - Daylight Lyric Video Official.mp3
-2025-10-17 18:56:46,141 - INFO - [T01] Descargando...  41.1% a  595.85KiB/s
-2025-10-17 18:56:46,209 - INFO - [T07] Descargando...  26.4% a    3.06MiB/s
-2025-10-17 18:56:46,555 - INFO - [T01] Descargando...  42.0% a  735.14KiB/s
-2025-10-17 18:56:46,562 - INFO - [T01] Descargando...  36.4% a  735.14KiB/s
-2025-10-17 18:56:47,224 - INFO - [T07] Descargando...  28.1% a    2.40MiB/s
-2025-10-17 18:56:47,604 - INFO - [T01] Descargando...  42.9% a  664.72KiB/s
-2025-10-17 18:56:47,605 - INFO - [T01] Descargando...  42.9% a  664.72KiB/s
-2025-10-17 18:56:47,607 - INFO - [T01] Descargando...  42.9% a  664.72KiB/s
-2025-10-17 18:56:47,613 - INFO - [T01] Descargando...  42.9% a  664.72KiB/s
-2025-10-17 18:56:47,628 - INFO - [T01] Descargando...  42.9% a  664.72KiB/s
-2025-10-17 18:56:47,752 - INFO - [T01] Descargando...  43.0% a  613.74KiB/s
-2025-10-17 18:56:47,908 - INFO - [T07] Descargando...  29.7% a    2.54MiB/s
-2025-10-17 18:56:47,940 - INFO - [T01] Descargando...  43.1% a  574.34KiB/s
-2025-10-17 18:56:48,187 - INFO - [T01] Descargando...  43.4% a  547.74KiB/s
-2025-10-17 18:56:48,617 - INFO - [T01] Descargando...  43.9% a  533.85KiB/s
-2025-10-17 18:56:48,716 - INFO - [T01] Descargando...  43.3% a  518.94KiB/s
-2025-10-17 18:56:48,726 - INFO - [T01] Descargando...  40.5% a  518.94KiB/s
-2025-10-17 18:56:48,835 - INFO - [T07] Descargando...  32.2% a    2.70MiB/s
-2025-10-17 18:56:49,006 - INFO - [T07] Descargando...  33.1% a    2.87MiB/s
-2025-10-17 18:56:49,051 - INFO - [T01] Descargando...  45.7% a  475.82KiB/s
-2025-10-17 18:56:49,053 - INFO - [T01] Descargando...  45.7% a  475.82KiB/s
-2025-10-17 18:56:49,057 - INFO - [T01] Descargando...  45.7% a  475.82KiB/s
-2025-10-17 18:56:49,065 - INFO - [T07] Descargando...  33.1% a  303.69KiB/s
-2025-10-17 18:56:49,070 - INFO - [T07] Descargando...  33.1% a  259.10KiB/s
-2025-10-17 18:56:49,072 - INFO - [T01] Descargando...  45.7% a  475.82KiB/s
-2025-10-17 18:56:49,079 - INFO - [T07] Descargando...  33.1% a  377.70KiB/s
-2025-10-17 18:56:49,096 - INFO - [T01] Descargando...  45.8% a  475.82KiB/s
-2025-10-17 18:56:49,097 - INFO - [T07] Descargando...  33.1% a  433.03KiB/s
-2025-10-17 18:56:49,123 - INFO - [T07] Descargando...  33.1% a  498.24KiB/s
-2025-10-17 18:56:49,124 - INFO - [T01] Descargando...  45.9% a  449.18KiB/s
-2025-10-17 18:56:49,127 - INFO - [T07] Descargando...  33.1% a  921.33KiB/s
-2025-10-17 18:56:49,139 - INFO - [T07] Descargando...  33.2% a    1.54MiB/s
-2025-10-17 18:56:49,161 - INFO - [T07] Descargando...  33.3% a    2.43MiB/s
-2025-10-17 18:56:49,189 - INFO - [T01] Descargando...  46.0% a  398.27KiB/s
-2025-10-17 18:56:49,230 - INFO - [T07] Descargando...  33.5% a    2.92MiB/s
-2025-10-17 18:56:49,314 - INFO - [T01] Descargando...  46.3% a  372.71KiB/s
-2025-10-17 18:56:49,387 - INFO - [T07] Descargando...  33.9% a    3.05MiB/s
-2025-10-17 18:56:49,509 - INFO - [T01] Descargando...  46.8% a  374.68KiB/s
-2025-10-17 18:56:49,518 - INFO - [T01] Descargando...  45.9% a  374.68KiB/s
-2025-10-17 18:56:49,558 - INFO - [T01] Descargando...  43.5% a  441.31KiB/s
-2025-10-17 18:56:49,646 - INFO - [T07] Descargando...  34.8% a    3.41MiB/s
-2025-10-17 18:56:49,983 - INFO - [T01] Descargando...  48.6% a  456.20KiB/s
-2025-10-17 18:56:49,990 - INFO - [T01] Descargando...  48.6% a  456.20KiB/s
-2025-10-17 18:56:49,995 - INFO - [T01] Descargando...  48.6% a  456.20KiB/s
-2025-10-17 18:56:50,003 - INFO - [T01] Descargando...  48.6% a  456.20KiB/s
-2025-10-17 18:56:50,009 - INFO - [T01] Descargando...  48.6% a  456.20KiB/s
-2025-10-17 18:56:50,017 - INFO - [T01] Descargando...  48.7% a  456.20KiB/s
-2025-10-17 18:56:50,024 - INFO - [T01] Descargando...  48.8% a  456.20KiB/s
-2025-10-17 18:56:50,161 - INFO - [T07] Descargando...  36.4% a    3.63MiB/s
-2025-10-17 18:56:50,347 - INFO - [T01] Descargando...  49.1% a  474.77KiB/s
-2025-10-17 18:56:50,561 - INFO - [T01] Descargando...  49.7% a  502.53KiB/s
-2025-10-17 18:56:50,675 - INFO - [T01] Descargando...  49.5% a  539.60KiB/s
-2025-10-17 18:56:50,683 - INFO - [T01] Descargando...  45.8% a  539.60KiB/s
-2025-10-17 18:56:50,964 - INFO - [T01] Descargando...  51.4% a  554.83KiB/s
-2025-10-17 18:56:50,966 - INFO - [T01] Descargando...  51.4% a  554.83KiB/s
-2025-10-17 18:56:50,967 - INFO - [T01] Descargando...  51.4% a  554.83KiB/s
-2025-10-17 18:56:50,970 - INFO - [T01] Descargando...  51.5% a  554.83KiB/s
-2025-10-17 18:56:50,978 - INFO - [T01] Descargando...  51.5% a  554.83KiB/s
-2025-10-17 18:56:51,064 - INFO - [T01] Descargando...  51.6% a  565.79KiB/s
-2025-10-17 18:56:51,157 - INFO - [T01] Descargando...  51.7% a  574.35KiB/s
-2025-10-17 18:56:51,319 - INFO - [T01] Descargando...  52.0% a  583.83KiB/s
-2025-10-17 18:56:51,320 - INFO - [T07] Descargando...  39.7% a    3.48MiB/s
-2025-10-17 18:56:51,492 - INFO - [T01] Descargando...  52.5% a  606.22KiB/s
-2025-10-17 18:56:51,792 - INFO - [T01] Descargando...  53.1% a  664.53KiB/s
-2025-10-17 18:56:51,800 - INFO - [T01] Descargando...  48.0% a  664.53KiB/s
-2025-10-17 18:56:51,911 - INFO - [T07] Descargando...  41.3% a    3.43MiB/s
-2025-10-17 18:56:51,932 - INFO - [T01] Descargando...  54.3% a  693.78KiB/s
-2025-10-17 18:56:51,934 - INFO - [T01] Descargando...  54.3% a  693.78KiB/s
-2025-10-17 18:56:51,936 - INFO - [T01] Descargando...  54.3% a  693.78KiB/s
-2025-10-17 18:56:51,943 - INFO - [T01] Descargando...  54.3% a  693.78KiB/s
-2025-10-17 18:56:51,948 - INFO - [T01] Descargando...  54.4% a  693.78KiB/s
-2025-10-17 18:56:51,957 - INFO - [T01] Descargando...  54.4% a  693.78KiB/s
-2025-10-17 18:56:52,000 - INFO - [T01] Descargando...  54.6% a  721.82KiB/s
-2025-10-17 18:56:52,025 - INFO - [T07] Descargando...  41.3% a  205.43KiB/s
-2025-10-17 18:56:52,027 - INFO - [T07] Descargando...  41.3% a  394.10KiB/s
-2025-10-17 18:56:52,030 - INFO - [T07] Descargando...  41.3% a  645.31KiB/s
-2025-10-17 18:56:52,033 - INFO - [T07] Descargando...  41.4% a    1.12MiB/s
-2025-10-17 18:56:52,035 - INFO - [T07] Descargando...  41.4% a    1.96MiB/s
-2025-10-17 18:56:52,061 - INFO - [T07] Descargando...  41.4% a    1.48MiB/s
-2025-10-17 18:56:52,063 - INFO - [T01] Descargando...  54.8% a  748.83KiB/s
-2025-10-17 18:56:52,083 - INFO - [T07] Descargando...  41.4% a    1.95MiB/s
-2025-10-17 18:56:52,124 - INFO - [T07] Descargando...  41.6% a    2.41MiB/s
-2025-10-17 18:56:52,189 - INFO - [T01] Descargando...  55.4% a  779.96KiB/s
-2025-10-17 18:56:52,198 - INFO - [T07] Descargando...  41.8% a    2.80MiB/s
-2025-10-17 18:56:52,227 - INFO - [T01] Descargando...  54.6% a  779.96KiB/s
-2025-10-17 18:56:52,236 - INFO - [T01] Descargando...  51.9% a  779.96KiB/s
-2025-10-17 18:56:52,481 - INFO - [T07] Descargando...  42.2% a    2.17MiB/s
-2025-10-17 18:56:52,598 - INFO - [T01] Descargando...  57.1% a  802.41KiB/s
-2025-10-17 18:56:52,600 - INFO - [T01] Descargando...  57.2% a  802.41KiB/s
-2025-10-17 18:56:52,602 - INFO - [T01] Descargando...  57.2% a  802.41KiB/s
-2025-10-17 18:56:52,605 - INFO - [T01] Descargando...  57.2% a  802.41KiB/s
-2025-10-17 18:56:52,611 - INFO - [T01] Descargando...  57.2% a  802.41KiB/s
-2025-10-17 18:56:52,679 - INFO - [T01] Descargando...  57.3% a  817.26KiB/s
-2025-10-17 18:56:52,733 - INFO - [T01] Descargando...  57.4% a  829.71KiB/s
-2025-10-17 18:56:52,767 - INFO - [T07] Descargando...  43.0% a    2.67MiB/s
-2025-10-17 18:56:52,819 - INFO - [T01] Descargando...  57.7% a  844.10KiB/s
-2025-10-17 18:56:52,918 - INFO - [T01] Descargando...  58.2% a  871.41KiB/s
-2025-10-17 18:56:53,006 - INFO - [T01] Descargando...  57.9% a  912.14KiB/s
-2025-10-17 18:56:53,016 - INFO - [T01] Descargando...  54.4% a  912.14KiB/s
-2025-10-17 18:56:53,345 - INFO - [T01] Descargando...  60.0% a  906.61KiB/s
-2025-10-17 18:56:53,347 - INFO - [T01] Descargando...  60.0% a  906.61KiB/s
-2025-10-17 18:56:53,349 - INFO - [T01] Descargando...  60.0% a  906.61KiB/s
-2025-10-17 18:56:53,353 - INFO - [T01] Descargando...  60.0% a  906.61KiB/s
-2025-10-17 18:56:53,357 - INFO - [T01] Descargando...  60.1% a  906.61KiB/s
-2025-10-17 18:56:53,366 - INFO - [T01] Descargando...  60.1% a  906.61KiB/s
-2025-10-17 18:56:53,421 - INFO - [T01] Descargando...  60.3% a  901.98KiB/s
-2025-10-17 18:56:53,485 - INFO - [T07] Descargando...  44.7% a    2.73MiB/s
-2025-10-17 18:56:53,510 - INFO - [T01] Descargando...  60.5% a  903.67KiB/s
-2025-10-17 18:56:53,681 - INFO - [T01] Descargando...  61.1% a  932.56KiB/s
-2025-10-17 18:56:53,776 - INFO - [T01] Descargando...  60.8% a  963.97KiB/s
-2025-10-17 18:56:53,791 - INFO - [T01] Descargando...  57.2% a  963.97KiB/s
-2025-10-17 18:56:54,018 - INFO - [T01] Descargando...  62.9% a  964.84KiB/s
-2025-10-17 18:56:54,020 - INFO - [T01] Descargando...  62.9% a  964.84KiB/s
-2025-10-17 18:56:54,023 - INFO - [T01] Descargando...  62.9% a  964.84KiB/s
-2025-10-17 18:56:54,025 - INFO - [T01] Descargando...  62.9% a  964.84KiB/s
-2025-10-17 18:56:54,028 - INFO - [T01] Descargando...  62.9% a  964.84KiB/s
-2025-10-17 18:56:54,053 - INFO - [T01] Descargando...  63.0% a  964.84KiB/s
-2025-10-17 18:56:54,114 - INFO - [T01] Descargando...  63.1% a  971.57KiB/s
-2025-10-17 18:56:54,222 - INFO - [T01] Descargando...  63.4% a  981.74KiB/s
-2025-10-17 18:56:54,362 - INFO - [T07] Descargando...  47.1% a    2.90MiB/s
-2025-10-17 18:56:54,415 - INFO - [T01] Descargando...  63.9% a  986.93KiB/s
-2025-10-17 18:56:54,694 - INFO - [T01] Descargando...  64.5% a  993.50KiB/s
-2025-10-17 18:56:54,731 - INFO - [T01] Descargando...  59.4% a  993.50KiB/s
-2025-10-17 18:56:55,011 - INFO - [T01] Descargando...  65.7% a  967.60KiB/s
-2025-10-17 18:56:55,016 - INFO - [T01] Descargando...  65.7% a  967.60KiB/s
-2025-10-17 18:56:55,021 - INFO - [T01] Descargando...  65.7% a  967.60KiB/s
-2025-10-17 18:56:55,037 - INFO - [T01] Descargando...  65.7% a  967.60KiB/s
-2025-10-17 18:56:55,042 - INFO - [T01] Descargando...  65.8% a  967.60KiB/s
-2025-10-17 18:56:55,050 - INFO - [T01] Descargando...  65.8% a  967.60KiB/s
-2025-10-17 18:56:55,080 - INFO - [T01] Descargando...  66.0% a  941.63KiB/s
-2025-10-17 18:56:55,122 - INFO - [T01] Descargando...  66.2% a  941.63KiB/s
-2025-10-17 18:56:55,167 - INFO - [T01] Descargando...  66.8% a  954.07KiB/s
-2025-10-17 18:56:55,172 - INFO - [T01] Descargando...  65.9% a  954.07KiB/s
-2025-10-17 18:56:55,186 - INFO - [T01] Descargando...  63.5% a  954.07KiB/s
-2025-10-17 18:56:55,230 - INFO - [T07] Descargando...  49.8% a    3.09MiB/s
-2025-10-17 18:56:55,285 - INFO - [T07] Descargando...  49.8% a  386.75KiB/s
-2025-10-17 18:56:55,289 - INFO - [T07] Descargando...  49.8% a  459.78KiB/s
-2025-10-17 18:56:55,294 - INFO - [T07] Descargando...  49.8% a  581.41KiB/s
-2025-10-17 18:56:55,311 - INFO - [T07] Descargando...  49.8% a  520.29KiB/s
-2025-10-17 18:56:55,315 - INFO - [T07] Descargando...  49.8% a  954.62KiB/s
-2025-10-17 18:56:55,320 - INFO - [T07] Descargando...  49.8% a    1.64MiB/s
-2025-10-17 18:56:55,323 - INFO - [T07] Descargando...  49.9% a    3.02MiB/s
-2025-10-17 18:56:55,348 - INFO - [T01] Descargando...  68.6% a  983.11KiB/s
-2025-10-17 18:56:55,356 - INFO - [T01] Descargando...  68.6% a  983.11KiB/s
-2025-10-17 18:56:55,356 - INFO - [T07] Descargando...  50.0% a    3.38MiB/s
-2025-10-17 18:56:55,362 - INFO - [T01] Descargando...  68.6% a  983.11KiB/s
-2025-10-17 18:56:55,377 - INFO - [T01] Descargando...  68.6% a  983.11KiB/s
-2025-10-17 18:56:55,381 - INFO - [T01] Descargando...  68.6% a  983.11KiB/s
-2025-10-17 18:56:55,391 - INFO - [T01] Descargando...  68.7% a  983.11KiB/s
-2025-10-17 18:56:55,465 - INFO - [T01] Descargando...  68.8% a 1003.70KiB/s
-2025-10-17 18:56:55,468 - INFO - [T07] Descargando...  50.2% a    2.69MiB/s
-2025-10-17 18:56:55,585 - INFO - [T01] Descargando...  69.1% a 1018.27KiB/s
-2025-10-17 18:56:55,627 - INFO - [T07] Descargando...  50.6% a    2.90MiB/s
-2025-10-17 18:56:55,707 - INFO - [T01] Descargando...  69.5% a    1.01MiB/s
-2025-10-17 18:56:55,723 - INFO - [T01] Descargando...  66.7% a    1.01MiB/s
-2025-10-17 18:56:55,824 - INFO - [T07] Descargando...  51.4% a    3.68MiB/s
-2025-10-17 18:56:55,901 - INFO - [T01] Descargando...  71.4% a 1013.29KiB/s
-2025-10-17 18:56:55,903 - INFO - [T01] Descargando...  71.4% a 1013.29KiB/s
-2025-10-17 18:56:55,905 - INFO - [T01] Descargando...  71.4% a 1013.29KiB/s
-2025-10-17 18:56:55,908 - INFO - [T01] Descargando...  71.5% a 1013.29KiB/s
-2025-10-17 18:56:55,910 - INFO - [T01] Descargando...  71.5% a 1013.29KiB/s
-2025-10-17 18:56:55,946 - INFO - [T01] Descargando...  71.6% a 1013.29KiB/s
-2025-10-17 18:56:55,997 - INFO - [T01] Descargando...  71.7% a  988.86KiB/s
-2025-10-17 18:56:56,079 - INFO - [T01] Descargando...  72.0% a 1011.85KiB/s
-2025-10-17 18:56:56,154 - INFO - [T01] Descargando...  72.4% a    1.02MiB/s
-2025-10-17 18:56:56,163 - INFO - [T01] Descargando...  69.4% a    1.02MiB/s
-2025-10-17 18:56:56,403 - INFO - [T01] Descargando...  74.3% a    1.01MiB/s
-2025-10-17 18:56:56,409 - INFO - [T01] Descargando...  74.3% a    1.01MiB/s
-2025-10-17 18:56:56,417 - INFO - [T01] Descargando...  74.3% a    1.01MiB/s
-2025-10-17 18:56:56,422 - INFO - [T01] Descargando...  74.3% a    1.01MiB/s
-2025-10-17 18:56:56,425 - INFO - [T01] Descargando...  74.4% a    1.01MiB/s
-2025-10-17 18:56:56,426 - INFO - [T07] Descargando...  53.1% a    3.50MiB/s
-2025-10-17 18:56:56,428 - INFO - [T01] Descargando...  74.4% a    1.01MiB/s
-2025-10-17 18:56:56,483 - INFO - [T01] Descargando...  74.6% a    1.01MiB/s
-2025-10-17 18:56:56,552 - INFO - [T01] Descargando...  74.8% a    1.00MiB/s
-2025-10-17 18:56:56,632 - INFO - [T01] Descargando...  75.4% a    1.01MiB/s
-2025-10-17 18:56:56,695 - INFO - [T01] Descargando...  74.9% a    1.02MiB/s
-2025-10-17 18:56:56,707 - INFO - [T01] Descargando...  71.7% a    1.02MiB/s
-2025-10-17 18:56:57,025 - INFO - [T01] Descargando...  77.1% a    1.01MiB/s
-2025-10-17 18:56:57,029 - INFO - [T01] Descargando...  77.2% a    1.01MiB/s
-2025-10-17 18:56:57,034 - INFO - [T01] Descargando...  77.2% a    1.01MiB/s
-2025-10-17 18:56:57,052 - INFO - [T01] Descargando...  77.2% a    1.01MiB/s
-2025-10-17 18:56:57,059 - INFO - [T01] Descargando...  77.2% a    1.01MiB/s
-2025-10-17 18:56:57,080 - INFO - [T01] Descargando...  77.3% a    1.01MiB/s
-2025-10-17 18:56:57,146 - INFO - [T01] Descargando...  77.4% a    1.00MiB/s
-2025-10-17 18:56:57,251 - INFO - [T01] Descargando...  77.7% a 1019.52KiB/s
-2025-10-17 18:56:57,403 - INFO - [T01] Descargando...  78.2% a    1.00MiB/s
-2025-10-17 18:56:57,423 - INFO - [T01] Descargando...  77.4% a    1.00MiB/s
-2025-10-17 18:56:57,441 - INFO - [T01] Descargando...  74.8% a    1.00MiB/s
-2025-10-17 18:56:57,569 - INFO - [T07] Descargando...  56.0% a    3.20MiB/s
-2025-10-17 18:56:57,835 - INFO - [T01] Descargando...  80.0% a 1008.57KiB/s
-2025-10-17 18:56:57,851 - INFO - [T01] Descargando...  80.0% a 1008.57KiB/s
-2025-10-17 18:56:57,865 - INFO - [T01] Descargando...  80.0% a 1008.57KiB/s
-2025-10-17 18:56:57,873 - INFO - [T01] Descargando...  80.0% a 1008.57KiB/s
-2025-10-17 18:56:57,880 - INFO - [T01] Descargando...  80.1% a 1008.57KiB/s
-2025-10-17 18:56:57,897 - INFO - [T01] Descargando...  80.1% a  998.72KiB/s
-2025-10-17 18:56:57,940 - INFO - [T01] Descargando...  80.3% a  993.14KiB/s
-2025-10-17 18:56:58,044 - INFO - [T01] Descargando...  80.6% a  985.57KiB/s
-2025-10-17 18:56:58,088 - INFO - [T01] Descargando...  81.1% a  985.57KiB/s
-2025-10-17 18:56:58,114 - INFO - [T07] Descargando...  57.8% a    3.37MiB/s
-2025-10-17 18:56:58,174 - INFO - [T01] Descargando...  80.9% a  997.33KiB/s
-2025-10-17 18:56:58,201 - INFO - [T01] Descargando...  77.1% a  997.33KiB/s
-2025-10-17 18:56:58,227 - INFO - [T07] Descargando...  57.8% a   60.87KiB/s
-2025-10-17 18:56:58,235 - INFO - [T07] Descargando...  57.8% a   85.12KiB/s
-2025-10-17 18:56:58,239 - INFO - [T07] Descargando...  57.8% a  178.99KiB/s
-2025-10-17 18:56:58,245 - INFO - [T07] Descargando...  57.8% a  329.11KiB/s
-2025-10-17 18:56:58,248 - INFO - [T07] Descargando...  57.8% a  643.60KiB/s
-2025-10-17 18:56:58,268 - INFO - [T07] Descargando...  57.9% a  982.52KiB/s
-2025-10-17 18:56:58,293 - INFO - [T07] Descargando...  57.9% a    1.36MiB/s
-2025-10-17 18:56:58,316 - INFO - [T07] Descargando...  58.0% a    2.15MiB/s
-2025-10-17 18:56:58,376 - INFO - [T07] Descargando...  58.2% a    2.84MiB/s
-2025-10-17 18:56:58,466 - INFO - [T07] Descargando...  58.7% a    3.76MiB/s
-2025-10-17 18:56:58,501 - INFO - [T01] Descargando...  82.9% a  970.31KiB/s
-2025-10-17 18:56:58,509 - INFO - [T01] Descargando...  82.9% a  970.31KiB/s
-2025-10-17 18:56:58,516 - INFO - [T01] Descargando...  82.9% a  970.31KiB/s
-2025-10-17 18:56:58,527 - INFO - [T01] Descargando...  82.9% a  970.31KiB/s
-2025-10-17 18:56:58,541 - INFO - [T01] Descargando...  82.9% a  970.31KiB/s
-2025-10-17 18:56:58,549 - INFO - [T01] Descargando...  83.0% a  970.31KiB/s
-2025-10-17 18:56:58,555 - INFO - [T01] Descargando...  83.1% a  959.11KiB/s
-2025-10-17 18:56:58,631 - INFO - [T01] Descargando...  83.4% a  946.93KiB/s
-2025-10-17 18:56:58,755 - INFO - [T07] Descargando...  59.5% a    3.60MiB/s
-2025-10-17 18:56:58,798 - INFO - [T01] Descargando...  84.0% a  967.47KiB/s
-2025-10-17 18:56:58,925 - INFO - [T01] Descargando...  83.6% a  983.13KiB/s
-2025-10-17 18:56:58,944 - INFO - [T01] Descargando...  80.1% a  983.13KiB/s
-2025-10-17 18:56:59,457 - INFO - [T01] Descargando...  85.7% a  939.34KiB/s
-2025-10-17 18:56:59,464 - INFO - [T01] Descargando...  85.7% a  939.34KiB/s
-2025-10-17 18:56:59,484 - INFO - [T01] Descargando...  85.7% a  939.34KiB/s
-2025-10-17 18:56:59,505 - INFO - [T01] Descargando...  85.7% a  939.34KiB/s
-2025-10-17 18:56:59,532 - INFO - [T01] Descargando...  85.8% a  898.27KiB/s
-2025-10-17 18:56:59,543 - INFO - [T01] Descargando...  85.9% a  898.27KiB/s
-2025-10-17 18:56:59,603 - INFO - [T01] Descargando...  86.0% a  854.31KiB/s
-2025-10-17 18:56:59,623 - INFO - [T01] Descargando...  86.3% a  854.31KiB/s
-2025-10-17 18:56:59,636 - INFO - [T01] Descargando...  85.9% a  854.31KiB/s
-2025-10-17 18:56:59,656 - INFO - [T01] Descargando...  84.5% a  826.48KiB/s
-2025-10-17 18:56:59,657 - INFO - [T07] Descargando...  61.2% a    2.75MiB/s
-2025-10-17 18:56:59,995 - INFO - [T01] Descargando...  88.6% a  806.23KiB/s
-2025-10-17 18:56:59,999 - INFO - [T01] Descargando...  88.6% a  806.23KiB/s
-2025-10-17 18:57:00,003 - INFO - [T01] Descargando...  88.6% a  806.23KiB/s
-2025-10-17 18:57:00,016 - INFO - [T01] Descargando...  88.6% a  806.23KiB/s
-2025-10-17 18:57:00,025 - INFO - [T01] Descargando...  88.6% a  806.23KiB/s
-2025-10-17 18:57:00,050 - INFO - [T01] Descargando...  88.7% a  792.01KiB/s
-2025-10-17 18:57:00,061 - INFO - [T07] Descargando...  63.1% a    3.34MiB/s
-2025-10-17 18:57:00,172 - INFO - [T01] Descargando...  88.9% a  772.77KiB/s
-2025-10-17 18:57:00,269 - INFO - [T01] Descargando...  89.1% a  750.08KiB/s
-2025-10-17 18:57:00,543 - INFO - [T01] Descargando...  89.7% a  768.18KiB/s
-2025-10-17 18:57:00,750 - INFO - [T01] Descargando...  89.8% a  793.54KiB/s
-2025-10-17 18:57:00,765 - INFO - [T01] Descargando...  85.3% a  793.54KiB/s
-2025-10-17 18:57:00,787 - INFO - [T07] Descargando...  66.0% a    3.71MiB/s
-2025-10-17 18:57:00,880 - INFO - [T07] Descargando...  66.0% a  280.78KiB/s
-2025-10-17 18:57:00,884 - INFO - [T07] Descargando...  66.0% a  427.48KiB/s
-2025-10-17 18:57:00,888 - INFO - [T07] Descargando...  66.0% a  700.18KiB/s
-2025-10-17 18:57:00,891 - INFO - [T07] Descargando...  66.0% a    1.04MiB/s
-2025-10-17 18:57:00,900 - INFO - [T07] Descargando...  66.0% a    1.30MiB/s
-2025-10-17 18:57:00,928 - INFO - [T07] Descargando...  66.0% a    1.21MiB/s
-2025-10-17 18:57:00,969 - INFO - [T01] Descargando...  91.4% a  784.50KiB/s
-2025-10-17 18:57:00,971 - INFO - [T01] Descargando...  91.4% a  784.50KiB/s
-2025-10-17 18:57:00,986 - INFO - [T07] Descargando...  66.1% a    1.17MiB/s
-2025-10-17 18:57:00,986 - INFO - [T01] Descargando...  91.4% a  784.50KiB/s
-2025-10-17 18:57:00,992 - INFO - [T01] Descargando...  91.5% a  784.50KiB/s
-2025-10-17 18:57:00,995 - INFO - [T01] Descargando...  91.5% a  784.50KiB/s
-2025-10-17 18:57:01,000 - INFO - [T01] Descargando...  91.6% a  784.50KiB/s
-2025-10-17 18:57:01,368 - INFO - [T01] Descargando...  91.7% a  747.65KiB/s
-2025-10-17 18:57:01,416 - INFO - [T07] Descargando...  66.2% a  472.54KiB/s
-2025-10-17 18:57:01,439 - INFO - [T01] Descargando...  92.0% a  730.14KiB/s
-2025-10-17 18:57:01,498 - INFO - [T01] Descargando...  92.1% a  728.33KiB/s
-2025-10-17 18:57:01,507 - INFO - [T01] Descargando...  89.7% a  728.33KiB/s
-2025-10-17 18:57:01,593 - INFO - [T07] Descargando...  66.4% a  713.62KiB/s
-2025-10-17 18:57:01,673 - INFO - [T01] Descargando...  94.3% a  683.29KiB/s
-2025-10-17 18:57:01,675 - INFO - [T01] Descargando...  94.3% a  683.29KiB/s
-2025-10-17 18:57:01,685 - INFO - [T01] Descargando...  94.3% a  683.29KiB/s
-2025-10-17 18:57:01,690 - INFO - [T01] Descargando...  94.3% a  683.29KiB/s
-2025-10-17 18:57:01,693 - INFO - [T01] Descargando...  94.4% a  683.29KiB/s
-2025-10-17 18:57:01,697 - INFO - [T01] Descargando...  94.4% a  683.29KiB/s
-2025-10-17 18:57:01,714 - INFO - [T01] Descargando...  94.6% a  683.29KiB/s
-2025-10-17 18:57:01,740 - INFO - [T01] Descargando...  94.8% a  673.69KiB/s
-2025-10-17 18:57:01,795 - INFO - [T01] Descargando...  95.4% a  689.01KiB/s
-2025-10-17 18:57:01,828 - INFO - [T01] Descargando...  94.9% a  689.01KiB/s
-2025-10-17 18:57:01,842 - INFO - [T01] Descargando...  91.5% a  689.01KiB/s
-2025-10-17 18:57:01,861 - INFO - [T07] Descargando...  66.8% a    1.01MiB/s
-2025-10-17 18:57:02,032 - INFO - [T01] Descargando...  97.1% a  732.68KiB/s
-2025-10-17 18:57:02,036 - INFO - [T01] Descargando...  97.2% a  732.68KiB/s
-2025-10-17 18:57:02,044 - INFO - [T01] Descargando...  97.2% a  732.68KiB/s
-2025-10-17 18:57:02,050 - INFO - [T01] Descargando...  97.2% a  732.68KiB/s
-2025-10-17 18:57:02,077 - INFO - [T01] Descargando...  97.2% a  732.68KiB/s
-2025-10-17 18:57:02,082 - INFO - [T01] Descargando...  97.3% a  765.51KiB/s
-2025-10-17 18:57:02,096 - INFO - [T01] Descargando...  97.4% a  765.51KiB/s
-2025-10-17 18:57:02,124 - INFO - [T01] Descargando...  97.7% a  765.51KiB/s
-2025-10-17 18:57:02,161 - INFO - [T01] Descargando...  97.8% a  819.82KiB/s
-2025-10-17 18:57:02,175 - INFO - [T01] Descargando...  95.4% a  819.82KiB/s
-2025-10-17 18:57:02,264 - INFO - [T07] Descargando...  67.6% a    1.44MiB/s
-2025-10-17 18:57:02,345 - INFO - [T01] Descargando... 100.0% a  839.92KiB/s
-2025-10-17 18:57:02,350 - INFO - [T01] Descargando... 100.0% a  839.92KiB/s
-2025-10-17 18:57:02,354 - INFO - [T01] Descargando... 100.0% a  839.92KiB/s
-2025-10-17 18:57:02,373 - INFO - [T01] Descargando... 100.0% a  839.92KiB/s
-2025-10-17 18:57:02,453 - INFO - [T01] Descarga terminada: downloads/Miley Cyrus - Angels Like You (Lyrics).mp4
-2025-10-17 18:57:02,656 - INFO - [T07] Descargando...  69.3% a    2.25MiB/s
-2025-10-17 18:57:03,526 - INFO - [T07] Descargando...  72.7% a    3.02MiB/s
-2025-10-17 18:57:03,780 - INFO - [T07] Descargando...  74.2% a    3.35MiB/s
-2025-10-17 18:57:03,821 - INFO - [T07] Descargando...  74.2% a  Unknown B/s
-2025-10-17 18:57:03,823 - INFO - [T07] Descargando...  74.2% a    1.51MiB/s
-2025-10-17 18:57:03,825 - INFO - [T07] Descargando...  74.2% a    1.40MiB/s
-2025-10-17 18:57:03,828 - INFO - [T07] Descargando...  74.2% a    1.94MiB/s
-2025-10-17 18:57:03,833 - INFO - [T07] Descargando...  74.2% a    2.54MiB/s
-2025-10-17 18:57:03,837 - INFO - [T07] Descargando...  74.2% a    3.75MiB/s
-2025-10-17 18:57:03,865 - INFO - [T07] Descargando...  74.3% a    2.82MiB/s
-2025-10-17 18:57:03,884 - INFO - [T07] Descargando...  74.4% a    3.92MiB/s
-2025-10-17 18:57:03,958 - INFO - [T07] Descargando...  74.6% a    3.61MiB/s
-2025-10-17 18:57:03,398 - INFO - [T07] Descargando...  75.0% a  Unknown B/s
-2025-10-17 18:57:03,685 - INFO - [T07] Descargando...  75.9% a  Unknown B/s
-2025-10-17 18:57:10,297 - INFO - [T01] Descarga completada exitosamente: downloads/Miley Cyrus - Angels Like You Lyrics.mp3
-2025-10-17 18:57:11,080 - INFO - [T07] Descargando...  77.6% a  564.05KiB/s
-2025-10-17 18:57:11,847 - INFO - [T07] Descargando...  78.4% a  637.73KiB/s
-2025-10-17 18:57:12,385 - INFO - [T07] Descargando...  79.5% a  753.63KiB/s
-2025-10-17 18:57:13,978 - INFO - [T07] Descargando...  81.6% a  880.04KiB/s
-2025-10-17 18:57:14,182 - INFO - [T07] Descargando...  82.7% a  987.13KiB/s
-2025-10-17 18:57:14,254 - INFO - [T07] Descargando...  82.7% a  207.05KiB/s
-2025-10-17 18:57:14,257 - INFO - [T07] Descargando...  82.7% a  406.87KiB/s
-2025-10-17 18:57:14,260 - INFO - [T07] Descargando...  82.7% a  692.33KiB/s
-2025-10-17 18:57:14,263 - INFO - [T07] Descargando...  82.7% a    1.09MiB/s
-2025-10-17 18:57:14,269 - INFO - [T07] Descargando...  82.7% a    1.50MiB/s
-2025-10-17 18:57:14,276 - INFO - [T07] Descargando...  82.7% a    2.28MiB/s
-2025-10-17 18:57:14,294 - INFO - [T07] Descargando...  82.8% a    2.83MiB/s
-2025-10-17 18:57:14,372 - INFO - [T07] Descargando...  82.9% a    2.04MiB/s
-2025-10-17 18:57:14,433 - INFO - [T07] Descargando...  83.1% a    2.75MiB/s
-2025-10-17 18:57:14,526 - INFO - [T07] Descargando...  83.5% a    3.61MiB/s
-2025-10-17 18:57:14,792 - INFO - [T07] Descargando...  84.3% a    3.69MiB/s
-2025-10-17 18:57:15,283 - INFO - [T07] Descargando...  86.0% a    3.87MiB/s
-2025-10-17 18:57:17,364 - INFO - [T07] Descargando...  89.4% a    2.57MiB/s
-2025-10-17 18:57:17,606 - INFO - [T07] Descargando...  90.8% a    2.88MiB/s
-2025-10-17 18:57:17,692 - INFO - [T07] Descargando...  90.8% a  Unknown B/s
-2025-10-17 18:57:17,693 - INFO - [T07] Descargando...  90.8% a    1.91MiB/s
-2025-10-17 18:57:17,699 - INFO - [T07] Descargando...  90.8% a  937.99KiB/s
-2025-10-17 18:57:17,705 - INFO - [T07] Descargando...  90.8% a    1.13MiB/s
-2025-10-17 18:57:17,734 - INFO - [T07] Descargando...  90.9% a  740.06KiB/s
-2025-10-17 18:57:17,739 - INFO - [T07] Descargando...  90.9% a    1.31MiB/s
-2025-10-17 18:57:17,790 - INFO - [T07] Descargando...  90.9% a    1.26MiB/s
-2025-10-17 18:57:17,816 - INFO - [T07] Descargando...  91.0% a    2.00MiB/s
-2025-10-17 18:57:17,860 - INFO - [T07] Descargando...  91.3% a    2.97MiB/s
-2025-10-17 18:57:18,723 - INFO - [T07] Descargando...  91.7% a  992.49KiB/s
-2025-10-17 18:57:18,927 - INFO - [T07] Descargando...  92.2% a    1.28MiB/s
-2025-10-17 18:57:19,384 - INFO - [T07] Descargando...  93.1% a    1.62MiB/s
-2025-10-17 18:57:20,085 - INFO - [T07] Descargando...  95.1% a    2.11MiB/s
-2025-10-17 18:57:20,552 - INFO - [T07] Descargando...  97.9% a    2.92MiB/s
-2025-10-17 18:57:20,678 - INFO - [T07] Descargando...  99.0% a    3.25MiB/s
-2025-10-17 18:57:20,752 - INFO - [T07] Descargando...  99.0% a  317.25KiB/s
-2025-10-17 18:57:20,753 - INFO - [T07] Descargando...  99.0% a  626.61KiB/s
-2025-10-17 18:57:20,756 - INFO - [T07] Descargando...  99.0% a  875.85KiB/s
-2025-10-17 18:57:20,761 - INFO - [T07] Descargando...  99.1% a    1.24MiB/s
-2025-10-17 18:57:20,766 - INFO - [T07] Descargando...  99.1% a    1.79MiB/s
-2025-10-17 18:57:20,773 - INFO - [T07] Descargando...  99.1% a    2.59MiB/s
-2025-10-17 18:57:20,786 - INFO - [T07] Descargando...  99.1% a    3.31MiB/s
-2025-10-17 18:57:20,816 - INFO - [T07] Descargando...  99.3% a    3.68MiB/s
-2025-10-17 18:57:20,872 - INFO - [T07] Descargando...  99.5% a    4.06MiB/s
-2025-10-17 18:57:21,002 - INFO - [T07] Descargando...  99.9% a    3.94MiB/s
-2025-10-17 18:57:21,045 - INFO - [T07] Descargando... 100.0% a    3.82MiB/s
-2025-10-17 18:57:21,055 - INFO - [T07] Descarga terminada: downloads/Música Relajante Alivia el Estrés, Ansiedad y Depresión, Sana la Mente, Sueño Profundo.webm
-2025-10-17 19:01:28,730 - INFO - [T07] Descarga completada exitosamente: downloads/Música Relajante Alivia el Estrés Ansiedad y Depresión Sana la Mente Sueño Profundo.mp3
-2025-10-17 19:01:28,732 - INFO - T01 - Exito: https://www.youtube.com/watch?v=DmxuL9h8foQ
-2025-10-17 19:01:28,732 - INFO - T02 - Exito: https://www.youtube.com/watch?v=5BJfkeN_lkQ
-2025-10-17 19:01:28,733 - INFO - T03 - Exito: https://www.youtube.com/watch?v=hY1tULEr4-4
-2025-10-17 19:01:28,734 - INFO - T04 - Exito: https://www.youtube.com/watch?v=uQHLJoXXjL8
-2025-10-17 19:01:28,734 - INFO - T05 - Exito: https://www.youtube.com/watch?v=PZtwxD5Myk0
-2025-10-17 19:01:28,735 - INFO - T06 - Exito: https://www.youtube.com/watch?v=rykH1BkGwTo
-2025-10-17 19:01:28,736 - INFO - T07 - Exito: https://www.youtube.com/watch?v=dmSbahgZZ2U
-2025-10-17 19:01:28,736 - INFO - T08 - Exito: https://www.youtube.com/watch?v=0Cshm-BsiaU
-2025-10-17 19:01:28,740 - INFO - Resumen final - URLs: 8, Exitosos: 8, Fallidos: 0
-2025-10-17 19:01:28,741 - INFO - Sesion completada exitosamente - todos los archivos descargados
-2025-10-17 19:01:28,742 - INFO - Programa terminado con codigo de salida: 0
-2025-10-17 19:01:28,742 - INFO - ==================================================
+2025-10-24 17:01:15,476 - INFO - ==================================================
+2025-10-24 17:01:15,476 - INFO - Nueva sesion de YouTube to MP3 Downloader iniciada
+2025-10-24 17:01:15,476 - INFO - ==================================================
+2025-10-24 17:01:15,477 - WARNING - Se recomienda no usar mas de 10 descargas simultaneas para evitar problemas.
+2025-10-24 17:01:15,479 - INFO - URL 1 agregada: https://www.youtube.com/watch?v=sErbH8pvf2E
+2025-10-24 17:01:15,479 - INFO - URL 2 agregada: https://www.youtube.com/watch?v=HSo4Tx7So2w
+2025-10-24 17:01:15,480 - INFO - URL 3 agregada: https://www.youtube.com/watch?v=SIdKGqtub3A
+2025-10-24 17:01:15,480 - INFO - URL 4 agregada: https://www.youtube.com/watch?v=PEmYV0ur-jA
+2025-10-24 17:01:15,481 - INFO - URL 5 agregada: https://www.youtube.com/watch?v=UTmeeFFmiMY
+2025-10-24 17:01:15,481 - INFO - URL 6 agregada: https://www.youtube.com/watch?v=TMiHYFNhRR8
+2025-10-24 17:01:15,481 - INFO - URL 7 agregada: https://www.youtube.com/watch?v=EgqOkYNZ6nc
+2025-10-24 17:01:15,481 - INFO - URL 8 agregada: https://www.youtube.com/watch?v=SLYS8LLK74w
+2025-10-24 17:01:15,481 - INFO - URL 9 agregada: https://www.youtube.com/watch?v=GltUFj19avg
+2025-10-24 17:01:15,482 - INFO - URL 10 agregada: https://www.youtube.com/watch?v=AwKf51HOka8
+2025-10-24 17:01:15,482 - INFO - URL 11 agregada: https://www.youtube.com/watch?v=AUJhsifGfTw
+2025-10-24 17:01:15,482 - INFO - URL 12 agregada: https://www.youtube.com/watch?v=GXre8LLTOqY
+2025-10-24 17:01:15,482 - INFO - URL 13 agregada: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-24 17:01:15,483 - INFO - URL 14 agregada: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-24 17:01:15,483 - INFO - URL 15 agregada: https://www.youtube.com/watch?v=-OJk9tJE3uE
+2025-10-24 17:01:15,484 - INFO - Iniciando procesamiento asincrono de 15 URLs con hasta 15 hilos simultaneos
+2025-10-24 17:01:15,486 - INFO - Creando tarea T01 para: https://www.youtube.com/watch?v=sErbH8pvf2E
+2025-10-24 17:01:15,486 - INFO - Creando tarea T02 para: https://www.youtube.com/watch?v=HSo4Tx7So2w
+2025-10-24 17:01:15,486 - INFO - Creando tarea T03 para: https://www.youtube.com/watch?v=SIdKGqtub3A
+2025-10-24 17:01:15,486 - INFO - Creando tarea T04 para: https://www.youtube.com/watch?v=PEmYV0ur-jA
+2025-10-24 17:01:15,486 - INFO - Creando tarea T05 para: https://www.youtube.com/watch?v=UTmeeFFmiMY
+2025-10-24 17:01:15,486 - INFO - Creando tarea T06 para: https://www.youtube.com/watch?v=TMiHYFNhRR8
+2025-10-24 17:01:15,487 - INFO - Creando tarea T07 para: https://www.youtube.com/watch?v=EgqOkYNZ6nc
+2025-10-24 17:01:15,487 - INFO - Creando tarea T08 para: https://www.youtube.com/watch?v=SLYS8LLK74w
+2025-10-24 17:01:15,487 - INFO - Creando tarea T09 para: https://www.youtube.com/watch?v=GltUFj19avg
+2025-10-24 17:01:15,487 - INFO - Creando tarea T10 para: https://www.youtube.com/watch?v=AwKf51HOka8
+2025-10-24 17:01:15,487 - INFO - Creando tarea T11 para: https://www.youtube.com/watch?v=AUJhsifGfTw
+2025-10-24 17:01:15,487 - INFO - Creando tarea T12 para: https://www.youtube.com/watch?v=GXre8LLTOqY
+2025-10-24 17:01:15,487 - INFO - Creando tarea T13 para: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-24 17:01:15,488 - INFO - Creando tarea T14 para: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-24 17:01:15,488 - INFO - Creando tarea T15 para: https://www.youtube.com/watch?v=-OJk9tJE3uE
+2025-10-24 17:01:15,489 - INFO - [T01] Iniciando descarga de: https://www.youtube.com/watch?v=sErbH8pvf2E
+2025-10-24 17:01:15,489 - INFO - [T02] Iniciando descarga de: https://www.youtube.com/watch?v=HSo4Tx7So2w
+2025-10-24 17:01:15,490 - INFO - [T03] Iniciando descarga de: https://www.youtube.com/watch?v=SIdKGqtub3A
+2025-10-24 17:01:15,491 - INFO - [T04] Iniciando descarga de: https://www.youtube.com/watch?v=PEmYV0ur-jA
+2025-10-24 17:01:15,492 - INFO - [T05] Iniciando descarga de: https://www.youtube.com/watch?v=UTmeeFFmiMY
+2025-10-24 17:01:15,494 - INFO - [T06] Iniciando descarga de: https://www.youtube.com/watch?v=TMiHYFNhRR8
+2025-10-24 17:01:15,495 - INFO - [T07] Iniciando descarga de: https://www.youtube.com/watch?v=EgqOkYNZ6nc
+2025-10-24 17:01:15,496 - INFO - [T09] Iniciando descarga de: https://www.youtube.com/watch?v=GltUFj19avg
+2025-10-24 17:01:15,498 - INFO - [T10] Iniciando descarga de: https://www.youtube.com/watch?v=AwKf51HOka8
+2025-10-24 17:01:15,498 - INFO - [T08] Iniciando descarga de: https://www.youtube.com/watch?v=SLYS8LLK74w
+2025-10-24 17:01:15,499 - INFO - [T11] Iniciando descarga de: https://www.youtube.com/watch?v=AUJhsifGfTw
+2025-10-24 17:01:15,500 - INFO - [T13] Iniciando descarga de: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-24 17:01:15,500 - INFO - [T12] Iniciando descarga de: https://www.youtube.com/watch?v=GXre8LLTOqY
+2025-10-24 17:01:15,501 - INFO - [T15] Iniciando descarga de: https://www.youtube.com/watch?v=-OJk9tJE3uE
+2025-10-24 17:01:15,502 - INFO - [T14] Iniciando descarga de: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-24 17:01:20,601 - INFO - [T05] Titulo del video: Arde Bogotá - Besos y Animales (Lyric Video)
+2025-10-24 17:01:20,607 - INFO - [T07] Titulo del video: Arde Bogotá - Clávame tus Palabras (Lyric Video)
+2025-10-24 17:01:21,251 - INFO - [T04] Titulo del video: Arde Bogotá - Copilotos (Lyric Video)
+2025-10-24 17:01:21,284 - INFO - [T13] Titulo del video: Arde Bogotá - Cowboys de la A3 (Video Oficial)
+2025-10-24 17:01:21,447 - INFO - [T06] Titulo del video: Arde Bogotá - Todos Mis Amigos Están Tristes (Lyric Video)
+2025-10-24 17:01:23,266 - INFO - [T12] Titulo del video: Arde Bogotá - Qué Vida Tan Dura
+2025-10-24 17:01:23,892 - INFO - [T03] Titulo del video: Arde Bogotá - La Salvación (Video Oficial)
+2025-10-24 17:01:25,585 - INFO - [T02] Titulo del video: Arde Bogotá - La Torre Picasso (Video Oficial)
+2025-10-24 17:01:25,619 - INFO - [T09] Titulo del video: Arde Bogotá - Veneno (Lyric Video)
+2025-10-24 17:01:26,268 - INFO - [T15] Titulo del video: Arde Bogotá, Dani Fernández - Sin Vergüenza (Video Oficial)
+2025-10-24 17:01:26,273 - INFO - [T01] Titulo del video: Arde Bogotá - Flores de Venganza (Video Oficial)
+2025-10-24 17:01:26,281 - INFO - [T11] Titulo del video: Arde Bogotá - Escorpio y Sagitario (Lyric Video)
+2025-10-24 17:01:26,907 - INFO - [T14] Titulo del video: Arde Bogotá - Los Perros (Video Oficial)
+2025-10-24 17:01:27,243 - INFO - [T08] Titulo del video: Arde Bogotá - Nuestros Pecados (Lyric Video)
+2025-10-24 17:01:28,893 - INFO - [T10] Titulo del video: Arde Bogotá - Flor de la Mancha (Lyric Video)
+2025-10-24 17:01:30,019 - INFO - [T05] Descargando...   0.0% a    2.61KiB/s
+2025-10-24 17:01:30,027 - INFO - [T05] Descargando...   0.1% a    7.62KiB/s
+2025-10-24 17:01:30,051 - INFO - [T04] Descargando...   0.0% a   26.95KiB/s
+2025-10-24 17:01:30,052 - INFO - [T05] Descargando...   0.2% a   17.09KiB/s
+2025-10-24 17:01:30,088 - INFO - [T04] Descargando...   0.1% a   50.31KiB/s
+2025-10-24 17:01:30,105 - INFO - [T05] Descargando...   0.5% a   31.90KiB/s
+2025-10-24 17:01:30,108 - INFO - [T04] Descargando...   0.3% a   66.91KiB/s
+2025-10-24 17:01:30,113 - INFO - [T05] Descargando...   0.9% a   64.29KiB/s
+2025-10-24 17:01:30,117 - INFO - [T04] Descargando...   0.6% a  132.60KiB/s
+2025-10-24 17:01:30,121 - INFO - [T05] Descargando...   1.9% a  129.67KiB/s
+2025-10-24 17:01:30,123 - INFO - [T04] Descargando...   1.1% a  258.41KiB/s
+2025-10-24 17:01:30,127 - INFO - [T04] Descargando...   2.3% a  512.27KiB/s
+2025-10-24 17:01:30,147 - INFO - [T04] Descargando...   4.7% a  895.92KiB/s
+2025-10-24 17:01:30,147 - INFO - [T05] Descargando...   3.8% a  246.93KiB/s
+2025-10-24 17:01:30,168 - INFO - [T05] Descargando...   7.7% a  475.21KiB/s
+2025-10-24 17:01:30,168 - INFO - [T04] Descargando...   9.4% a    1.52MiB/s
+2025-10-24 17:01:30,211 - INFO - [T04] Descargando...  18.8% a    2.41MiB/s
+2025-10-24 17:01:30,219 - INFO - [T05] Descargando...  15.3% a  869.76KiB/s
+2025-10-24 17:01:30,222 - INFO - [T04] Descargando...  37.6% a    4.56MiB/s
+2025-10-24 17:01:30,225 - INFO - [T05] Descargando...  30.7% a    1.68MiB/s
+2025-10-24 17:01:30,280 - INFO - [T04] Descargando...  75.2% a    7.37MiB/s
+2025-10-24 17:01:30,352 - INFO - [T05] Descargando...  61.4% a    2.78MiB/s
+2025-10-24 17:01:30,372 - INFO - [T04] Descargando... 100.0% a    7.21MiB/s
+2025-10-24 17:01:30,376 - INFO - [T05] Descargando... 100.0% a    4.37MiB/s
+2025-10-24 17:01:30,377 - INFO - [T04] Descarga terminada: downloads/Arde Bogotá - Copilotos (Lyric Video).webm
+2025-10-24 17:01:30,385 - INFO - [T05] Descarga terminada: downloads/Arde Bogotá - Besos y Animales (Lyric Video).webm
+2025-10-24 17:01:31,298 - INFO - [T06] Descargando...   0.0% a   50.11KiB/s
+2025-10-24 17:01:31,299 - INFO - [T06] Descargando...   0.1% a  144.59KiB/s
+2025-10-24 17:01:31,300 - INFO - [T06] Descargando...   0.2% a  321.32KiB/s
+2025-10-24 17:01:31,301 - INFO - [T06] Descargando...   0.3% a  650.23KiB/s
+2025-10-24 17:01:31,302 - INFO - [T06] Descargando...   0.7% a    1.26MiB/s
+2025-10-24 17:01:31,303 - INFO - [T06] Descargando...   1.4% a    2.43MiB/s
+2025-10-24 17:01:31,306 - INFO - [T06] Descargando...   2.8% a    4.45MiB/s
+2025-10-24 17:01:31,310 - INFO - [T06] Descargando...   5.7% a    7.81MiB/s
+2025-10-24 17:01:31,317 - INFO - [T06] Descargando...  11.4% a   12.78MiB/s
+2025-10-24 17:01:31,330 - INFO - [T06] Descargando...  22.9% a   19.22MiB/s
+2025-10-24 17:01:31,360 - INFO - [T06] Descargando...  45.9% a   24.45MiB/s
+2025-10-24 17:01:31,437 - INFO - [T06] Descargando...  91.7% a   25.24MiB/s
+2025-10-24 17:01:31,442 - INFO - [T06] Descargando... 100.0% a   26.61MiB/s
+2025-10-24 17:01:31,445 - INFO - [T06] Descarga terminada: downloads/Arde Bogotá - Todos Mis Amigos Están Tristes (Lyric Video).webm
+2025-10-24 17:01:32,287 - INFO - [T13] Descargando...   0.0% a  336.97KiB/s
+2025-10-24 17:01:32,288 - INFO - [T13] Descargando...   0.1% a  744.07KiB/s
+2025-10-24 17:01:32,289 - INFO - [T13] Descargando...   0.1% a    1.38MiB/s
+2025-10-24 17:01:32,290 - INFO - [T13] Descargando...   0.3% a    2.48MiB/s
+2025-10-24 17:01:32,291 - INFO - [T13] Descargando...   0.6% a    4.30MiB/s
+2025-10-24 17:01:32,292 - INFO - [T13] Descargando...   1.3% a    7.61MiB/s
+2025-10-24 17:01:32,295 - INFO - [T13] Descargando...   2.6% a   11.51MiB/s
+2025-10-24 17:01:32,300 - INFO - [T13] Descargando...   5.2% a   15.59MiB/s
+2025-10-24 17:01:32,311 - INFO - [T13] Descargando...  10.4% a   18.88MiB/s
+2025-10-24 17:01:32,327 - INFO - [T13] Descargando...  20.8% a   23.24MiB/s
+2025-10-24 17:01:32,375 - INFO - [T13] Descargando...  41.6% a   23.38MiB/s
+2025-10-24 17:01:32,509 - INFO - [T13] Descargando...  83.2% a   17.76MiB/s
+2025-10-24 17:01:32,514 - INFO - [T13] Descargando... 100.0% a   20.84MiB/s
+2025-10-24 17:01:32,517 - INFO - [T13] Descarga terminada: downloads/Arde Bogotá - Cowboys de la A3 (Video Oficial).webm
+2025-10-24 17:01:32,819 - INFO - [T07] Descargando...   0.0% a  342.14KiB/s
+2025-10-24 17:01:32,820 - INFO - [T07] Descargando...   0.1% a  759.47KiB/s
+2025-10-24 17:01:32,822 - INFO - [T07] Descargando...   0.2% a    1.20MiB/s
+2025-10-24 17:01:32,824 - INFO - [T07] Descargando...   0.5% a    1.81MiB/s
+2025-10-24 17:01:32,827 - INFO - [T07] Descargando...   0.9% a    2.76MiB/s
+2025-10-24 17:01:32,828 - INFO - [T07] Descargando...   1.9% a    5.02MiB/s
+2025-10-24 17:01:32,830 - INFO - [T07] Descargando...   3.8% a    8.68MiB/s
+2025-10-24 17:01:32,835 - INFO - [T07] Descargando...   7.7% a   13.57MiB/s
+2025-10-24 17:01:32,845 - INFO - [T07] Descargando...  15.4% a   17.24MiB/s
+2025-10-24 17:01:32,859 - INFO - [T07] Descargando...  30.7% a   23.37MiB/s
+2025-10-24 17:01:32,893 - INFO - [T07] Descargando...  61.5% a   25.93MiB/s
+2025-10-24 17:01:32,940 - INFO - [T07] Descargando... 100.0% a   26.40MiB/s
+2025-10-24 17:01:32,943 - INFO - [T07] Descarga terminada: downloads/Arde Bogotá - Clávame tus Palabras (Lyric Video).webm
+2025-10-24 17:01:33,112 - INFO - [T12] Descargando...   0.0% a  282.60KiB/s
+2025-10-24 17:01:33,114 - INFO - [T12] Descargando...   0.1% a  478.35KiB/s
+2025-10-24 17:01:33,116 - INFO - [T12] Descargando...   0.2% a  805.76KiB/s
+2025-10-24 17:01:33,118 - INFO - [T12] Descargando...   0.4% a    1.41MiB/s
+2025-10-24 17:01:33,120 - INFO - [T12] Descargando...   0.9% a    2.56MiB/s
+2025-10-24 17:01:33,123 - INFO - [T12] Descargando...   1.8% a    4.05MiB/s
+2025-10-24 17:01:33,125 - INFO - [T12] Descargando...   3.6% a    7.31MiB/s
+2025-10-24 17:01:33,133 - INFO - [T12] Descargando...   7.2% a   10.40MiB/s
+2025-10-24 17:01:33,147 - INFO - [T12] Descargando...  14.5% a   12.57MiB/s
+2025-10-24 17:01:33,147 - INFO - [T02] Descargando...   0.0% a  159.27KiB/s
+2025-10-24 17:01:33,149 - INFO - [T02] Descargando...   0.0% a  365.54KiB/s
+2025-10-24 17:01:33,150 - INFO - [T02] Descargando...   0.1% a  707.01KiB/s
+2025-10-24 17:01:33,152 - INFO - [T02] Descargando...   0.2% a    1.26MiB/s
+2025-10-24 17:01:33,155 - INFO - [T02] Descargando...   0.4% a    2.15MiB/s
+2025-10-24 17:01:33,160 - INFO - [T02] Descargando...   0.8% a    3.25MiB/s
+2025-10-24 17:01:33,166 - INFO - [T02] Descargando...   1.5% a    5.02MiB/s
+2025-10-24 17:01:33,170 - INFO - [T09] Descargando...   0.0% a  162.80KiB/s
+2025-10-24 17:01:33,171 - INFO - [T09] Descargando...   0.1% a  324.54KiB/s
+2025-10-24 17:01:33,174 - INFO - [T09] Descargando...   0.2% a  633.29KiB/s
+2025-10-24 17:01:33,176 - INFO - [T09] Descargando...   0.4% a    1.11MiB/s
+2025-10-24 17:01:33,178 - INFO - [T09] Descargando...   0.8% a    2.04MiB/s
+2025-10-24 17:01:33,180 - INFO - [T02] Descargando...   3.1% a    6.42MiB/s
+2025-10-24 17:01:33,181 - INFO - [T09] Descargando...   1.7% a    3.26MiB/s
+2025-10-24 17:01:33,189 - INFO - [T12] Descargando...  29.0% a   12.24MiB/s
+2025-10-24 17:01:33,196 - INFO - [T09] Descargando...   3.5% a    3.70MiB/s
+2025-10-24 17:01:33,202 - INFO - [T02] Descargando...   6.2% a    8.11MiB/s
+2025-10-24 17:01:33,209 - INFO - [T09] Descargando...   6.9% a    5.45MiB/s
+2025-10-24 17:01:33,229 - INFO - [T09] Descargando...  13.9% a    7.54MiB/s
+2025-10-24 17:01:33,232 - INFO - [T02] Descargando...  12.4% a   10.95MiB/s
+2025-10-24 17:01:33,281 - INFO - [T12] Descargando...  58.0% a   11.56MiB/s
+2025-10-24 17:01:33,285 - INFO - [T09] Descargando...  27.9% a    8.15MiB/s
+2025-10-24 17:01:33,285 - INFO - [T02] Descargando...  24.9% a   13.79MiB/s
+2025-10-24 17:01:33,391 - INFO - [T09] Descargando...  55.7% a    8.78MiB/s
+2025-10-24 17:01:33,402 - INFO - [T12] Descargando... 100.0% a   11.68MiB/s
+2025-10-24 17:01:33,410 - INFO - [T12] Descarga terminada: downloads/Arde Bogotá - Qué Vida Tan Dura.webm
+2025-10-24 17:01:33,429 - INFO - [T03] Descargando...   0.0% a   87.80KiB/s
+2025-10-24 17:01:33,430 - INFO - [T03] Descargando...   0.1% a  229.52KiB/s
+2025-10-24 17:01:33,432 - INFO - [T03] Descargando...   0.2% a  481.35KiB/s
+2025-10-24 17:01:33,433 - INFO - [T03] Descargando...   0.3% a  936.42KiB/s
+2025-10-24 17:01:33,435 - INFO - [T03] Descargando...   0.7% a    1.74MiB/s
+2025-10-24 17:01:33,436 - INFO - [T03] Descargando...   1.4% a    3.30MiB/s
+2025-10-24 17:01:33,445 - INFO - [T02] Descargando...  49.8% a   13.13MiB/s
+2025-10-24 17:01:33,451 - INFO - [T03] Descargando...   2.8% a    3.81MiB/s
+2025-10-24 17:01:33,454 - INFO - [T03] Descargando...   5.6% a    6.89MiB/s
+2025-10-24 17:01:33,480 - INFO - [T03] Descargando...  11.2% a    7.94MiB/s
+2025-10-24 17:01:33,505 - INFO - [T03] Descargando...  22.5% a   11.81MiB/s
+2025-10-24 17:01:33,542 - INFO - [T09] Descargando... 100.0% a    9.47MiB/s
+2025-10-24 17:01:33,545 - INFO - [T03] Descargando...  45.0% a   15.64MiB/s
+2025-10-24 17:01:33,548 - INFO - [T09] Descarga terminada: downloads/Arde Bogotá - Veneno (Lyric Video).webm
+2025-10-24 17:01:33,692 - INFO - [T03] Descargando...  90.0% a   14.57MiB/s
+2025-10-24 17:01:33,717 - INFO - [T03] Descargando... 100.0% a   14.94MiB/s
+2025-10-24 17:01:33,724 - INFO - [T03] Descarga terminada: downloads/Arde Bogotá - La Salvación (Video Oficial).webm
+2025-10-24 17:01:33,737 - INFO - [T02] Descargando...  99.6% a   13.41MiB/s
+2025-10-24 17:01:33,742 - INFO - [T02] Descargando... 100.0% a   13.37MiB/s
+2025-10-24 17:01:33,750 - INFO - [T02] Descarga terminada: downloads/Arde Bogotá - La Torre Picasso (Video Oficial).webm
+2025-10-24 17:01:34,206 - INFO - [T14] Descargando...   0.0% a  322.07KiB/s
+2025-10-24 17:01:34,207 - INFO - [T14] Descargando...   0.1% a  539.92KiB/s
+2025-10-24 17:01:34,209 - INFO - [T14] Descargando...   0.2% a  961.52KiB/s
+2025-10-24 17:01:34,213 - INFO - [T14] Descargando...   0.4% a    1.55MiB/s
+2025-10-24 17:01:34,217 - INFO - [T14] Descargando...   0.8% a    1.97MiB/s
+2025-10-24 17:01:34,233 - INFO - [T14] Descargando...   1.6% a    1.92MiB/s
+2025-10-24 17:01:34,240 - INFO - [T14] Descargando...   3.2% a    3.26MiB/s
+2025-10-24 17:01:34,261 - INFO - [T14] Descargando...   6.4% a    4.20MiB/s
+2025-10-24 17:01:34,263 - INFO - [T01] Descargando...   0.0% a   68.08KiB/s
+2025-10-24 17:01:34,264 - INFO - [T01] Descargando...   0.1% a  133.98KiB/s
+2025-10-24 17:01:34,269 - INFO - [T01] Descargando...   0.3% a  263.46KiB/s
+2025-10-24 17:01:34,273 - INFO - [T14] Descargando...  12.9% a    6.96MiB/s
+2025-10-24 17:01:34,274 - INFO - [T01] Descargando...   0.6% a  473.47KiB/s
+2025-10-24 17:01:34,284 - INFO - [T01] Descargando...   1.2% a  834.66KiB/s
+2025-10-24 17:01:34,294 - INFO - [T01] Descargando...   2.4% a    1.20MiB/s
+2025-10-24 17:01:34,303 - INFO - [T14] Descargando...  25.8% a   10.16MiB/s
+2025-10-24 17:01:34,305 - INFO - [T01] Descargando...   4.9% a    1.99MiB/s
+2025-10-24 17:01:34,330 - INFO - [T01] Descargando...   9.8% a    2.85MiB/s
+2025-10-24 17:01:34,339 - INFO - [T14] Descargando...  51.6% a   14.57MiB/s
+2025-10-24 17:01:34,343 - INFO - [T01] Descargando...  19.7% a    4.96MiB/s
+2025-10-24 17:01:34,373 - INFO - [T01] Descargando...  39.3% a    7.66MiB/s
+2025-10-24 17:01:34,448 - INFO - [T11] Descargando...   0.0% a  124.76KiB/s
+2025-10-24 17:01:34,450 - INFO - [T11] Descargando...   0.1% a  304.03KiB/s
+2025-10-24 17:01:34,455 - INFO - [T11] Descargando...   0.2% a  543.96KiB/s
+2025-10-24 17:01:34,468 - INFO - [T11] Descargando...   0.5% a  615.51KiB/s
+2025-10-24 17:01:34,474 - INFO - [T01] Descargando...  78.7% a    8.63MiB/s
+2025-10-24 17:01:34,476 - INFO - [T11] Descargando...   1.1% a  866.06KiB/s
+2025-10-24 17:01:34,480 - INFO - [T11] Descargando...   2.2% a    1.55MiB/s
+2025-10-24 17:01:34,489 - INFO - [T11] Descargando...   4.5% a    2.57MiB/s
+2025-10-24 17:01:34,494 - INFO - [T14] Descargando... 100.0% a   13.26MiB/s
+2025-10-24 17:01:34,497 - INFO - [T11] Descargando...   9.1% a    4.41MiB/s
+2025-10-24 17:01:34,497 - INFO - [T01] Descargando... 100.0% a   10.00MiB/s
+2025-10-24 17:01:34,498 - INFO - [T14] Descarga terminada: downloads/Arde Bogotá - Los Perros (Video Oficial).webm
+2025-10-24 17:01:34,515 - INFO - [T11] Descargando...  18.2% a    6.64MiB/s
+2025-10-24 17:01:34,517 - INFO - [T01] Descarga terminada: downloads/Arde Bogotá - Flores de Venganza (Video Oficial).webm
+2025-10-24 17:01:34,562 - INFO - [T11] Descargando...  36.5% a    8.19MiB/s
+2025-10-24 17:01:34,644 - INFO - [T11] Descargando...  73.0% a    9.79MiB/s
+2025-10-24 17:01:34,678 - INFO - [T11] Descargando... 100.0% a   11.55MiB/s
+2025-10-24 17:01:34,682 - INFO - [T11] Descarga terminada: downloads/Arde Bogotá - Escorpio y Sagitario (Lyric Video).webm
+2025-10-24 17:01:34,711 - INFO - [T04] Descarga completada exitosamente: downloads/Arde Bogotá - Copilotos Lyric Video.mp3
+2025-10-24 17:01:35,446 - INFO - [T08] Descargando...   0.0% a   68.78KiB/s
+2025-10-24 17:01:35,450 - INFO - [T08] Descargando...   0.1% a  169.09KiB/s
+2025-10-24 17:01:35,462 - INFO - [T08] Descargando...   0.3% a  304.86KiB/s
+2025-10-24 17:01:35,479 - INFO - [T08] Descargando...   0.6% a  324.59KiB/s
+2025-10-24 17:01:35,483 - INFO - [T08] Descargando...   1.2% a  604.41KiB/s
+2025-10-24 17:01:35,486 - INFO - [T08] Descargando...   2.4% a    1.14MiB/s
+2025-10-24 17:01:35,500 - INFO - [T08] Descargando...   4.8% a    2.19MiB/s
+2025-10-24 17:01:35,534 - INFO - [T08] Descargando...   9.6% a    2.45MiB/s
+2025-10-24 17:01:35,555 - INFO - [T08] Descargando...  19.3% a    4.03MiB/s
+2025-10-24 17:01:35,600 - INFO - [T08] Descargando...  38.6% a    6.02MiB/s
+2025-10-24 17:01:35,700 - INFO - [T08] Descargando...  77.3% a    7.45MiB/s
+2025-10-24 17:01:35,744 - INFO - [T08] Descargando... 100.0% a    8.32MiB/s
+2025-10-24 17:01:35,748 - INFO - [T08] Descarga terminada: downloads/Arde Bogotá - Nuestros Pecados (Lyric Video).webm
+2025-10-24 17:01:36,178 - INFO - [T05] Descarga completada exitosamente: downloads/Arde Bogotá - Besos y Animales Lyric Video.mp3
+2025-10-24 17:01:36,545 - INFO - [T15] Descargando...   0.0% a  185.00KiB/s
+2025-10-24 17:01:36,548 - INFO - [T15] Descargando...   0.1% a  351.68KiB/s
+2025-10-24 17:01:36,550 - INFO - [T15] Descargando...   0.2% a  647.70KiB/s
+2025-10-24 17:01:36,552 - INFO - [T15] Descargando...   0.4% a    1.18MiB/s
+2025-10-24 17:01:36,556 - INFO - [T15] Descargando...   0.8% a    2.07MiB/s
+2025-10-24 17:01:36,558 - INFO - [T15] Descargando...   1.7% a    3.41MiB/s
+2025-10-24 17:01:36,569 - INFO - [T15] Descargando...   3.4% a    4.30MiB/s
+2025-10-24 17:01:36,583 - INFO - [T15] Descargando...   6.8% a    6.55MiB/s
+2025-10-24 17:01:36,609 - INFO - [T15] Descargando...  13.6% a    7.27MiB/s
+2025-10-24 17:01:36,629 - INFO - [T15] Descargando...  27.1% a   11.16MiB/s
+2025-10-24 17:01:36,659 - INFO - [T15] Descargando...  54.3% a   16.89MiB/s
+2025-10-24 17:01:36,746 - INFO - [T15] Descargando... 100.0% a   17.87MiB/s
+2025-10-24 17:01:36,751 - INFO - [T15] Descarga terminada: downloads/Arde Bogotá, Dani Fernández - Sin Vergüenza (Video Oficial).webm
+2025-10-24 17:01:37,449 - INFO - [T10] Descargando...   0.0% a  101.50KiB/s
+2025-10-24 17:01:37,452 - INFO - [T10] Descargando...   0.1% a  266.13KiB/s
+2025-10-24 17:01:37,456 - INFO - [T10] Descargando...   0.2% a  426.68KiB/s
+2025-10-24 17:01:37,459 - INFO - [T10] Descargando...   0.3% a  733.80KiB/s
+2025-10-24 17:01:37,461 - INFO - [T10] Descargando...   0.7% a    1.38MiB/s
+2025-10-24 17:01:37,469 - INFO - [T10] Descargando...   1.4% a    2.54MiB/s
+2025-10-24 17:01:37,478 - INFO - [T10] Descargando...   2.9% a    3.89MiB/s
+2025-10-24 17:01:37,488 - INFO - [T10] Descargando...   5.8% a    5.09MiB/s
+2025-10-24 17:01:37,497 - INFO - [T10] Descargando...  11.7% a    8.61MiB/s
+2025-10-24 17:01:37,517 - INFO - [T10] Descargando...  23.4% a   13.07MiB/s
+2025-10-24 17:01:37,563 - INFO - [T10] Descargando...  46.8% a   16.16MiB/s
+2025-10-24 17:01:37,743 - INFO - [T10] Descargando...  93.7% a   13.24MiB/s
+2025-10-24 17:01:37,760 - INFO - [T10] Descargando... 100.0% a   13.29MiB/s
+2025-10-24 17:01:37,770 - INFO - [T10] Descarga terminada: downloads/Arde Bogotá - Flor de la Mancha (Lyric Video).webm
+2025-10-24 17:01:38,719 - INFO - [T06] Descarga completada exitosamente: downloads/Arde Bogotá - Todos Mis Amigos Están Tristes Lyric Video.mp3
+2025-10-24 17:01:39,518 - INFO - [T07] Descarga completada exitosamente: downloads/Arde Bogotá - Clávame tus Palabras Lyric Video.mp3
+2025-10-24 17:01:39,927 - INFO - [T01] Descarga completada exitosamente: downloads/Arde Bogotá - Flores de Venganza Video Oficial.mp3
+2025-10-24 17:01:40,115 - INFO - [T12] Descarga completada exitosamente: downloads/Arde Bogotá - Qué Vida Tan Dura.mp3
+2025-10-24 17:01:40,319 - INFO - [T11] Descarga completada exitosamente: downloads/Arde Bogotá - Escorpio y Sagitario Lyric Video.mp3
+2025-10-24 17:01:40,696 - INFO - [T08] Descarga completada exitosamente: downloads/Arde Bogotá - Nuestros Pecados Lyric Video.mp3
+2025-10-24 17:01:40,728 - INFO - [T09] Descarga completada exitosamente: downloads/Arde Bogotá - Veneno Lyric Video.mp3
+2025-10-24 17:01:40,937 - INFO - [T13] Descarga completada exitosamente: downloads/Arde Bogotá - Cowboys de la A3 Video Oficial.mp3
+2025-10-24 17:01:41,508 - INFO - [T03] Descarga completada exitosamente: downloads/Arde Bogotá - La Salvación Video Oficial.mp3
+2025-10-24 17:01:41,933 - INFO - [T14] Descarga completada exitosamente: downloads/Arde Bogotá - Los Perros Video Oficial.mp3
+2025-10-24 17:01:42,625 - INFO - [T15] Descarga completada exitosamente: downloads/Arde Bogotá Dani Fernández - Sin Vergüenza Video Oficial.mp3
+2025-10-24 17:01:43,735 - INFO - [T10] Descarga completada exitosamente: downloads/Arde Bogotá - Flor de la Mancha Lyric Video.mp3
+2025-10-24 17:01:45,938 - INFO - [T02] Descarga completada exitosamente: downloads/Arde Bogotá - La Torre Picasso Video Oficial.mp3
+2025-10-24 17:01:45,939 - INFO - T01 - Exito: https://www.youtube.com/watch?v=sErbH8pvf2E
+2025-10-24 17:01:45,939 - INFO - T02 - Exito: https://www.youtube.com/watch?v=HSo4Tx7So2w
+2025-10-24 17:01:45,940 - INFO - T03 - Exito: https://www.youtube.com/watch?v=SIdKGqtub3A
+2025-10-24 17:01:45,941 - INFO - T04 - Exito: https://www.youtube.com/watch?v=PEmYV0ur-jA
+2025-10-24 17:01:45,941 - INFO - T05 - Exito: https://www.youtube.com/watch?v=UTmeeFFmiMY
+2025-10-24 17:01:45,941 - INFO - T06 - Exito: https://www.youtube.com/watch?v=TMiHYFNhRR8
+2025-10-24 17:01:45,942 - INFO - T07 - Exito: https://www.youtube.com/watch?v=EgqOkYNZ6nc
+2025-10-24 17:01:45,942 - INFO - T08 - Exito: https://www.youtube.com/watch?v=SLYS8LLK74w
+2025-10-24 17:01:45,943 - INFO - T09 - Exito: https://www.youtube.com/watch?v=GltUFj19avg
+2025-10-24 17:01:45,943 - INFO - T10 - Exito: https://www.youtube.com/watch?v=AwKf51HOka8
+2025-10-24 17:01:45,943 - INFO - T11 - Exito: https://www.youtube.com/watch?v=AUJhsifGfTw
+2025-10-24 17:01:45,944 - INFO - T12 - Exito: https://www.youtube.com/watch?v=GXre8LLTOqY
+2025-10-24 17:01:45,944 - INFO - T13 - Exito: https://www.youtube.com/watch?v=7Zwj4DQdmwA
+2025-10-24 17:01:45,944 - INFO - T14 - Exito: https://www.youtube.com/watch?v=iy-X7U6Znm0
+2025-10-24 17:01:45,944 - INFO - T15 - Exito: https://www.youtube.com/watch?v=-OJk9tJE3uE
+2025-10-24 17:01:45,946 - INFO - Resumen final - URLs: 15, Exitosos: 15, Fallidos: 0
+2025-10-24 17:01:45,947 - INFO - Sesion completada exitosamente - todos los archivos descargados
+2025-10-24 17:01:45,947 - INFO - Programa terminado con codigo de salida: 0
+2025-10-24 17:01:45,947 - INFO - ==================================================
