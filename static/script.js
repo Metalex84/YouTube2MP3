@@ -336,6 +336,7 @@ function markDownloadComplete(data) {
     download.status = 'completed';
     download.title = data.title;
     download.filename = data.filename;
+    download.id = data.download_id; // Ensure id is set
 
     const element = document.getElementById(`download-${data.download_id}`);
     if (element) {
