@@ -66,6 +66,11 @@ setup_console_encoding()
 # Configure logging
 def setup_logging():
     """Configure logging to file with timestamp"""
+    # Skip if logging is already configured
+    root_logger = logging.getLogger()
+    if root_logger.handlers:
+        return None
+    
     logs_dir = os.environ.get('LOGS_DIR', '.')
     
     # Create logs directory if it doesn't exist
@@ -73,16 +78,12 @@ def setup_logging():
     
     log_filename = os.path.join(logs_dir, 'youtube_downloader.log')
     
-    # Clear previous log file
-    if os.path.exists(log_filename):
-        os.remove(log_filename)
-    
-    # Configure logging
+    # Configure logging (mode='a' to append instead of truncate)
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         handlers=[
-            logging.FileHandler(log_filename, encoding='utf-8'),
+            logging.FileHandler(log_filename, mode='a', encoding='utf-8'),
         ]
     )
     
@@ -93,8 +94,12 @@ def setup_logging():
     
     return log_filename
 
-# Initialize logging
-log_file = setup_logging()
+# Initialize logging only when module is run directly (not imported)
+log_file = None
+
+# Always ensure basic logging is configured
+if not logging.getLogger().handlers:
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Thread-safe printing lock
 print_lock = Lock()
@@ -418,6 +423,10 @@ async def procesar_urls_async(urls, output_dir, max_concurrent=3):
 
 def main():
     """Función principal con manejo de argumentos mejorado"""
+    # Initialize logging for CLI usage
+    global log_file
+    log_file = setup_logging()
+    
     parser = argparse.ArgumentParser(
         description='Descarga audio de YouTube y lo convierte a MP3',
         formatter_class=argparse.RawDescriptionHelpFormatter,

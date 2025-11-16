@@ -9,6 +9,20 @@ import json
 from datetime import datetime
 import uuid
 
+# Load .env file if it exists
+def load_env_file():
+    """Load environment variables from .env file"""
+    env_path = Path(__file__).parent / '.env'
+    if env_path.exists():
+        with open(env_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    key, value = line.split('=', 1)
+                    os.environ[key.strip()] = value.strip()
+
+load_env_file()
+
 # Import the existing download functionality
 from descargar_audio import descargar_audio_mp3, leer_urls_csv, setup_logging
 
@@ -16,7 +30,15 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'youtube2mp3-secret-key'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file upload
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*")
+socketio = SocketIO(
+    app, 
+    cors_allowed_origins="*",
+    async_mode='threading',
+    ping_timeout=60,
+    ping_interval=25,
+    logger=False,
+    engineio_logger=False
+)
 
 # Global state to track downloads
 downloads = {}
@@ -26,6 +48,22 @@ downloads_lock = threading.Lock()
 DOWNLOAD_DIR = os.environ.get('DOWNLOAD_DIR', os.path.join(os.getcwd(), 'downloads'))
 Path(DOWNLOAD_DIR).mkdir(parents=True, exist_ok=True)
 
+# Configure FFmpeg location
+def find_ffmpeg():
+    """Find FFmpeg location from environment or local installation"""
+    # Check environment variable first
+    if os.environ.get('FFMPEG_LOCATION'):
+        return os.environ.get('FFMPEG_LOCATION')
+    
+    # Check local ffmpeg/bin directory
+    local_ffmpeg = Path(__file__).parent / 'ffmpeg' / 'bin'
+    if (local_ffmpeg / 'ffmpeg.exe').exists():
+        return str(local_ffmpeg)
+    
+    return None
+
+FFMPEG_LOCATION = find_ffmpeg()
+
 class WebProgressHook:
     """Custom progress hook for web interface with SocketIO updates"""
     
@@ -33,6 +71,7 @@ class WebProgressHook:
         self.download_id = download_id
         self.socketio = socketio_instance
         self.last_update = datetime.now()
+        self.final_filename = None
         
     def __call__(self, d):
         """Hook function called by yt-dlp"""
@@ -56,12 +95,16 @@ class WebProgressHook:
             })
         elif d['status'] == 'finished':
             status_data['filename'] = d.get('filename', 'audio.mp3')
+            self.final_filename = d.get('filename')
             
         # Emit progress update via WebSocket
         self.socketio.emit('download_progress', status_data, namespace='/')
 
 def download_task(download_id, url, output_dir):
     """Background task for downloading audio"""
+    print(f"[DEBUG] Starting download task for {download_id}: {url}")
+    print(f"[DEBUG] Output directory: {output_dir}")
+    
     with downloads_lock:
         downloads[download_id]['status'] = 'downloading'
         downloads[download_id]['started_at'] = datetime.now().isoformat()
@@ -69,6 +112,9 @@ def download_task(download_id, url, output_dir):
     try:
         # Create custom yt-dlp options with web progress hook
         import yt_dlp
+        print(f"[DEBUG] yt-dlp imported successfully")
+        
+        progress_hook = WebProgressHook(download_id, socketio)
         
         ydl_opts = {
             'format': 'bestaudio/best',
@@ -78,25 +124,61 @@ def download_task(download_id, url, output_dir):
                 'preferredquality': '320',
             }],
             'outtmpl': os.path.join(output_dir, '%(title)s.%(ext)s'),
-            'progress_hooks': [WebProgressHook(download_id, socketio)],
+            'progress_hooks': [progress_hook],
             'noplaylist': True,
-            'quiet': True
+            'quiet': True,
+            'socket_timeout': 30,  # 30 seconds socket timeout
+            'retries': 3,  # Retry 3 times on failure
+            'fragment_retries': 3,  # Retry fragments
+            'extractor_args': {'youtube': ['player_client=ios,mweb']},
+            'no_warnings': True  # Suppress yt-dlp warnings
         }
         
+        if FFMPEG_LOCATION:
+            ydl_opts['ffmpeg_location'] = FFMPEG_LOCATION
+        
+        print(f"[DEBUG] Creating YoutubeDL with options: {ydl_opts}")
+        
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            print(f"[DEBUG] Extracting info for: {url}")
             info = ydl.extract_info(url, download=False)
             title = info.get('title', 'audio')
+            print(f"[DEBUG] Video title: {title}")
             
             with downloads_lock:
                 downloads[download_id]['title'] = title
             
             # Perform download
+            print(f"[DEBUG] Starting download...")
             ydl.download([url])
+            print(f"[DEBUG] Download completed")
             
-            # Find the downloaded file
-            safe_title = "".join(c for c in title if c.isalnum() or c in (' ', '-', '_')).rstrip()
-            filename = f"{safe_title}.mp3"
-            filepath = os.path.join(output_dir, filename)
+            # Get the actual downloaded file from progress hook
+            filepath = None
+            filename = None
+            
+            if progress_hook.final_filename:
+                # The progress hook captured the final filename (before post-processing)
+                # But post-processing changes the extension to .mp3
+                base_path = os.path.splitext(progress_hook.final_filename)[0]
+                filepath = f"{base_path}.mp3"
+                filename = os.path.basename(filepath)
+                print(f"[DEBUG] Filepath from progress hook: {filepath}")
+            else:
+                # Fallback: search for the most recently created .mp3 file
+                print(f"[DEBUG] Progress hook didn't capture filename, searching directory...")
+                import glob
+                mp3_files = glob.glob(os.path.join(output_dir, "*.mp3"))
+                if mp3_files:
+                    filepath = max(mp3_files, key=os.path.getctime)
+                    filename = os.path.basename(filepath)
+                    print(f"[DEBUG] Found most recent file: {filepath}")
+            
+            print(f"[DEBUG] Final filepath: {filepath}")
+            print(f"[DEBUG] File exists: {os.path.exists(filepath) if filepath else False}")
+            
+            if not filepath or not os.path.exists(filepath):
+                raise FileNotFoundError(f"Downloaded file not found. Expected: {filepath}")
             
             with downloads_lock:
                 downloads[download_id]['status'] = 'completed'
@@ -112,6 +194,11 @@ def download_task(download_id, url, output_dir):
             }, namespace='/')
             
     except Exception as e:
+        print(f"[ERROR] Download failed for {download_id}: {e}")
+        print(f"[ERROR] Exception type: {type(e).__name__}")
+        import traceback
+        traceback.print_exc()
+        
         with downloads_lock:
             downloads[download_id]['status'] = 'failed'
             downloads[download_id]['error'] = str(e)
@@ -245,20 +332,36 @@ def api_download_status(download_id):
 @app.route('/api/download/<download_id>/file', methods=['GET'])
 def api_download_file(download_id):
     """Download the MP3 file"""
+    print(f"[DEBUG] File download requested for: {download_id}")
+    
     with downloads_lock:
         if download_id not in downloads:
+            print(f"[DEBUG] Download ID not found: {download_id}")
             return jsonify({'error': 'Download not found'}), 404
         
         download = downloads[download_id]
+        print(f"[DEBUG] Download status: {download['status']}")
         
         if download['status'] != 'completed':
             return jsonify({'error': 'Download not completed yet'}), 400
         
         filepath = download.get('filepath')
+        filename = download.get('filename')
+        
+        print(f"[DEBUG] Filepath: {filepath}")
+        print(f"[DEBUG] Filename: {filename}")
+        print(f"[DEBUG] File exists: {os.path.exists(filepath) if filepath else False}")
+        
         if not filepath or not os.path.exists(filepath):
-            return jsonify({'error': 'File not found'}), 404
+            return jsonify({'error': 'File not found', 'filepath': filepath}), 404
     
-    return send_file(filepath, as_attachment=True, download_name=download['filename'])
+    try:
+        return send_file(filepath, as_attachment=True, download_name=filename, mimetype='audio/mpeg')
+    except Exception as e:
+        print(f"[ERROR] Failed to send file: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'Failed to send file: {str(e)}'}), 500
 
 @app.route('/api/health', methods=['GET'])
 def health():
@@ -272,20 +375,34 @@ def health():
 @socketio.on('connect')
 def handle_connect():
     """Handle WebSocket connection"""
+    print(f"[DEBUG] Client connected")
     emit('connected', {'message': 'Connected to YouTube2MP3 server'})
 
 @socketio.on('disconnect')
 def handle_disconnect():
     """Handle WebSocket disconnection"""
-    pass
+    print(f"[DEBUG] Client disconnected")
+
+@socketio.on('ping')
+def handle_ping():
+    """Handle ping from client"""
+    emit('pong')
 
 if __name__ == '__main__':
     print("=" * 60)
     print("YouTube2MP3 Web Server")
     print("=" * 60)
     print(f"Download directory: {DOWNLOAD_DIR}")
+    
+    if FFMPEG_LOCATION:
+        print(f"FFmpeg location: {FFMPEG_LOCATION}")
+    else:
+        print("⚠️  WARNING: FFmpeg not found!")
+        print("   Please run: python setup_ffmpeg.py")
+        print("   Or install FFmpeg and add to PATH")
+    
     print(f"Starting server on http://localhost:5000")
     print("=" * 60)
     
     # Run the Flask-SocketIO server
-    socketio.run(app, host='0.0.0.0', port=5000, debug=True, allow_unsafe_werkzeug=True)
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True, use_reloader=False, log_output=True)
