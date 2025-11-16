@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to MP3 Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 YouTube to MP3</h1>
+            <p class="subtitle">Convierte videos de YouTube a MP3 de alta calidad</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('single')">
+                📎 Descarga Simple
+            </button>
+            <button class="tab-button" onclick="switchTab('batch')">
+                📋 Descarga en Lote
+            </button>
+        </div>
+
+        <!-- Single Download Tab -->
+        <div id="single-tab" class="tab-content active">
+            <div class="card">
+                <h2>Descargar una URL</h2>
+                <form id="single-form">
+                    <div class="form-group">
+                        <label for="single-url">URL de YouTube:</label>
+                        <input 
+                            type="text" 
+                            id="single-url" 
+                            name="url" 
+                            placeholder="https://www.youtube.com/watch?v=..." 
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        🚀 Descargar
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Batch Download Tab -->
+        <div id="batch-tab" class="tab-content">
+            <div class="card">
+                <h2>Descarga en Lote</h2>
+                
+                <!-- CSV Upload -->
+                <div class="upload-section">
+                    <h3>Subir archivo CSV</h3>
+                    <form id="csv-form">
+                        <div class="file-input-wrapper">
+                            <input 
+                                type="file" 
+                                id="csv-file" 
+                                name="file" 
+                                accept=".csv"
+                                class="file-input"
+                            >
+                            <label for="csv-file" class="file-label">
+                                📁 Seleccionar archivo CSV
+                            </label>
+                            <span id="file-name" class="file-name"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            🚀 Subir y Procesar
+                        </button>
+                    </form>
+                </div>
+
+                <div class="divider">O</div>
+
+                <!-- Text Area for URLs -->
+                <div class="textarea-section">
+                    <h3>Pegar URLs (una por línea)</h3>
+                    <form id="urls-form">
+                        <textarea 
+                            id="urls-textarea" 
+                            name="urls" 
+                            rows="8" 
+                            placeholder="https://www.youtube.com/watch?v=...&#10;https://www.youtube.com/watch?v=...&#10;https://www.youtube.com/watch?v=..."
+                        ></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            🚀 Procesar URLs
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="card downloads-section">
+            <h2>📊 Descargas Activas</h2>
+            <div id="downloads-container">
+                <p class="no-downloads">No hay descargas activas</p>
+            </div>
+        </div>
+
+        <!-- Connection Status -->
+        <div class="status-bar">
+            <span id="connection-status" class="status-disconnected">
+                ⚠️ Desconectado
+            </span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
