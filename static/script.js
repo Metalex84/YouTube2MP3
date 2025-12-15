@@ -1,6 +1,7 @@
 // Global state
 let socket = null;
 let activeDownloads = new Map();
+let activeBatches = new Map();
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -52,6 +53,10 @@ function initializeWebSocket() {
 
     socket.on('download_error', (data) => {
         markDownloadFailed(data);
+    });
+
+    socket.on('batch_complete', (data) => {
+        handleBatchComplete(data);
     });
 }
 
@@ -110,6 +115,11 @@ function setupEventListeners() {
         const fileName = e.target.files[0]?.name || '';
         document.getElementById('file-name').textContent = fileName;
     });
+
+    // Download all as ZIP button
+    document.getElementById('download-all-zip').addEventListener('click', async () => {
+        await downloadAllAsZip();
+    });
 }
 
 // API call to start single download
@@ -155,7 +165,14 @@ async function uploadCSV(file) {
         const data = await response.json();
         
         if (response.ok) {
-            alert(`Se iniciaron ${data.count} descargas`);
+            // Track the batch
+            if (data.batch_id) {
+                activeBatches.set(data.batch_id, {
+                    id: data.batch_id,
+                    status: 'processing',
+                    download_ids: data.download_ids
+                });
+            }
             // Load downloads will be updated via WebSocket
         } else {
             alert(`Error: ${data.error}`);
@@ -180,7 +197,14 @@ async function startBatchDownload(urls) {
         const data = await response.json();
         
         if (response.ok) {
-            alert(`Se iniciaron ${data.count} descargas`);
+            // Track the batch
+            if (data.batch_id) {
+                activeBatches.set(data.batch_id, {
+                    id: data.batch_id,
+                    status: 'processing',
+                    download_ids: data.download_ids
+                });
+            }
         } else {
             alert(`Error: ${data.error}`);
         }
@@ -201,6 +225,18 @@ async function loadExistingDownloads() {
                 addDownloadToUI(download);
             });
         }
+        
+        // Load batches
+        if (data.batches && data.batches.length > 0) {
+            data.batches.forEach(batch => {
+                activeBatches.set(batch.id, batch);
+                if (batch.status === 'completed') {
+                    addBatchZipToUI(batch);
+                }
+            });
+        }
+        
+        updateDownloadAllButton();
     } catch (error) {
         console.error('Error loading downloads:', error);
     }
@@ -342,6 +378,8 @@ function markDownloadComplete(data) {
     if (element) {
         element.innerHTML = createDownloadHTML(download);
     }
+    
+    updateDownloadAllButton();
 }
 
 // Mark download as failed
@@ -361,5 +399,152 @@ function markDownloadFailed(data) {
         // Add error message
         const errorHTML = `<div class="download-error" style="color: #ef4444; margin-top: 10px;">Error: ${data.error}</div>`;
         element.querySelector('.download-url').insertAdjacentHTML('afterend', errorHTML);
+    }
+    
+    updateDownloadAllButton();
+}
+
+// Download all completed files as ZIP
+async function downloadAllAsZip() {
+    console.log('[DEBUG] Requesting ZIP download...');
+    try {
+        const response = await fetch('/api/batch-download/zip');
+        console.log(`[DEBUG] Response status: ${response.status}`);
+        console.log(`[DEBUG] Response OK: ${response.ok}`);
+        
+        if (response.ok) {
+            // Create a blob from the response
+            const blob = await response.blob();
+            
+            // Get filename from Content-Disposition header or use default
+            const contentDisposition = response.headers.get('Content-Disposition');
+            let filename = 'youtube2mp3_batch.zip';
+            if (contentDisposition) {
+                const matches = /filename="(.+)"/.exec(contentDisposition);
+                if (matches && matches[1]) {
+                    filename = matches[1];
+                }
+            }
+            
+            // Create a download link and trigger it
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } else {
+            const data = await response.json();
+            alert(`Error: ${data.error || 'Failed to download ZIP'}`);
+        }
+    } catch (error) {
+        console.error('Error downloading ZIP:', error);
+        alert('Error al descargar el archivo ZIP');
+    }
+}
+
+// Handle batch completion
+function handleBatchComplete(data) {
+    console.log('[DEBUG] Batch completed:', data);
+    
+    const batch = {
+        id: data.batch_id,
+        status: 'completed',
+        zip_filename: data.zip_filename,
+        total_files: data.total_files,
+        failed_files: data.failed_files
+    };
+    
+    activeBatches.set(data.batch_id, batch);
+    addBatchZipToUI(batch);
+    
+    // Automatically trigger download
+    console.log('[DEBUG] Triggering automatic ZIP download...');
+    downloadBatchZip(data.batch_id, data.zip_filename);
+}
+
+// Download batch ZIP file automatically
+function downloadBatchZip(batchId, filename) {
+    const url = `/api/batch/${batchId}/zip`;
+    
+    // Show notification
+    console.log(`[DEBUG] ZIP download triggered: ${filename}`);
+    
+    // Create a temporary link and trigger download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up
+    setTimeout(() => {
+        document.body.removeChild(a);
+    }, 100);
+}
+
+// Add batch ZIP to UI
+function addBatchZipToUI(batch) {
+    // Check if already exists
+    if (document.getElementById(`batch-${batch.id}`)) {
+        return;
+    }
+    
+    const container = document.getElementById('downloads-container');
+    
+    // Remove "no downloads" message if present
+    const noDownloads = container.querySelector('.no-downloads');
+    if (noDownloads) {
+        noDownloads.remove();
+    }
+    
+    // Create batch item element
+    const item = document.createElement('div');
+    item.className = 'download-item batch-item';
+    item.id = `batch-${batch.id}`;
+    item.style.borderLeft = '4px solid #10b981';
+    
+    item.innerHTML = `
+        <div class="download-header">
+            <div class="download-title">📦 Descarga en Lote Completada</div>
+            <div class="download-status status-completed">✅ Descargado</div>
+        </div>
+        <div class="download-url">
+            ${batch.total_files} archivo(s) MP3 comprimido(s)<br>
+            <small style="color: #10b981;">✓ Descarga iniciada automáticamente</small>
+        </div>
+        <div class="download-actions" style="margin-top: 15px;">
+            <a href="/api/batch/${batch.id}/zip" class="btn-download" download onclick="event.preventDefault(); downloadBatchZip('${batch.id}', '${batch.zip_filename}'); return false;">
+                🔄 Descargar Nuevamente
+            </a>
+        </div>
+    `;
+    
+    // Insert at the top of the container
+    container.insertBefore(item, container.firstChild);
+}
+
+// Update visibility of "Download All as ZIP" button
+function updateDownloadAllButton() {
+    const completedCount = Array.from(activeDownloads.values())
+        .filter(d => d.status === 'completed').length;
+    
+    console.log(`[DEBUG] Completed downloads: ${completedCount}`);
+    
+    const button = document.getElementById('download-all-zip');
+    if (!button) {
+        console.error('[ERROR] Download all ZIP button not found!');
+        return;
+    }
+    
+    if (completedCount >= 2) {
+        console.log('[DEBUG] Showing ZIP download button');
+        button.style.display = 'block';
+    } else {
+        console.log('[DEBUG] Hiding ZIP download button');
+        button.style.display = 'none';
     }
 }

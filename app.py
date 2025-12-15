@@ -8,6 +8,8 @@ from pathlib import Path
 import json
 from datetime import datetime
 import uuid
+import zipfile
+import tempfile
 
 # Load .env file if it exists
 def load_env_file():
@@ -44,6 +46,10 @@ socketio = SocketIO(
 downloads = {}
 downloads_lock = threading.Lock()
 
+# Track batch operations
+batches = {}
+batches_lock = threading.Lock()
+
 # Configure download directory
 DOWNLOAD_DIR = os.environ.get('DOWNLOAD_DIR', os.path.join(os.getcwd(), 'downloads'))
 Path(DOWNLOAD_DIR).mkdir(parents=True, exist_ok=True)
@@ -51,18 +57,27 @@ Path(DOWNLOAD_DIR).mkdir(parents=True, exist_ok=True)
 # Configure FFmpeg location
 def find_ffmpeg():
     """Find FFmpeg location from environment or local installation"""
+    import shutil
+    
     # Check environment variable first
     if os.environ.get('FFMPEG_LOCATION'):
         return os.environ.get('FFMPEG_LOCATION')
     
-    # Check local ffmpeg/bin directory
+    # Check local ffmpeg/bin directory first (portable, relative to project)
     local_ffmpeg = Path(__file__).parent / 'ffmpeg' / 'bin'
-    if (local_ffmpeg / 'ffmpeg.exe').exists():
-        return str(local_ffmpeg)
+    if (local_ffmpeg / 'ffmpeg.exe').exists() and (local_ffmpeg / 'ffprobe.exe').exists():
+        return str(local_ffmpeg.resolve())  # Return absolute path for yt-dlp
+    
+    # Fallback to system PATH
+    ffmpeg_path = shutil.which('ffmpeg')
+    if ffmpeg_path:
+        # Return the directory containing ffmpeg
+        return str(Path(ffmpeg_path).parent)
     
     return None
 
 FFMPEG_LOCATION = find_ffmpeg()
+print(f"[DEBUG] FFMPEG_LOCATION set to: {FFMPEG_LOCATION}")
 
 class WebProgressHook:
     """Custom progress hook for web interface with SocketIO updates"""
@@ -100,6 +115,77 @@ class WebProgressHook:
         # Emit progress update via WebSocket
         self.socketio.emit('download_progress', status_data, namespace='/')
 
+def check_batch_completion(batch_id):
+    """Check if all downloads in a batch are complete and create ZIP if so"""
+    with batches_lock:
+        if batch_id not in batches:
+            return
+        
+        batch = batches[batch_id]
+        download_ids = batch['download_ids']
+    
+    # Check status of all downloads in batch
+    with downloads_lock:
+        all_downloads = [downloads.get(did) for did in download_ids if did in downloads]
+        completed = [d for d in all_downloads if d and d['status'] == 'completed']
+        failed = [d for d in all_downloads if d and d['status'] == 'failed']
+        in_progress = [d for d in all_downloads if d and d['status'] in ('pending', 'downloading')]
+    
+    # If there are still downloads in progress, don't create ZIP yet
+    if in_progress:
+        print(f"[DEBUG] Batch {batch_id}: {len(in_progress)} downloads still in progress")
+        return
+    
+    # All downloads are done (completed or failed)
+    if not completed:
+        print(f"[DEBUG] Batch {batch_id}: No successful downloads to zip")
+        with batches_lock:
+            batches[batch_id]['status'] = 'failed'
+        return
+    
+    # Create ZIP file with all completed downloads
+    print(f"[DEBUG] Batch {batch_id}: All downloads complete, creating ZIP...")
+    
+    try:
+        zip_filename = f'youtube2mp3_batch_{datetime.now().strftime("%Y%m%d_%H%M%S")}.zip'
+        zip_path = os.path.join(DOWNLOAD_DIR, zip_filename)
+        
+        with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for download in completed:
+                filepath = download.get('filepath')
+                filename = download.get('filename')
+                
+                if filepath and os.path.exists(filepath):
+                    print(f"[DEBUG] Adding to batch ZIP: {filename}")
+                    zipf.write(filepath, arcname=filename)
+        
+        # Update batch status
+        with batches_lock:
+            batches[batch_id]['status'] = 'completed'
+            batches[batch_id]['zip_filename'] = zip_filename
+            batches[batch_id]['zip_path'] = zip_path
+            batches[batch_id]['completed_at'] = datetime.now().isoformat()
+            batches[batch_id]['total_files'] = len(completed)
+        
+        print(f"[DEBUG] Batch {batch_id}: ZIP created successfully - {zip_filename}")
+        
+        # Notify via WebSocket
+        socketio.emit('batch_complete', {
+            'batch_id': batch_id,
+            'zip_filename': zip_filename,
+            'total_files': len(completed),
+            'failed_files': len(failed)
+        }, namespace='/')
+        
+    except Exception as e:
+        print(f"[ERROR] Failed to create batch ZIP: {e}")
+        import traceback
+        traceback.print_exc()
+        
+        with batches_lock:
+            batches[batch_id]['status'] = 'failed'
+            batches[batch_id]['error'] = str(e)
+
 def download_task(download_id, url, output_dir):
     """Background task for downloading audio"""
     print(f"[DEBUG] Starting download task for {download_id}: {url}")
@@ -130,12 +216,26 @@ def download_task(download_id, url, output_dir):
             'socket_timeout': 30,  # 30 seconds socket timeout
             'retries': 3,  # Retry 3 times on failure
             'fragment_retries': 3,  # Retry fragments
-            'extractor_args': {'youtube': ['player_client=ios,mweb']},
-            'no_warnings': True  # Suppress yt-dlp warnings
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['ios', 'android', 'web'],
+                    'player_skip': ['webpage', 'configs'],
+                }
+            },
+            'no_warnings': True,  # Suppress yt-dlp warnings
+            'http_headers': {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-us,en;q=0.5',
+                'Sec-Fetch-Mode': 'navigate',
+            }
         }
         
         if FFMPEG_LOCATION:
             ydl_opts['ffmpeg_location'] = FFMPEG_LOCATION
+            print(f"[DEBUG] Using ffmpeg location: {FFMPEG_LOCATION}")
+        else:
+            print(f"[WARNING] FFMPEG_LOCATION is None - ffmpeg may not be found!")
         
         print(f"[DEBUG] Creating YoutubeDL with options: {ydl_opts}")
         
@@ -193,6 +293,12 @@ def download_task(download_id, url, output_dir):
                 'filename': filename
             }, namespace='/')
             
+            # Check if this download is part of a batch
+            batch_id = downloads[download_id].get('batch_id')
+            if batch_id:
+                # Check if all downloads in batch are complete
+                check_batch_completion(batch_id)
+            
     except Exception as e:
         print(f"[ERROR] Download failed for {download_id}: {e}")
         print(f"[ERROR] Exception type: {type(e).__name__}")
@@ -208,6 +314,12 @@ def download_task(download_id, url, output_dir):
             'download_id': download_id,
             'error': str(e)
         }, namespace='/')
+        
+        # Check if this download is part of a batch
+        batch_id = downloads[download_id].get('batch_id')
+        if batch_id:
+            # Check if all downloads in batch are complete (or failed)
+            check_batch_completion(batch_id)
 
 @app.route('/')
 def index():
@@ -285,6 +397,18 @@ def api_batch_download():
     if not urls:
         return jsonify({'error': 'No valid URLs found'}), 400
     
+    # Create a batch to track this group of downloads
+    batch_id = str(uuid.uuid4())
+    
+    with batches_lock:
+        batches[batch_id] = {
+            'id': batch_id,
+            'status': 'processing',
+            'created_at': datetime.now().isoformat(),
+            'total_urls': len(urls),
+            'download_ids': []
+        }
+    
     # Start downloads for each URL
     download_ids = []
     output_dir = request.form.get('output_dir', DOWNLOAD_DIR) if not request.is_json else data.get('output_dir', DOWNLOAD_DIR)
@@ -297,6 +421,7 @@ def api_batch_download():
                 'id': download_id,
                 'url': url,
                 'status': 'pending',
+                'batch_id': batch_id,  # Associate with batch
                 'created_at': datetime.now().isoformat()
             }
         
@@ -306,8 +431,13 @@ def api_batch_download():
         
         download_ids.append(download_id)
     
+    # Update batch with download IDs
+    with batches_lock:
+        batches[batch_id]['download_ids'] = download_ids
+    
     return jsonify({
         'success': True,
+        'batch_id': batch_id,
         'download_ids': download_ids,
         'count': len(download_ids),
         'message': f'Started {len(download_ids)} downloads'
@@ -317,9 +447,15 @@ def api_batch_download():
 def api_downloads():
     """Get list of all downloads"""
     with downloads_lock:
-        return jsonify({
-            'downloads': list(downloads.values())
-        })
+        downloads_list = list(downloads.values())
+    
+    with batches_lock:
+        batches_list = list(batches.values())
+    
+    return jsonify({
+        'downloads': downloads_list,
+        'batches': batches_list
+    })
 
 @app.route('/api/download/<download_id>', methods=['GET'])
 def api_download_status(download_id):
@@ -362,6 +498,103 @@ def api_download_file(download_id):
         import traceback
         traceback.print_exc()
         return jsonify({'error': f'Failed to send file: {str(e)}'}), 500
+
+@app.route('/api/batch/<batch_id>/zip', methods=['GET'])
+def api_batch_zip(batch_id):
+    """Download the ZIP file for a completed batch"""
+    print(f"[DEBUG] Batch ZIP download requested for: {batch_id}")
+    
+    with batches_lock:
+        if batch_id not in batches:
+            return jsonify({'error': 'Batch not found'}), 404
+        
+        batch = batches[batch_id]
+        
+        if batch['status'] != 'completed':
+            return jsonify({'error': f"Batch not completed yet (status: {batch['status']})"}), 400
+        
+        zip_path = batch.get('zip_path')
+        zip_filename = batch.get('zip_filename')
+        
+        if not zip_path or not os.path.exists(zip_path):
+            return jsonify({'error': 'ZIP file not found'}), 404
+    
+    try:
+        return send_file(zip_path, as_attachment=True, download_name=zip_filename, mimetype='application/zip')
+    except Exception as e:
+        print(f"[ERROR] Failed to send batch ZIP: {e}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({'error': f'Failed to send ZIP file: {str(e)}'}), 500
+
+@app.route('/api/batch-download/zip', methods=['GET'])
+def api_batch_download_zip():
+    """Download all completed files as a ZIP archive"""
+    print(f"[DEBUG] ZIP download requested")
+    
+    # Get all completed downloads (release lock immediately)
+    with downloads_lock:
+        completed = [d.copy() for d in downloads.values() if d['status'] == 'completed' and 'filepath' in d]
+    
+    if not completed:
+        print(f"[DEBUG] No completed downloads found")
+        return jsonify({'error': 'No completed downloads available'}), 404
+    
+    print(f"[DEBUG] Found {len(completed)} completed downloads")
+    
+    # Create a temporary ZIP file
+    temp_zip = tempfile.NamedTemporaryFile(delete=False, suffix='.zip')
+    temp_zip_path = temp_zip.name
+    temp_zip.close()
+    
+    try:
+        with zipfile.ZipFile(temp_zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            for download in completed:
+                filepath = download.get('filepath')
+                filename = download.get('filename')
+                
+                if filepath and os.path.exists(filepath):
+                    print(f"[DEBUG] Adding to zip: {filename}")
+                    zipf.write(filepath, arcname=filename)
+                else:
+                    print(f"[WARNING] File not found: {filepath}")
+        
+        # Send the ZIP file
+        zip_filename = f'youtube2mp3_batch_{datetime.now().strftime("%Y%m%d_%H%M%S")}.zip'
+        print(f"[DEBUG] Sending ZIP file: {zip_filename}")
+        
+        def cleanup_temp_file():
+            """Clean up temporary file after sending"""
+            try:
+                os.unlink(temp_zip_path)
+                print(f"[DEBUG] Cleaned up temp zip: {temp_zip_path}")
+            except Exception as e:
+                print(f"[WARNING] Failed to cleanup temp zip: {e}")
+        
+        response = send_file(
+            temp_zip_path,
+            as_attachment=True,
+            download_name=zip_filename,
+            mimetype='application/zip'
+        )
+        
+        # Schedule cleanup after response is sent
+        response.call_on_close(cleanup_temp_file)
+        
+        return response
+        
+    except Exception as e:
+        print(f"[ERROR] Failed to create ZIP: {e}")
+        import traceback
+        traceback.print_exc()
+        
+        # Cleanup on error
+        try:
+            os.unlink(temp_zip_path)
+        except:
+            pass
+        
+        return jsonify({'error': f'Failed to create ZIP: {str(e)}'}), 500
 
 @app.route('/api/health', methods=['GET'])
 def health():
