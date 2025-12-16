@@ -1,4 +1,4 @@
-# YouTube to MP3 Downloader - Docker Container
+# YouTube to MP3 Downloader - Docker Container (Web Interface)
 FROM python:3.11-slim
 
 # Instalar dependencias del sistema
@@ -18,26 +18,29 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el código de la aplicación
+COPY app.py .
 COPY descargar_audio.py .
+COPY .env .
+COPY templates/ templates/
+COPY static/ static/
 COPY README.md .
 
-# Crear directorio para las descargas
+# Crear directorios para las descargas y logs
 RUN mkdir -p /app/downloads /app/logs
 
 # Configurar variables de entorno
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONIOENCODING=utf-8
+ENV DOWNLOAD_DIR=/app/downloads
+ENV LOGS_DIR=/app/logs
 
 # Usuario no root para seguridad
 RUN adduser --disabled-password --gecos '' appuser && \
     chown -R appuser:appuser /app
 USER appuser
 
-# Puerto expuesto (por si queremos añadir API web en el futuro)
-EXPOSE 8080
+# Puerto expuesto para la aplicación web
+EXPOSE 5000
 
-# Punto de entrada
-ENTRYPOINT ["python", "descargar_audio.py"]
-
-# Comando por defecto (mostrar ayuda)
-CMD ["--help"]
+# Punto de entrada para la aplicación web Flask
+CMD ["python", "app.py"]

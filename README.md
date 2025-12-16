@@ -2,16 +2,42 @@
 
 Un script en Python que descarga audio de videos de YouTube y los convierte a formato MP3.
 
-## Características
+## 🌟 Características
 
-- ✅ Descarga audio de alta calidad (320 kbps)
-- ✅ Convierte automáticamente a MP3
+- ✅ **Interfaz Web Moderna** (branch `web`) - UI intuitiva con actualizaciones en tiempo real
+- ✅ **Descarga audio de alta calidad** (320 kbps)
+- ✅ **Convierte automáticamente a MP3**
 - ✅ **Procesamiento en lote desde archivo CSV**
+- ✅ **Soporte Docker** - Ejecuta sin instalar dependencias
 - ✅ Limpia nombres de archivo problemáticos
-- ✅ Muestra progreso de descarga
+- ✅ Muestra progreso de descarga en tiempo real
 - ✅ Interfaz de línea de comandos mejorada
+- ✅ API REST para integración
 - ✅ Manejo de errores robusto
 - ✅ Resumen detallado de procesamiento
+
+## 🐳 Docker (Opción más fácil)
+
+¿Quieres la forma más rápida de empezar? Usa Docker:
+
+```bash
+# 1. Construir y ejecutar
+docker-compose up -d
+
+# 2. Acceder a la interfaz web
+# Abre http://localhost:5000 en tu navegador
+```
+
+**Ventajas de Docker:**
+- ✅ No necesitas instalar Python, FFmpeg ni dependencias
+- ✅ Funciona en Windows, Mac y Linux
+- ✅ Incluye interfaz web completa
+- ✅ Configuración en un solo comando
+
+**Documentación completa:**
+- [DOCKER-QUICKSTART.md](DOCKER-QUICKSTART.md) - Guía rápida de Docker
+- [README-Docker-Web.md](README-Docker-Web.md) - Documentación completa de Docker
+- [README-Web.md](README-Web.md) - Documentación de la interfaz web
 
 ## Requisitos
 

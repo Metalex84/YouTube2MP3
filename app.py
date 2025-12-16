@@ -638,4 +638,14 @@ if __name__ == '__main__':
     print("=" * 60)
     
     # Run the Flask-SocketIO server
-    socketio.run(app, host='0.0.0.0', port=5000, debug=True, use_reloader=False, log_output=True)
+    # In production/Docker, allow_unsafe_werkzeug=True is needed
+    # For production deployment, consider using gunicorn with eventlet worker
+    socketio.run(
+        app, 
+        host='0.0.0.0', 
+        port=5000, 
+        debug=False,  # Disable debug in production
+        use_reloader=False, 
+        log_output=True,
+        allow_unsafe_werkzeug=True  # Required for Flask-SocketIO with newer Werkzeug
+    )

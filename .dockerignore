@@ -11,30 +11,55 @@ __pycache__/
 venv/
 env/
 ENV/
+.venv
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Project specific
+# Downloads and logs (will be mounted as volumes)
+downloads/
+logs/
+*.log
+
+# Media files
 *.mp3
 *.mp4
 *.webm
 *.m4a
-*.log
+
+# Test files
 temp_*
-test_*
+test_*.py
+test_*.csv
+*_test.py
 
-# PowerShell scripts (no necesarios en Linux container)
+# Scripts (not needed in container)
+*.bat
 *.ps1
+*.sh
+docker-run.*
 
-# Docker
+# Documentation (README.md is included via COPY)
+README-*.md
+*.md
+!README.md
+
+# CSV files (mounted as needed)
+*.csv
+*.csv.example
+
+# FFmpeg (using system package)
+ffmpeg/
+
+# Docker files
 Dockerfile*
 docker-compose*
 .dockerignore
