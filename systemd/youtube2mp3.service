@@ -1,0 +1,69 @@
+# Systemd service file for YouTube2MP3 Web Application
+# This service runs the application using Gunicorn with eventlet worker
+#
+# Installation:
+# 1. Copy this file to: /etc/systemd/system/youtube2mp3.service
+# 2. Reload systemd: sudo systemctl daemon-reload
+# 3. Enable service: sudo systemctl enable youtube2mp3
+# 4. Start service: sudo systemctl start youtube2mp3
+# 5. Check status: sudo systemctl status youtube2mp3
+#
+# View logs: sudo journalctl -u youtube2mp3 -f
+
+[Unit]
+Description=YouTube2MP3 Web Application
+After=network.target
+Documentation=https://github.com/yourusername/YouTube2MP3
+
+[Service]
+Type=notify
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/youtube2mp3
+Environment="PATH=/opt/youtube2mp3/venv/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+# Load environment variables from .env file
+EnvironmentFile=/opt/youtube2mp3/.env
+
+# Gunicorn configuration
+# --worker-class eventlet: Required for SocketIO support
+# -w 1: Single worker (required for eventlet)
+# --bind 127.0.0.1:8000: Listen on localhost only (Apache proxies to this)
+# --timeout 300: 5 minute timeout for long downloads
+# --access-logfile: Log all requests
+# --error-logfile: Log errors
+ExecStart=/opt/youtube2mp3/venv/bin/gunicorn \
+    --worker-class eventlet \
+    -w 1 \
+    --bind 127.0.0.1:8000 \
+    --timeout 300 \
+    --access-logfile /var/log/youtube2mp3/access.log \
+    --error-logfile /var/log/youtube2mp3/error.log \
+    --log-level info \
+    wsgi:application
+
+# Restart policy
+Restart=always
+RestartSec=10
+StartLimitInterval=5min
+StartLimitBurst=5
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/youtube2mp3/downloads /var/log/youtube2mp3
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=512
+
+# Kill mode
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
