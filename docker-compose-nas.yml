@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  youtube-mp3-downloader:
+    image: y2m-downloader:latest
+    container_name: y2m-downloader
+    restart: unless-stopped
+    
+    ports:
+      - "5000:5000"
+    
+    volumes:
+      # Map to QNAP shared folder paths - adjust these paths based on your NAS structure
+      # Example: /share/Download or /share/Container/y2m-downloads
+      - /share/Download/y2m-downloads:/app/downloads
+      - /share/Container/y2m-logs:/app/logs
+    
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONIOENCODING=utf-8
+      - DOWNLOAD_DIR=/app/downloads
+      - LOGS_DIR=/app/logs
+      # Add your Flask secret key here
+      - SECRET_KEY=change-this-to-a-secure-random-key
+    
+    # Resource limits suitable for QNAP TS-231P (ARM-based, limited resources)
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    
+    # Health check to ensure container is running properly
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Network mode for better compatibility with QNAP
+    network_mode: bridge
+
+networks:
+  default:
+    driver: bridge
