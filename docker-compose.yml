@@ -1,24 +1,24 @@
-version: '3.8'
-
 services:
-  youtube-mp3:
+  youtube-mp3-web:
     build: .
-    container_name: youtube-mp3-downloader
+    container_name: youtube-mp3-web
+    ports:
+      # Exponer el puerto 5000 para acceder a la interfaz web
+      - "5000:5000"
     volumes:
       # Directorio para las descargas (persistente)
       - ./downloads:/app/downloads
       # Directorio para los logs (persistente)
       - ./logs:/app/logs
-      # Archivo CSV de URLs (si existe)
-      - ./urls.csv:/app/urls.csv:ro
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONIOENCODING=utf-8
-    # Comando por defecto - se puede sobrescribir
-    command: ["--help"]
+      - DOWNLOAD_DIR=/app/downloads
+      - LOGS_DIR=/app/logs
     # Opcional: recursos limitados
     deploy:
       resources:
         limits:
-          memory: 512M
-          cpus: '1.0'
+          memory: 1G
+          cpus: '2.0'
+    restart: unless-stopped
