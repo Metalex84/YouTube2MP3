@@ -1,46 +1,57 @@
 # YouTube to MP3 Downloader - Docker Container (Web Interface)
-FROM python:3.11-slim
+FROM python:3.11-alpine AS builder
 
-# Instalar dependencias del sistema
-RUN apt-get update && apt-get install -y \
-    ffmpeg \
-    curl \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
+# Install build dependencies
+RUN apk add --no-cache \
+    gcc \
+    musl-dev \
+    python3-dev \
+    libffi-dev
 
-# Establecer directorio de trabajo
+# Set working directory
 WORKDIR /app
 
-# Copiar requirements primero para aprovechar cache de Docker
+# Copy and install Python dependencies
 COPY requirements.txt .
+RUN pip install --no-cache-dir --user -r requirements.txt
 
-# Instalar dependencias de Python
-RUN pip install --no-cache-dir -r requirements.txt
+# Final stage
+FROM python:3.11-alpine
 
-# Copiar el código de la aplicación
+# Install runtime dependencies only
+RUN apk add --no-cache \
+    ffmpeg \
+    && rm -rf /var/cache/apk/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy Python packages from builder
+COPY --from=builder /root/.local /root/.local
+
+# Copy only necessary application files
 COPY app.py .
 COPY descargar_audio.py .
-COPY .env .
 COPY templates/ templates/
 COPY static/ static/
-COPY README.md .
 
-# Crear directorios para las descargas y logs
+# Create directories for downloads and logs
 RUN mkdir -p /app/downloads /app/logs
 
-# Configurar variables de entorno
+# Configure environment variables
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONIOENCODING=utf-8
 ENV DOWNLOAD_DIR=/app/downloads
 ENV LOGS_DIR=/app/logs
+ENV PATH=/root/.local/bin:$PATH
 
-# Usuario no root para seguridad
-RUN adduser --disabled-password --gecos '' appuser && \
+# Non-root user for security
+RUN adduser -D -g '' appuser && \
     chown -R appuser:appuser /app
 USER appuser
 
-# Puerto expuesto para la aplicación web
+# Expose port for web application
 EXPOSE 5000
 
-# Punto de entrada para la aplicación web Flask
+# Entry point for Flask web application
 CMD ["python", "app.py"]
