@@ -26,8 +26,8 @@ RUN apk add --no-cache \
 # Set working directory
 WORKDIR /app
 
-# Copy Python packages from builder
-COPY --from=builder /root/.local /root/.local
+# Copy Python packages from builder to system location
+COPY --from=builder /root/.local /usr/local
 
 # Copy only necessary application files
 COPY app.py .
@@ -43,7 +43,6 @@ ENV PYTHONUNBUFFERED=1
 ENV PYTHONIOENCODING=utf-8
 ENV DOWNLOAD_DIR=/app/downloads
 ENV LOGS_DIR=/app/logs
-ENV PATH=/root/.local/bin:$PATH
 
 # Non-root user for security
 RUN adduser -D -g '' appuser && \
