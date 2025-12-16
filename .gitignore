@@ -46,3 +46,28 @@ logs/
 
 # FFmpeg binaries (local installation)
 ffmpeg/
+
+# Media files - never commit these
+*.mp3
+*.mp4
+*.webm
+*.m4a
+*.wav
+*.flac
+*.aac
+*.ogg
+*.opus
+
+# Archive files
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# Backup files from git filter-branch
+.git/refs/original/
+
+# Large test files
+temp_*
+test_downloads/
