@@ -29,7 +29,7 @@ load_env_file()
 from descargar_audio import descargar_audio_mp3, leer_urls_csv, setup_logging
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'youtube2mp3-secret-key'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file upload
 CORS(app)
 socketio = SocketIO(
@@ -634,17 +634,19 @@ if __name__ == '__main__':
         print("   Please run: python setup_ffmpeg.py")
         print("   Or install FFmpeg and add to PATH")
     
-    print(f"Starting server on http://localhost:5000")
+    # Get port from environment variable (for deployment platforms like Render)
+    port = int(os.environ.get('PORT', 5000))
+    print(f"Starting server on http://0.0.0.0:{port}")
     print("=" * 60)
     
     # Run the Flask-SocketIO server
-    # In production/Docker, allow_unsafe_werkzeug=True is needed
-    # For production deployment, consider using gunicorn with eventlet worker
+    # For production deployment with gunicorn, this block won't be used
+    # For local development or direct python execution
     socketio.run(
         app, 
         host='0.0.0.0', 
-        port=5000, 
-        debug=False,  # Disable debug in production
+        port=port, 
+        debug=False,
         use_reloader=False, 
         log_output=True,
         allow_unsafe_werkzeug=True  # Required for Flask-SocketIO with newer Werkzeug

@@ -38,3 +38,11 @@ ENV/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Environment and logs
+.env
+logs/
+*.log
+
+# FFmpeg binaries (local installation)
+ffmpeg/

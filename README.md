@@ -39,6 +39,31 @@ docker-compose up -d
 - [README-Docker-Web.md](README-Docker-Web.md) - Documentación completa de Docker
 - [README-Web.md](README-Web.md) - Documentación de la interfaz web
 
+## ☁️ Despliegue en la Nube (Cloud Deployment)
+
+¿Quieres que tu aplicación esté disponible en internet 24/7?
+
+**Despliegue en Render (Recomendado):**
+- ✅ Soporte completo para WebSockets
+- ✅ Instalación fácil de FFmpeg
+- ✅ Tier gratuito disponible
+- ✅ Configuración con un clic usando `render.yaml`
+
+**Guía completa:**
+- [DEPLOYMENT.md](DEPLOYMENT.md) - Guía paso a paso para desplegar en Render
+
+**Inicio rápido:**
+```bash
+# 1. Push tu código a GitHub/GitLab/Bitbucket
+git add .
+git commit -m "Ready for deployment"
+git push origin main
+
+# 2. Ve a Render.com → New + → Blueprint
+# 3. Conecta tu repositorio
+# 4. ¡Deploy automático!
+```
+
 ## Requisitos
 
 - Python 3.7+
