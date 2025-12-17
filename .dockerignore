@@ -47,9 +47,16 @@ test_*.csv
 *.sh
 docker-run.*
 
-# Documentation (README.md is included via COPY)
-README-*.md
+# Documentation (not needed in container, except README.md)
+README*.md
 *.md
+DOCKER*.md
+DEPLOYMENT.md
+FEATURE*.md
+TESTING*.md
+QUICK_START.md
+AUTO_ZIP_FEATURE.md
+LICENSE
 !README.md
 
 # CSV files (mounted as needed)
@@ -63,3 +70,19 @@ ffmpeg/
 Dockerfile*
 docker-compose*
 .dockerignore
+
+# Config files not needed in container
+.env
+.env.example
+Procfile
+render.yaml
+runtime.txt
+
+# Setup and utility scripts
+setup_ffmpeg.py
+check_downloads.py
+configurar.bat
+configurar.ps1
+instalar_ffmpeg.ps1
+ejecutar.bat
+ejecutar.ps1
