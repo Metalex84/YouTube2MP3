@@ -1,12 +1,12 @@
-# Ignore downloads folder
-downloads/
-
-# Common Python ignores
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+env/
+venv/
+ENV/
 build/
 develop-eggs/
 dist/
@@ -22,52 +22,51 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
 
-# Virtual environments
-venv/
-env/
-ENV/
+# PyInstaller
+*.manifest
+*.spec
 
-# IDE files
+# Logs
+logs/
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Flask
+instance/
+.webassets-cache
+
+# Environments
+.env
+.venv
+
+# IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
-# Environment and logs
-.env
-logs/
-*.log
-
-# FFmpeg binaries (local installation)
-ffmpeg/
-
-# Media files - never commit these
+# Project specific
+downloads/
 *.mp3
 *.mp4
 *.webm
-*.m4a
-*.wav
-*.flac
-*.aac
-*.ogg
-*.opus
-
-# Archive files
 *.zip
-*.tar.gz
-*.tar
-*.rar
-*.7z
-
-# Backup files from git filter-branch
-.git/refs/original/
-
-# Large test files
-temp_*
-test_downloads/

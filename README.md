@@ -1,20 +1,21 @@
-# YouTube to MP3 Converter
+# YouTube to MP3 Converter - Web Interface
 
-Un script en Python que descarga audio de videos de YouTube y los convierte a formato MP3.
+Una aplicación web moderna con interfaz gráfica que descarga audio de videos de YouTube y los convierte a formato MP3.
+
+> **Nota**: Este es el repositorio de la **aplicación web**. Si buscas la versión de línea de comandos (CLI), visita [y2m-cli](../y2m-cli).
 
 ## 🌟 Características
 
-- ✅ **Interfaz Web Moderna** (branch `web`) - UI intuitiva con actualizaciones en tiempo real
+- ✅ **Interfaz Web Moderna** - UI intuitiva con actualizaciones en tiempo real
 - ✅ **Descarga audio de alta calidad** (320 kbps)
 - ✅ **Convierte automáticamente a MP3**
-- ✅ **Procesamiento en lote desde archivo CSV**
-- ✅ **Soporte Docker** - Ejecuta sin instalar dependencias
-- ✅ Limpia nombres de archivo problemáticos
-- ✅ Muestra progreso de descarga en tiempo real
-- ✅ Interfaz de línea de comandos mejorada
-- ✅ API REST para integración
-- ✅ Manejo de errores robusto
-- ✅ Resumen detallado de procesamiento
+- ✅ **Procesamiento en lote** - Sube archivos CSV o ingresa múltiples URLs
+- ✅ **Actualizaciones en tiempo real** - Progreso de descarga vía WebSockets
+- ✅ **API REST** - Para integración con otras aplicaciones
+- ✅ **Descarga por lotes en ZIP** - Descarga todos los archivos en un solo ZIP
+- ✅ **Soporte Docker** - Despliega fácilmente con Docker Compose
+- ✅ **Cloud-ready** - Configurado para Render, Heroku, y otros servicios cloud
+- ✅ **Manejo de errores robusto**
 
 ## 🐳 Docker (Opción más fácil)
 
@@ -63,220 +64,211 @@ git push origin main
 # 4. ¡Deploy automático!
 ```
 
+**Otras opciones de deployment:**
+- [NAS-DEPLOYMENT.md](NAS-DEPLOYMENT.md) - Guía para desplegar en NAS (Synology, QNAP, etc.)
+
 ## Requisitos
 
 - Python 3.7+
 - FFmpeg (debe estar instalado en el sistema y disponible en PATH)
-- yt-dlp (incluido en requirements.txt)
+- Dependencias Python (ver requirements.txt)
 
-## Instalación
+## Instalación Local
 
-### 🚀 Configuración Automática (Recomendado)
+### Instalación Manual
 
-El proyecto incluye un script de configuración automático que se encarga de todo:
+1. **Clona o descarga este repositorio**
 
-1. **Descarga el proyecto** a tu ordenador
-2. **Abre PowerShell como administrador** (clic derecho → "Ejecutar como administrador")
-3. **Navega al directorio del proyecto**:
-   ```powershell
-   cd "C:\ruta\a\tu\proyecto\y2m"
-   ```
-4. **Ejecuta la configuración automática**:
-   ```powershell
-   # Opción 1: PowerShell (más completo, instala Python/FFmpeg automáticamente)
-   .\configurar.ps1
-   
-   # Opción 2: Batch (más compatible, requiere Python pre-instalado)
-   configurar.bat
-   ```
+2. **Instala FFmpeg** desde [ffmpeg.org](https://ffmpeg.org/download.html)
 
-Este script automáticamente:
-- ✅ Verifica e instala Python 3.11.9 si es necesario
-- ✅ Verifica e instala FFmpeg si es necesario  
-- ✅ Crea el entorno virtual
-- ✅ Instala todas las dependencias
-- ✅ Verifica que todo funciona correctamente
-
-### 🔧 Configuración Manual (Alternativa)
-
-Si prefieres configurar manualmente:
-
-1. Instala Python 3.7+ desde [python.org](https://www.python.org/downloads/)
-2. Instala FFmpeg desde [ffmpeg.org](https://ffmpeg.org/download.html)
-3. Clona o descarga este repositorio
-4. Activa el entorno virtual:
+3. **Crea un entorno virtual**:
    ```bash
-   venv\Scripts\Activate.ps1  # Windows PowerShell
-   # o
-   venv\Scripts\activate.bat  # Windows CMD
+   python -m venv venv
    ```
-5. Instala las dependencias:
+
+4. **Activa el entorno virtual**:
+   ```bash
+   # Windows PowerShell
+   venv\Scripts\Activate.ps1
+   
+   # Windows CMD
+   venv\Scripts\activate.bat
+   
+   # Linux/Mac
+   source venv/bin/activate
+   ```
+
+5. **Instala las dependencias**:
    ```bash
    pip install -r requirements.txt
    ```
 
+6. **Ejecuta la aplicación**:
+   ```bash
+   python app.py
+   ```
+
+7. **Abre tu navegador** en `http://localhost:5000`
+
 ## Uso
 
-### 🎯 Uso Simplificado (Recomendado)
+### Interfaz Web
 
-Después de la configuración automática, usa el script ejecutor:
+1. Abre `http://localhost:5000` en tu navegador
+2. Ingresa la URL del video de YouTube
+3. Haz clic en "Descargar"
+4. Espera a que se complete la descarga
+5. Descarga el archivo MP3 generado
 
-**Descargar una URL:**
-```batch
-# Usando archivo .bat (más compatible)
-ejecutar.bat "https://www.youtube.com/watch?v=VIDEO_ID"
+### Procesamiento en Lote
 
-# O usando PowerShell
-.\ejecutar.ps1 "https://www.youtube.com/watch?v=VIDEO_ID"
-```
+**Opción 1: Subir archivo CSV**
+1. Prepara un archivo CSV con URLs (una por línea)
+2. En la interfaz web, sube el archivo CSV
+3. Las descargas comenzarán automáticamente
+4. Descarga todos los archivos en un ZIP al finalizar
 
-**Especificar directorio de salida:**
-```batch
-ejecutar.bat -o "C:\Mi\Carpeta\Musica" "https://www.youtube.com/watch?v=VIDEO_ID"
-```
+**Opción 2: Múltiples URLs en la interfaz**
+1. Ingresa múltiples URLs separadas por líneas
+2. Haz clic en "Descargar Lote"
+3. Descarga el ZIP con todos los archivos
 
-**Procesamiento en lote desde CSV:**
-```batch
-ejecutar.bat --csv-file urls.csv
-```
+### API REST
 
-**CSV con directorio personalizado:**
-```batch
-ejecutar.bat --csv-file urls.csv -o "C:\Mi\Carpeta\Musica"
-```
+La aplicación expone una API REST para integración:
 
-**Modo interactivo:**
-```batch
-ejecutar.bat
-# El script te pedirá que pegues la URL
-```
-
-**Ver ayuda detallada:**
-```batch
-ejecutar.bat --help
-```
-
-### 🔧 Uso Manual (Si no usas el ejecutor)
-
-**Activar entorno virtual primero:**
-```powershell
-venv\Scripts\Activate.ps1
-```
-
-**Luego usar el script Python directamente:**
+**Iniciar descarga:**
 ```bash
-python descargar_audio.py "https://www.youtube.com/watch?v=VIDEO_ID"
-python descargar_audio.py --csv-file urls.csv
-python descargar_audio.py -o "C:\Mi\Musica" "https://..."
+curl -X POST http://localhost:5000/api/download \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://www.youtube.com/watch?v=VIDEO_ID"}'
 ```
 
-### Opciones disponibles
-- `-h, --help`: Muestra ayuda
-- `-o, --output-dir`: Especifica directorio de salida
-- `--csv-file`: Procesa URLs desde archivo CSV
-- `--version`: Muestra versión del programa
-
-## Formato del archivo CSV
-
-El archivo CSV debe contener las URLs de YouTube, una por fila. Puede incluir un encabezado opcional:
-
-```csv
-URL
-https://www.youtube.com/watch?v=VIDEO_ID_1
-https://www.youtube.com/watch?v=VIDEO_ID_2
-https://www.youtube.com/watch?v=VIDEO_ID_3
+**Consultar estado:**
+```bash
+curl http://localhost:5000/api/download/DOWNLOAD_ID
 ```
 
-O sin encabezado:
-
-```csv
-https://www.youtube.com/watch?v=VIDEO_ID_1
-https://www.youtube.com/watch?v=VIDEO_ID_2
-https://www.youtube.com/watch?v=VIDEO_ID_3
+**Descargar archivo:**
+```bash
+curl http://localhost:5000/api/download/DOWNLOAD_ID/file -o audio.mp3
 ```
 
-### Características del procesamiento CSV:
-- ✅ Detecta automáticamente si hay encabezados
-- ✅ Ignora líneas vacías
-- ✅ Valida cada URL antes de procesar
-- ✅ Muestra progreso detallado para cada descarga
-- ✅ Resumen final con estadísticas
-- ✅ Manejo de interrupciones (Ctrl+C) con resumen parcial
-
-## Scripts Incluidos
-
-### 🛠️ Configuradores
-
-**configurar.ps1** - Configuración avanzada (PowerShell)
-```powershell
-.\configurar.ps1              # Configuración completa con instalación automática
-.\configurar.ps1 -SkipFFmpeg  # Omitir instalación de FFmpeg
+**Procesamiento en lote:**
+```bash
+curl -X POST http://localhost:5000/api/batch-download \
+  -H "Content-Type: application/json" \
+  -d '{"urls": ["URL1", "URL2", "URL3"]}'
 ```
 
-**configurar.bat** - Configuración simple (Batch)
-```batch
-configurar.bat                # Configuración básica (requiere Python pre-instalado)
+**Health check:**
+```bash
+curl http://localhost:5000/api/health
 ```
 
-### 🚀 Ejecutores
+## Configuración
 
-**ejecutar.bat** - Ejecutor principal (Recomendado)
-```batch
-ejecutar.bat [opciones]       # Ejecuta el programa
+### Variables de Entorno
+
+Puedes configurar la aplicación usando variables de entorno o un archivo `.env`:
+
+```env
+# Puerto del servidor (default: 5000)
+PORT=5000
+
+# Directorio de descargas (default: ./downloads)
+DOWNLOAD_DIR=/app/downloads
+
+# Directorio de logs (default: ./logs)
+LOGS_DIR=/app/logs
+
+# Clave secreta de Flask (genera una para producción)
+SECRET_KEY=your-secret-key-here
+
+# Ubicación de FFmpeg (opcional, si no está en PATH)
+FFMPEG_LOCATION=/path/to/ffmpeg/bin
 ```
 
-**ejecutar.ps1** - Ejecutor PowerShell (Alternativo)
-```powershell
-.\ejecutar.ps1 [opciones]     # Ejecuta el programa
-.\ejecutar.ps1 help          # Muestra ayuda rápida
+### Configuración para Producción
+
+Para producción, usa un servidor WSGI como Gunicorn:
+
+```bash
+gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:5000 app:app
 ```
 
-### 🎥 Herramientas adicionales
+La aplicación incluye configuraciones para:
+- **Apache** (ver `apache-config/`)
+- **Nginx** (ver `nginx-config/`)
+- **Systemd** (ver `systemd/`)
+- **Render** (ver `render.yaml`)
+- **Heroku** (ver `Procfile`)
 
-**instalar_ffmpeg.ps1** - Instalador de FFmpeg
-```powershell
-.\instalar_ffmpeg.ps1        # Instala sólo FFmpeg
+## Arquitectura
+
 ```
+y2m-web/
+├── app.py                  # Aplicación Flask principal
+├── descargar_audio.py      # Módulo de descarga/conversión
+├── wsgi.py                 # Entry point WSGI
+├── requirements.txt        # Dependencias Python
+├── Dockerfile              # Dockerfile para desarrollo
+├── Dockerfile.production   # Dockerfile optimizado para producción
+├── docker-compose.yml      # Configuración Docker Compose
+├── render.yaml             # Configuración para Render.com
+├── Procfile                # Configuración para Heroku
+├── templates/              # Templates HTML
+│   └── index.html
+├── static/                 # Archivos estáticos
+│   ├── style.css
+│   └── script.js
+├── apache-config/          # Configuración Apache
+├── nginx-config/           # Configuración Nginx
+└── systemd/                # Configuración Systemd
+```
+
+## Características Técnicas
+
+### Backend
+- **Flask**: Framework web minimalista
+- **Flask-SocketIO**: WebSockets para actualizaciones en tiempo real
+- **yt-dlp**: Motor de descarga de YouTube
+- **FFmpeg**: Conversión de audio a MP3
+
+### Frontend
+- **HTML5/CSS3**: Interfaz moderna y responsive
+- **JavaScript Vanilla**: Sin frameworks pesados
+- **Socket.IO**: Cliente WebSocket para actualizaciones en tiempo real
+
+### Deployment
+- **Docker**: Contenedorización completa
+- **Gunicorn + Eventlet**: Servidor WSGI con soporte WebSocket
+- **Cloud-ready**: Configurado para múltiples plataformas cloud
 
 ## Solución de problemas
 
-### 🚑 Configuración
+### Error: "FFmpeg not found"
+- Instala FFmpeg desde [ffmpeg.org](https://ffmpeg.org/download.html)
+- Asegúrate de que FFmpeg esté en el PATH
+- O configura la variable `FFMPEG_LOCATION`
 
-**Error: "Python no está instalado"**
-- Ejecuta `.\configurar.ps1` como administrador
-- O instala Python manualmente desde [python.org](https://www.python.org/downloads/)
+### Error de WebSocket
+- Asegúrate de que el puerto 5000 no esté bloqueado
+- Verifica que Flask-SocketIO esté instalado correctamente
+- En producción, usa Gunicorn con `--worker-class eventlet`
 
-**Error: "FFmpeg not found"**
-- Ejecuta `.\instalar_ffmpeg.ps1`
-- O ejecuta `.\configurar.ps1` de nuevo
-- O instala FFmpeg manualmente desde [ffmpeg.org](https://ffmpeg.org/download.html)
-
-**Error: "No se encontró el entorno virtual"**
-- Ejecuta `.\configurar.ps1` para crear el entorno
-- Asegúrate de estar en el directorio correcto del proyecto
-
-### 📱 Ejecución
-
-**Error de descarga**
+### Error de descarga
 - Verifica que la URL del video sea correcta
-- Asegúrate de tener conexión a internet
-- Algunos videos pueden estar restringidos por región o privados
-- Prueba con una URL diferente
+- Algunos videos pueden estar restringidos
+- Verifica tu conexión a internet
 
-**Caracteres especiales en nombres de archivo**
-- El script limpia automáticamente los caracteres problemáticos
-- Los archivos se guardan con nombres seguros para el sistema de archivos
+### Problemas de permisos
+- Asegúrate de que los directorios `downloads/` y `logs/` tengan permisos de escritura
+- En Docker, el usuario `appuser` debe tener permisos
 
-**Error: "Execution Policy"**
-- Ejecuta: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
-- O ejecuta: `PowerShell -ExecutionPolicy Bypass -File .\configurar.ps1`
+## Relacionado
 
-### 📝 CSV
-
-**El archivo CSV no se procesa correctamente**
-- Verifica que el archivo tenga URLs válidas (que empiecen con http:// o https://)
-- Asegúrate de que no haya líneas vacías extra
-- El formato debe ser una URL por línea
+- **CLI Version**: [y2m-cli](../y2m-cli) - Versión de línea de comandos
 
 ## Licencia
 

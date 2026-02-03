@@ -455,12 +455,6 @@ Ejemplos:
         help='Archivo CSV con URLs a procesar (una URL por fila)'
     )
     parser.add_argument(
-        '--max-concurrent',
-        type=int,
-        default=3,
-        help='Numero maximo de descargas simultaneas (por defecto: 3)'
-    )
-    parser.add_argument(
         '--version',
         action='version',
         version='YouTube to MP3 Downloader v1.2 (Async)'
@@ -472,13 +466,6 @@ Ejemplos:
     
     # Mostrar informacion del archivo de log
     thread_safe_print(f"[INFO] Log de la sesion: {log_file}")
-    
-    # Validar max_concurrent
-    if args.max_concurrent < 1:
-        safe_print("[ERROR] El numero maximo de descargas concurrentes debe ser al menos 1.")
-        return 1
-    elif args.max_concurrent > 10:
-        log_warning("Se recomienda no usar mas de 10 descargas simultaneas para evitar problemas.")
     
     # Modo CSV: procesar multiples URLs desde archivo
     if args.csv_file:
@@ -513,15 +500,28 @@ Ejemplos:
     # Procesar todas las URLs de forma asincrona
     total_urls = len(urls_a_procesar)
     
+    # Determinar automaticamente el numero de hilos basado en la cantidad de URLs
+    # Estrategia: un hilo por URL, con un maximo razonable para no sobrecargar el sistema
+    if total_urls == 1:
+        max_concurrent = 1
+    elif total_urls <= 5:
+        max_concurrent = total_urls  # Un hilo por URL para pocas URLs
+    elif total_urls <= 10:
+        max_concurrent = min(total_urls, 5)  # Hasta 5 hilos para 6-10 URLs
+    else:
+        max_concurrent = min(total_urls, 8)  # Hasta 8 hilos para mas de 10 URLs
+    
+    log_info(f"Determinacion automatica de hilos: {total_urls} URLs -> {max_concurrent} hilos")
+    
     # Decide si usar procesamiento asincrono o sincronico
-    usar_async = total_urls > 1 and args.max_concurrent > 1
+    usar_async = total_urls > 1 and max_concurrent > 1
     
     if usar_async:
-        thread_safe_print(f"[INFO] Modo asincrono con hasta {args.max_concurrent} hilos")
+        thread_safe_print(f"[INFO] Modo asincrono automatico: {max_concurrent} hilos para {total_urls} URL(s)")
         try:
             # Ejecutar el procesamiento asincrono
             exitosos, fallidos, resultados = asyncio.run(
-                procesar_urls_async(urls_a_procesar, args.output_dir, args.max_concurrent)
+                procesar_urls_async(urls_a_procesar, args.output_dir, max_concurrent)
             )
         except KeyboardInterrupt:
             safe_print(f"\n[PAUSE] Procesamiento interrumpido por el usuario.")
