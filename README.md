@@ -36,8 +36,7 @@ docker-compose up -d
 
 **Documentación completa:**
 - [DOCKER-QUICKSTART.md](DOCKER-QUICKSTART.md) - Guía rápida de Docker
-- [README-Docker-Web.md](README-Docker-Web.md) - Documentación completa de Docker
-- [README-Web.md](README-Web.md) - Documentación de la interfaz web
+- [DOCKER_OPTIMIZATION.md](DOCKER_OPTIMIZATION.md) - Optimizaciones de Docker
 
 ## ☁️ Despliegue en la Nube (Cloud Deployment)
 
