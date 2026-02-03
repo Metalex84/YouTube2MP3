@@ -21,6 +21,44 @@ Una aplicación web moderna con interfaz gráfica que descarga audio de videos d
 
 ¿Quieres la forma más rápida de empezar? Usa Docker:
 
+### Opción 1: Scripts Wrapper (Recomendado)
+
+**Windows (PowerShell):**
+```powershell
+.\run-web.ps1
+```
+
+**Linux/Mac (Bash):**
+```bash
+./run-web.sh
+```
+
+Estos scripts automáticamente:
+- ✅ Construyen la imagen Docker si no existe
+- ✅ Crean directorios necesarios (downloads, logs)
+- ✅ Ejecutan el contenedor con la configuración correcta
+- ✅ Muestran la URL para acceder a la aplicación
+
+**Comandos adicionales:**
+```bash
+# Ver logs en tiempo real
+./run-web.sh --logs
+
+# Detener la aplicación
+./run-web.sh --stop
+
+# Forzar reconstrucción
+./run-web.sh --build
+
+# Cambiar puerto (default: 5000)
+./run-web.sh --port 8080
+
+# Limpiar todo (contenedor e imagen)
+./run-web.sh --clean
+```
+
+### Opción 2: Docker Compose
+
 ```bash
 # 1. Construir y ejecutar
 docker-compose up -d
