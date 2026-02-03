@@ -67,10 +67,25 @@ function Write-ColorOutput {
     Write-Host $Message -ForegroundColor $Color
 }
 
-function Write-Success { param([string]$Message) Write-ColorOutput "✓ $Message" "Green" }
-function Write-Info { param([string]$Message) Write-ColorOutput "ℹ $Message" "Cyan" }
-function Write-Warning { param([string]$Message) Write-ColorOutput "⚠ $Message" "Yellow" }
-function Write-Error-Custom { param([string]$Message) Write-ColorOutput "✗ $Message" "Red" }
+function Write-Success {
+    param([string]$Message)
+    Write-ColorOutput "[+] $Message" "Green"
+}
+
+function Write-Info {
+    param([string]$Message)
+    Write-ColorOutput "[i] $Message" "Cyan"
+}
+
+function Write-Warning {
+    param([string]$Message)
+    Write-ColorOutput "[!] $Message" "Yellow"
+}
+
+function Write-Error-Custom {
+    param([string]$Message)
+    Write-ColorOutput "[x] $Message" "Red"
+}
 
 # Check if Docker is installed
 function Test-Docker {
