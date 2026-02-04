@@ -2,6 +2,31 @@
 let socket = null;
 let activeDownloads = new Map();
 let activeBatches = new Map();
+let pendingDownloadsCount = 0;
+
+// Loading overlay functions
+function showLoading(message = 'Iniciando descarga') {
+    const overlay = document.getElementById('loading-overlay');
+    const submessage = document.getElementById('loading-submessage');
+    if (overlay) {
+        submessage.textContent = message;
+        overlay.classList.remove('hidden');
+    }
+}
+
+function hideLoading() {
+    const overlay = document.getElementById('loading-overlay');
+    if (overlay) {
+        overlay.classList.add('hidden');
+    }
+}
+
+function updateLoadingMessage(message) {
+    const submessage = document.getElementById('loading-submessage');
+    if (submessage) {
+        submessage.textContent = message;
+    }
+}
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
@@ -124,6 +149,9 @@ function setupEventListeners() {
 
 // API call to start single download
 async function startSingleDownload(url) {
+    showLoading('Conectando con YouTube...');
+    pendingDownloadsCount = 1;
+    
     try {
         const response = await fetch('/api/download', {
             method: 'POST',
@@ -136,6 +164,7 @@ async function startSingleDownload(url) {
         const data = await response.json();
         
         if (response.ok) {
+            updateLoadingMessage('Descargando y convirtiendo a MP3...');
             addDownloadToUI({
                 id: data.download_id,
                 url: url,
@@ -143,9 +172,11 @@ async function startSingleDownload(url) {
                 title: 'Cargando...'
             });
         } else {
+            hideLoading();
             alert(`Error: ${data.error}`);
         }
     } catch (error) {
+        hideLoading();
         console.error('Error starting download:', error);
         alert('Error al iniciar la descarga');
     }
@@ -153,6 +184,8 @@ async function startSingleDownload(url) {
 
 // API call to upload CSV
 async function uploadCSV(file) {
+    showLoading('Procesando archivo CSV...');
+    
     try {
         const formData = new FormData();
         formData.append('file', file);
@@ -165,6 +198,9 @@ async function uploadCSV(file) {
         const data = await response.json();
         
         if (response.ok) {
+            pendingDownloadsCount = data.download_ids.length;
+            updateLoadingMessage(`Descargando ${pendingDownloadsCount} archivo(s)...`);
+            
             // Track the batch
             if (data.batch_id) {
                 activeBatches.set(data.batch_id, {
@@ -175,9 +211,11 @@ async function uploadCSV(file) {
             }
             // Load downloads will be updated via WebSocket
         } else {
+            hideLoading();
             alert(`Error: ${data.error}`);
         }
     } catch (error) {
+        hideLoading();
         console.error('Error uploading CSV:', error);
         alert('Error al subir el archivo CSV');
     }
@@ -185,6 +223,8 @@ async function uploadCSV(file) {
 
 // API call to start batch download from URLs
 async function startBatchDownload(urls) {
+    showLoading(`Preparando ${urls.length} descarga(s)...`);
+    
     try {
         const response = await fetch('/api/batch-download', {
             method: 'POST',
@@ -197,6 +237,9 @@ async function startBatchDownload(urls) {
         const data = await response.json();
         
         if (response.ok) {
+            pendingDownloadsCount = data.download_ids.length;
+            updateLoadingMessage(`Descargando ${pendingDownloadsCount} archivo(s)...`);
+            
             // Track the batch
             if (data.batch_id) {
                 activeBatches.set(data.batch_id, {
@@ -206,9 +249,11 @@ async function startBatchDownload(urls) {
                 });
             }
         } else {
+            hideLoading();
             alert(`Error: ${data.error}`);
         }
     } catch (error) {
+        hideLoading();
         console.error('Error starting batch download:', error);
         alert('Error al iniciar las descargas');
     }
@@ -379,6 +424,15 @@ function markDownloadComplete(data) {
         element.innerHTML = createDownloadHTML(download);
     }
     
+    // Hide loading overlay when download completes (for single downloads)
+    pendingDownloadsCount--;
+    if (pendingDownloadsCount <= 0) {
+        hideLoading();
+        pendingDownloadsCount = 0;
+    } else {
+        updateLoadingMessage(`Procesando... ${pendingDownloadsCount} restante(s)`);
+    }
+    
     updateDownloadAllButton();
 }
 
@@ -399,6 +453,15 @@ function markDownloadFailed(data) {
         // Add error message
         const errorHTML = `<div class="download-error" style="color: #ef4444; margin-top: 10px;">Error: ${data.error}</div>`;
         element.querySelector('.download-url').insertAdjacentHTML('afterend', errorHTML);
+    }
+    
+    // Hide loading overlay when download fails
+    pendingDownloadsCount--;
+    if (pendingDownloadsCount <= 0) {
+        hideLoading();
+        pendingDownloadsCount = 0;
+    } else {
+        updateLoadingMessage(`Procesando... ${pendingDownloadsCount} restante(s)`);
     }
     
     updateDownloadAllButton();
@@ -448,6 +511,10 @@ async function downloadAllAsZip() {
 // Handle batch completion
 function handleBatchComplete(data) {
     console.log('[DEBUG] Batch completed:', data);
+    
+    // Hide loading overlay
+    hideLoading();
+    pendingDownloadsCount = 0;
     
     const batch = {
         id: data.batch_id,
