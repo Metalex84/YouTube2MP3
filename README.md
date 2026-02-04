@@ -2,7 +2,7 @@
 
 Una aplicación web moderna con interfaz gráfica que descarga audio de videos de YouTube y los convierte a formato MP3.
 
-> **Nota**: Este es el repositorio de la **aplicación web**. Si buscas la versión de línea de comandos (CLI), visita [YouTube2MP3_CLI](../YouTube2MP3_CLI).
+> **Nota**: Este es el repositorio de la **aplicación web**. Si buscas la versión de línea de comandos (CLI), visita [YouTube2MP3_CLI](https://github.com/Metalex84/YouTube2MP3_CLI).
 
 ## 🌟 Características
 
