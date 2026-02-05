@@ -11,7 +11,7 @@ CONTAINER_NAME="youtube2mp3-web"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOWNLOADS_DIR="${SCRIPT_DIR}/downloads"
 LOGS_DIR="${SCRIPT_DIR}/logs"
-PORT=5000
+PORT=5001
 
 # Colors
 RED='\033[0;31m'
