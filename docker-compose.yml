@@ -1,24 +1,15 @@
 services:
-  youtube-mp3-web:
+  ytmp3web:
     build: .
-    container_name: youtube-mp3-web
+    container_name: ytmp3web
     ports:
-      # Exponer el puerto 5000 para acceder a la interfaz web
-      - "5000:5000"
+      - "8085:5000"
     volumes:
-      # Directorio para las descargas (persistente)
       - ./downloads:/app/downloads
-      # Directorio para los logs (persistente)
       - ./logs:/app/logs
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONIOENCODING=utf-8
       - DOWNLOAD_DIR=/app/downloads
       - LOGS_DIR=/app/logs
-    # Opcional: recursos limitados
-    deploy:
-      resources:
-        limits:
-          memory: 1G
-          cpus: '2.0'
     restart: unless-stopped
